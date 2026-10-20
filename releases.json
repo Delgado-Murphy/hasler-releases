@@ -9,7 +9,9 @@
       "kind": "patch",
       "prerelease": false,
       "notes": "- The radio announces itself on the network again, so Home Assistant finds\n  it by itself (needs 0.3.7 or later installed first).",
-      "channels": [],
+      "channels": [
+        "bench"
+      ],
       "halted": [],
       "requires_migration": false,
       "min_from_seq": 0,
@@ -392,5 +394,5 @@
       }
     }
   ],
-  "updated": "2026-10-20T04:14:39Z"
+  "updated": "2026-10-20T04:14:53Z"
 }
