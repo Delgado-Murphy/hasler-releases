@@ -9,7 +9,9 @@
       "kind": "patch",
       "prerelease": false,
       "notes": "- Settings, rethought: a short home with seven rows - Sound, Phones &\n  casting, Rooms, Pilot lamp, Keys & knobs, This radio, and Maker tools\n  (hidden: tap the version number 7 times). Each row says how things stand\n  now; anything waiting (an update) shows on top.\n- One way of working everywhere: a switch or slider applies at once with\n  Undo; a change of several fields gets a \"Not saved - Cancel - Save\" bar;\n  risky things ask for a press on the radio.\n- Reset keys and the Bluetooth key options moved into Edit keys; plain words\n  instead of jargon.",
-      "channels": [],
+      "channels": [
+        "bench"
+      ],
       "halted": [],
       "requires_migration": false,
       "min_from_seq": 0,
@@ -735,5 +737,5 @@
       }
     }
   ],
-  "updated": "2026-10-20T21:59:05Z"
+  "updated": "2026-10-20T21:59:19Z"
 }
