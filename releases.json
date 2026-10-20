@@ -2,6 +2,53 @@
   "schema": 1,
   "releases": [
     {
+      "version": "1.0.0",
+      "seq": 1000099,
+      "date": "2026-10-20T22:59:16Z",
+      "created": "2026-10-20T22:55:50Z",
+      "kind": "major",
+      "prerelease": false,
+      "notes": "The first stable version. Nothing you set up changes: your keys, stations,\nsettings and knob calibration stay as they are.\n\nWhat your Hasler does:\n\n- **Press a key, hear music.** Each of the six keys plays an internet radio\n  station, a Spotify playlist or a YouTube Music playlist. No phone, no app.\n  Music starts about 15 seconds after you switch the radio on.\n- **A speaker for your phone:** Spotify Connect (guests on your Wi-Fi too),\n  AirPlay, Bluetooth and UPnP. It remembers your Bluetooth phones and calls\n  the last one when you switch to Bluetooth. When a phone stops, the radio\n  goes back to its station.\n- **Several rooms:** Haslers on the same network can play the same music in\n  step. Give each radio a room name (\"Kitchen\") and tap \"Also play on...\".\n- **Two knobs, like the old radio.** Volume, with a floor and a ceiling that\n  protect the old speaker. Tone makes the sound warmer or brighter (or one\n  of several other effects) and clicks off to put the radio to sleep.\n- **A pilot lamp that tells you how things are:** amber for the radio, blue\n  for a phone, a dim ember in standby, breathing ember while it installs an\n  update, dark when it is safe to unplug.\n- **The key page** in your browser (`http://hasler.local:8080`): choose the\n  music on each key, sound, phones and casting, rooms, the lamp, Wi-Fi and\n  updates. Anything risky asks for a press on the radio itself.\n- **Home Assistant**, if you use it: a held key can set the lights or start\n  a scene, and the Hasler integration shows each radio.\n- **Safe updates.** Small ones install by themselves at night in standby;\n  bigger ones ask first. If an update doesn't work, the radio goes back to\n  the version before by itself, even after a power cut.\n- **Help from the makers**, only if you ask for it: Settings -> This radio,\n  for 24 hours, ended at any time.\n\nNew in this version:\n\n- Updates: a version with a higher first number (2.0, 3.0...) always waits\n  for you, even if it is only a small fix on top of one you haven't\n  installed yet.\n- \"Help from the makers\" moved to the bottom of This radio, and it says\n  plainly when a maker is connected right now.\n- Keys answer at once, even when you switch stations quickly: a new press\n  replaces one still starting, and the radio no longer stops its player\n  twice on the way.\n- Reboots can't hang for minutes any more (a stuck service gets 20 s), and a\n  small log stays on the card so a bad shutdown can be looked into.\n- New radios can be set up without a screen or keyboard: flash moOde, copy\n  six files to the card, switch on (docs/new-install.md).\n- Open source: MIT licence, with the licences of everything bundled in each\n  release (THIRD_PARTY_NOTICES.md).\n\nVersion 1.0.0 is a big step in name only, so the radio asks before\ninstalling it: Settings -> This radio -> Updates -> Install. After that,\nupdates carry on as before.",
+      "channels": [],
+      "halted": [],
+      "requires_migration": false,
+      "min_from_seq": 0,
+      "variants": [
+        "excelsior",
+        "hasler-hm"
+      ],
+      "release_page": "https://github.com/Delgado-Murphy/hasler-releases/releases/tag/v1.0.0",
+      "assets": {
+        "tarball": {
+          "name": "hasler-1.0.0-arm64.tar.zst",
+          "url": "https://github.com/Delgado-Murphy/hasler-releases/releases/download/v1.0.0/hasler-1.0.0-arm64.tar.zst",
+          "size": 40382626,
+          "sha256": "28710e366e38582f6677abf75e2f16522c8aec0824c5f71f88fc00d867d288dd"
+        },
+        "release_json": {
+          "name": "release.json",
+          "url": "https://github.com/Delgado-Murphy/hasler-releases/releases/download/v1.0.0/release.json",
+          "size": 3749,
+          "sha256": "8fc8853e650ff4e9332106b4a027d0b28a677846074aee11ea9f1a942a17282e"
+        },
+        "signature": {
+          "name": "release.json.sig",
+          "url": "https://github.com/Delgado-Murphy/hasler-releases/releases/download/v1.0.0/release.json.sig",
+          "size": 310
+        },
+        "sbom": {
+          "name": "hasler-1.0.0.cdx.json",
+          "url": "https://github.com/Delgado-Murphy/hasler-releases/releases/download/v1.0.0/hasler-1.0.0.cdx.json",
+          "size": 20023
+        },
+        "sha256sums": {
+          "name": "SHA256SUMS",
+          "url": "https://github.com/Delgado-Murphy/hasler-releases/releases/download/v1.0.0/SHA256SUMS",
+          "size": 255
+        }
+      }
+    },
+    {
       "version": "0.4.6",
       "seq": 40699,
       "date": "2026-10-20T22:16:57Z",
@@ -786,5 +833,5 @@
       }
     }
   ],
-  "updated": "2026-10-20T22:17:11Z"
+  "updated": "2026-10-20T22:59:16Z"
 }
