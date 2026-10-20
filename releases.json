@@ -2,6 +2,53 @@
   "schema": 1,
   "releases": [
     {
+      "version": "0.3.7",
+      "seq": 30799,
+      "date": "2026-10-20T04:06:54Z",
+      "created": "2026-10-20T04:03:33Z",
+      "kind": "patch",
+      "prerelease": false,
+      "notes": "- Same as 0.3.6, but installable on radios running 0.3.5 or older: their\n  updater refused 0.3.6's new network announcement file. 0.3.7 leaves it out\n  and brings an updater that accepts it; the next release adds it back.",
+      "channels": [],
+      "halted": [],
+      "requires_migration": false,
+      "min_from_seq": 0,
+      "variants": [
+        "excelsior",
+        "hasler-hm"
+      ],
+      "release_page": "https://github.com/Delgado-Murphy/hasler-releases/releases/tag/v0.3.7",
+      "assets": {
+        "tarball": {
+          "name": "hasler-0.3.7-arm64.tar.zst",
+          "url": "https://github.com/Delgado-Murphy/hasler-releases/releases/download/v0.3.7/hasler-0.3.7-arm64.tar.zst",
+          "size": 40222487,
+          "sha256": "fdd6ded95f14b2785e7dbe17a6e04a38fa8c535d88a1778ecde035363a90d41f"
+        },
+        "release_json": {
+          "name": "release.json",
+          "url": "https://github.com/Delgado-Murphy/hasler-releases/releases/download/v0.3.7/release.json",
+          "size": 1039,
+          "sha256": "038c210f5e31798a47a8ac40c0a5c0792868d51fe56503043c54123045f61634"
+        },
+        "signature": {
+          "name": "release.json.sig",
+          "url": "https://github.com/Delgado-Murphy/hasler-releases/releases/download/v0.3.7/release.json.sig",
+          "size": 310
+        },
+        "sbom": {
+          "name": "hasler-0.3.7.cdx.json",
+          "url": "https://github.com/Delgado-Murphy/hasler-releases/releases/download/v0.3.7/hasler-0.3.7.cdx.json",
+          "size": 20023
+        },
+        "sha256sums": {
+          "name": "SHA256SUMS",
+          "url": "https://github.com/Delgado-Murphy/hasler-releases/releases/download/v0.3.7/SHA256SUMS",
+          "size": 255
+        }
+      }
+    },
+    {
       "version": "0.3.6",
       "seq": 30699,
       "date": "2026-10-20T03:59:24Z",
@@ -296,5 +343,5 @@
       }
     }
   ],
-  "updated": "2026-10-20T03:59:38Z"
+  "updated": "2026-10-20T04:06:55Z"
 }
