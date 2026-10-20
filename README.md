@@ -12,8 +12,7 @@ Base URL: `https://delgado-murphy.github.io/hasler-releases`
 | URL | what | signed by (namespace) |
 |---|---|---|
 | `<base>/keyring.json` + `.sig` | the current release and timestamp public keys | root key (`hasler-keyring`) |
-| `<base>/channels/bench.json` + `.sig` | owner's bench box | timestamp key (`hasler-channel`) |
-| `<base>/channels/beta.json` + `.sig` | 1-2 family boxes | timestamp key (`hasler-channel`) |
+| `<base>/channels/bench.json` + `.sig` | the makers' test radio (may break) | timestamp key (`hasler-channel`) |
 | `<base>/channels/stable.json` + `.sig` | everyone | timestamp key (`hasler-channel`) |
 | `https://github.com/Delgado-Murphy/hasler-releases/releases/download/v<version>/release.json` + `.sig` | the release manifest | release key (`hasler-release`) |
 | `.../v<version>/hasler-<version>-arm64.tar.zst` | the release tarball | its sha256 is in `release.json` |
@@ -61,7 +60,7 @@ copies of its `scripts/release/` (`make_manifest.py`, `keyring.py`,
 ## Promote, halt, refresh
 
 - **Promote** (same artifact, never rebuilt): sign-publish with mode
-  `promote`, the version, and the target channel (`beta` / `stable`). Only
+  `promote`, the version, and the target channel (`stable`). Only
   the `channel` job runs. A channel only moves to a higher `seq`.
 - **Halt** a bad release: sign-publish with mode `halt`, the bad version and
   the channel. Its `seq` is added to the channel's `halted` list and the
