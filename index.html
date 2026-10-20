@@ -99,7 +99,7 @@ section{margin-top:44px}
 
 /* ---------- channels ---------- */
 .channels{display:grid;grid-template-columns:1fr;gap:12px}
-@media (min-width:760px){ .channels{grid-template-columns:repeat(3,minmax(0,1fr))} }
+@media (min-width:760px){ .channels{grid-template-columns:repeat(2,minmax(0,1fr))} }
 .ch{display:flex;flex-direction:column;gap:12px;padding:16px;border:1px solid var(--line2);border-radius:14px;background:var(--card);min-width:0}
 .ch.unused{border-style:dashed;background:none}
 .ch-top{display:flex;align-items:center;gap:12px}
@@ -225,7 +225,7 @@ footer{margin-top:56px;padding-top:22px;border-top:1px solid var(--line);display
         <li><b>Every radio is built with our root key.</b> It is a public key, written once onto the radio. The matching private key stays offline and never touches the internet.</li>
         <li><b>The root key vouches for the working keys.</b> The keyring on this site lists the keys allowed to sign releases and channels. A radio only accepts a keyring signed by the root key, and only a newer one than it already has.</li>
         <li><b>Each release is signed.</b> The release key signs <code>release.json</code>, which names the exact software file and its SHA-256. A radio refuses a file whose checksum does not match, byte for byte.</li>
-        <li><b>Channels say which release to take.</b> A short, signed channel index points Bench, Beta or Stable at one release. It expires after two weeks and is re-signed every day, so nobody can replay an old one to hold a radio back.</li>
+        <li><b>Channels say which release to take.</b> A short, signed channel index points Bench or Stable at one release. It expires after two weeks and is re-signed every day, so nobody can replay an old one to hold a radio back.</li>
         <li><b>Install, test, or go back.</b> The radio installs next to the running version, checks its own health and keeps the new version only if everything works. Otherwise it returns to the previous one by itself.</li>
       </ol>
       <div class="trust">
@@ -259,8 +259,7 @@ footer{margin-top:56px;padding-top:22px;border-top:1px solid var(--line);display
 const ROOT_KEYS = ['ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIF9gmAm746rpYzKa24jKiAZyiAiMw0bEuj30vRw38Cv7 hasler-root-2026'];
 const CHANNELS = [
   {id:'bench', name:'Bench', cap:'B', blurb:'Our own test radios on the workbench. Every release starts here.'},
-  {id:'beta', name:'Beta', cap:'β', blurb:'Radios set to try new releases early.'},
-  {id:'stable', name:'Stable', cap:'S', blurb:'Every other radio. Releases reach it after Bench and Beta.'},
+  {id:'stable', name:'Stable', cap:'S', blurb:'Every other radio. Releases reach it after Bench.'},
 ];
 const $ = id => document.getElementById(id);
 const enc = new TextEncoder(), dec = new TextDecoder();
