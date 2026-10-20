@@ -9,7 +9,9 @@
       "kind": "patch",
       "prerelease": false,
       "notes": "- Keys: a bounced second tap no longer stops the station it just started\n  (an old key's contacts can register one press as two taps).\n- Key page: choose the update channel (Stable, Beta or Bench) in the Software\n  card, confirmed with a press on the radio.",
-      "channels": [],
+      "channels": [
+        "bench"
+      ],
       "halted": [],
       "requires_migration": false,
       "min_from_seq": 0,
@@ -147,5 +149,5 @@
       }
     }
   ],
-  "updated": "2026-10-20T02:40:06Z"
+  "updated": "2026-10-20T02:40:18Z"
 }
