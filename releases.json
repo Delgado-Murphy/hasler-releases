@@ -9,7 +9,9 @@
       "kind": "patch",
       "prerelease": false,
       "notes": "- Two update channels: Bench and Stable; new radios update automatically for\n  small releases.",
-      "channels": [],
+      "channels": [
+        "bench"
+      ],
       "halted": [],
       "requires_migration": false,
       "min_from_seq": 0,
@@ -196,5 +198,5 @@
       }
     }
   ],
-  "updated": "2026-10-20T02:51:15Z"
+  "updated": "2026-10-20T02:51:27Z"
 }
