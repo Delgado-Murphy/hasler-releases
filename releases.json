@@ -9,7 +9,9 @@
       "kind": "patch",
       "prerelease": false,
       "notes": "- Sources: choose which sources the PU key cycles through and in what order;\n  any key can be set to \"Cycle sources\".\n- Casting: AirPlay, Spotify (guests on your Wi-Fi too) and UPnP/DLNA can be\n  switched on and named on the key page; the radio goes back to its station\n  20 s after a phone stops.\n- Volume: the quietest knob step is now a setting (Sound).\n- Home Assistant: a key can turn lights on/off, set colour, brightness and\n  white temperature, start a scene, script or automation - with \"Try it\"\n  before saving. The radio also announces itself so Home Assistant finds it,\n  for the new Hasler integration (hasler-homeassistant).",
-      "channels": [],
+      "channels": [
+        "bench"
+      ],
       "halted": [],
       "requires_migration": false,
       "min_from_seq": 0,
@@ -294,5 +296,5 @@
       }
     }
   ],
-  "updated": "2026-10-20T03:59:25Z"
+  "updated": "2026-10-20T03:59:38Z"
 }
