@@ -9,7 +9,9 @@
       "kind": "patch",
       "prerelease": false,
       "notes": "- Bluetooth: paired phones on the key page (connect, disconnect, forget,\n  battery, last used); which codec is playing (SBC / aptX / aptX HD); a\n  \"Bluetooth\" key action - tap to switch and call your last phone, again for\n  the next track, hold to pause (configurable); reconnect to the last phone\n  when you switch to Bluetooth or wake the radio (configurable).\n- Pilot lamp: ember is visible again - standby 22 % (night 15 %), picked by\n  eye; it was too faint to see, so standby looked like \"safe to unplug\".",
-      "channels": [],
+      "channels": [
+        "bench"
+      ],
       "halted": [],
       "requires_migration": false,
       "min_from_seq": 0,
@@ -686,5 +688,5 @@
       }
     }
   ],
-  "updated": "2026-10-20T21:22:52Z"
+  "updated": "2026-10-20T21:23:07Z"
 }
