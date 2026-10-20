@@ -2,6 +2,53 @@
   "schema": 1,
   "releases": [
     {
+      "version": "0.4.5",
+      "seq": 40599,
+      "date": "2026-10-20T21:59:04Z",
+      "created": "2026-10-20T21:55:26Z",
+      "kind": "patch",
+      "prerelease": false,
+      "notes": "- Settings, rethought: a short home with seven rows - Sound, Phones &\n  casting, Rooms, Pilot lamp, Keys & knobs, This radio, and Maker tools\n  (hidden: tap the version number 7 times). Each row says how things stand\n  now; anything waiting (an update) shows on top.\n- One way of working everywhere: a switch or slider applies at once with\n  Undo; a change of several fields gets a \"Not saved - Cancel - Save\" bar;\n  risky things ask for a press on the radio.\n- Reset keys and the Bluetooth key options moved into Edit keys; plain words\n  instead of jargon.",
+      "channels": [],
+      "halted": [],
+      "requires_migration": false,
+      "min_from_seq": 0,
+      "variants": [
+        "excelsior",
+        "hasler-hm"
+      ],
+      "release_page": "https://github.com/Delgado-Murphy/hasler-releases/releases/tag/v0.4.5",
+      "assets": {
+        "tarball": {
+          "name": "hasler-0.4.5-arm64.tar.zst",
+          "url": "https://github.com/Delgado-Murphy/hasler-releases/releases/download/v0.4.5/hasler-0.4.5-arm64.tar.zst",
+          "size": 40309864,
+          "sha256": "bbce3b005a555cd99d141cd03709a3367c6c30af6c1566e230e8893ba3e77e34"
+        },
+        "release_json": {
+          "name": "release.json",
+          "url": "https://github.com/Delgado-Murphy/hasler-releases/releases/download/v0.4.5/release.json",
+          "size": 1383,
+          "sha256": "51a9a536cbc63302b9cd19d5fa8e0740c4180f78f4affdc697a5da16f6a17699"
+        },
+        "signature": {
+          "name": "release.json.sig",
+          "url": "https://github.com/Delgado-Murphy/hasler-releases/releases/download/v0.4.5/release.json.sig",
+          "size": 310
+        },
+        "sbom": {
+          "name": "hasler-0.4.5.cdx.json",
+          "url": "https://github.com/Delgado-Murphy/hasler-releases/releases/download/v0.4.5/hasler-0.4.5.cdx.json",
+          "size": 20023
+        },
+        "sha256sums": {
+          "name": "SHA256SUMS",
+          "url": "https://github.com/Delgado-Murphy/hasler-releases/releases/download/v0.4.5/SHA256SUMS",
+          "size": 255
+        }
+      }
+    },
+    {
       "version": "0.4.4",
       "seq": 40499,
       "date": "2026-10-20T21:22:51Z",
@@ -688,5 +735,5 @@
       }
     }
   ],
-  "updated": "2026-10-20T21:23:07Z"
+  "updated": "2026-10-20T21:59:05Z"
 }
