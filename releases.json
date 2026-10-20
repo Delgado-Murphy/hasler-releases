@@ -1,0 +1,104 @@
+{
+  "schema": 1,
+  "releases": [
+    {
+      "version": "0.3.2",
+      "seq": 30299,
+      "date": "2026-10-20T02:24:07Z",
+      "created": "2026-10-20T02:17:14Z",
+      "kind": "patch",
+      "prerelease": false,
+      "notes": "- YouTube Music no longer stutters: YouTube throttles a plain download of some\n  tracks to ~32 KB/s, so the radio now fetches each track in fast byte ranges\n  and plays it from local storage, with the next track downloaded ahead.\n- Pilot lamp at power-on: the warming-up breath starts with a clear amber glow\n  (a slow 2 s fade up, then breathes 25-60 %) instead of a near-invisible 10-35 %.",
+      "channels": [
+        "bench"
+      ],
+      "halted": [],
+      "requires_migration": false,
+      "min_from_seq": 0,
+      "variants": [
+        "excelsior",
+        "hasler-hm"
+      ],
+      "release_page": "https://github.com/Delgado-Murphy/hasler-releases/releases/tag/v0.3.2",
+      "assets": {
+        "tarball": {
+          "name": "hasler-0.3.2-arm64.tar.zst",
+          "url": "https://github.com/Delgado-Murphy/hasler-releases/releases/download/v0.3.2/hasler-0.3.2-arm64.tar.zst",
+          "size": 40225902,
+          "sha256": "0853f1e7567b48c135dd2cb3ec0ae7ae663f4e6bf0d85a4156f3844bad43826c"
+        },
+        "release_json": {
+          "name": "release.json",
+          "url": "https://github.com/Delgado-Murphy/hasler-releases/releases/download/v0.3.2/release.json",
+          "size": 1211,
+          "sha256": "a971f8aadd25aa9edec0f71b8bcc7a59f8d804570e8a16d23d0187af69ea5a5f"
+        },
+        "signature": {
+          "name": "release.json.sig",
+          "url": "https://github.com/Delgado-Murphy/hasler-releases/releases/download/v0.3.2/release.json.sig",
+          "size": 310
+        },
+        "sbom": {
+          "name": "hasler-0.3.2.cdx.json",
+          "url": "https://github.com/Delgado-Murphy/hasler-releases/releases/download/v0.3.2/hasler-0.3.2.cdx.json",
+          "size": 20023
+        },
+        "sha256sums": {
+          "name": "SHA256SUMS",
+          "url": "https://github.com/Delgado-Murphy/hasler-releases/releases/download/v0.3.2/SHA256SUMS",
+          "size": 255
+        }
+      }
+    },
+    {
+      "version": "0.3.1",
+      "seq": 30199,
+      "date": "2026-10-20T02:17:46Z",
+      "created": "2026-10-20T01:31:20Z",
+      "kind": "major",
+      "prerelease": false,
+      "notes": "First signed release through GitHub.\n\n- Over-the-air updates: signed releases, a health check and automatic rollback\n  (also after a power cut mid-update), manual \"go back\" from the key page.\n- Your settings and knob calibration live outside the release\n  (`/etc/hasler`); a calibration wizard for every knob on the key page.\n- Key page: Software card; installing, rolling back, Wi-Fi and reset need a\n  press on the radio; protection against malicious web pages.\n- Pilot lamp: one meaning per colour, smooth fades, night mode by the sun.\n- Boot: music about 15 s after power-on (was 40-60 s); YouTube Music plays its\n  first track from a cache; no music after a power cut at night.\n- yt-dlp updates weekly as its own user, with a self-check.",
+      "channels": [
+        "bench"
+      ],
+      "halted": [],
+      "requires_migration": false,
+      "min_from_seq": 0,
+      "variants": [
+        "excelsior",
+        "hasler-hm"
+      ],
+      "release_page": "https://github.com/Delgado-Murphy/hasler-releases/releases/tag/v0.3.1",
+      "assets": {
+        "tarball": {
+          "name": "hasler-0.3.1-arm64.tar.zst",
+          "url": "https://github.com/Delgado-Murphy/hasler-releases/releases/download/v0.3.1/hasler-0.3.1-arm64.tar.zst",
+          "size": 40184669,
+          "sha256": "7a0f7237a5918abf4052c2985875e694d2fc8af52ecb7a8e86a20a55ce9ae64a"
+        },
+        "release_json": {
+          "name": "release.json",
+          "url": "https://github.com/Delgado-Murphy/hasler-releases/releases/download/v0.3.1/release.json",
+          "size": 1571,
+          "sha256": "8c60295dcc0f9696344a72ab2394f8430e6b6006f6e087e0e19e779d257c48f4"
+        },
+        "signature": {
+          "name": "release.json.sig",
+          "url": "https://github.com/Delgado-Murphy/hasler-releases/releases/download/v0.3.1/release.json.sig",
+          "size": 310
+        },
+        "sbom": {
+          "name": "hasler-0.3.1.cdx.json",
+          "url": "https://github.com/Delgado-Murphy/hasler-releases/releases/download/v0.3.1/hasler-0.3.1.cdx.json",
+          "size": 20023
+        },
+        "sha256sums": {
+          "name": "SHA256SUMS",
+          "url": "https://github.com/Delgado-Murphy/hasler-releases/releases/download/v0.3.1/SHA256SUMS",
+          "size": 255
+        }
+      }
+    }
+  ],
+  "updated": "2026-10-20T02:31:28Z"
+}

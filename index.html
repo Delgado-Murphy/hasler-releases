@@ -2,30 +2,510 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Hasler releases</title>
+<meta name="description" content="Signed software for the Hasler radios: update channels, releases and how every radio checks what it installs.">
+<meta name="color-scheme" content="dark light">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='14' fill='%23C9A15A'/%3E%3Ccircle cx='16' cy='16' r='10' fill='%23E8CA8A'/%3E%3Crect x='14.5' y='5' width='3' height='8' rx='1.5' fill='%232A1C10'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,600;0,700;1,600&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
 <style>
-  :root { --bg: #faf8f4; --fg: #2a2723; --muted: #6f6a62; }
-  @media (prefers-color-scheme: dark) { :root { --bg: #1c1a18; --fg: #ece8e1; --muted: #a39d93; } }
-  body { margin: 0; background: var(--bg); color: var(--fg);
-         font: 16px/1.55 ui-serif, Georgia, serif; }
-  main { max-width: 36rem; margin: 0 auto; padding: 4rem 16px; }
-  h1 { font-weight: 500; font-size: 1.6rem; margin: 0 0 1rem; }
-  p { margin: 0 0 1rem; }
-  code { font: 0.9em ui-monospace, Menlo, monospace; }
-  footer { margin-top: 3rem; color: var(--muted); font-size: 0.85rem; }
-  a { color: inherit; }
+/* Tokens from the Hasler key page (daemon/haslerd/web/static/index.html).
+   Dark is the key page itself; light is the same radio in daylight. */
+:root{
+  --bg:#17100B; --surface:#24170F; --surface2:#1F140D; --well:#150E09;
+  --line:#3A2A1C; --line2:#5A4128; --fg:#EDE3CC; --fg2:#B9A584; --muted:#8C7656; --title:#FFE9C2;
+  --brass:#C9A15A; --brass-hi:#E0BC78; --amber:#FFB238; --on-amber:#1A1208; --red:#D9442B; --red-fg:#F07A62;
+  --needle:#C23A22; --ink:#2A1C10; --cap:#E8DCC2; --cap-ink:#2A1C10;
+  --card:linear-gradient(180deg,#26190F 0%,#211610 100%); --glow:rgba(255,178,56,.3);
+  --mark:#7D766B; --mark-amp:#5A544B; --mark-line:#2E2218;
+  --serif:"Fraunces",Georgia,"Times New Roman",serif;
+  --mono:"JetBrains Mono",ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  --sans:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  color-scheme:dark;
+}
+@media (prefers-color-scheme:light){
+  :root:not([data-theme="dark"]){
+    --bg:#F3EBDA; --surface:#FBF6EA; --surface2:#F7F0E1; --well:#EFE5D0;
+    --line:#E1D3B5; --line2:#CDB68A; --fg:#2A1C10; --fg2:#5A4428; --muted:#7D6648; --title:#1E1308;
+    --brass:#8A6326; --brass-hi:#6E4C18; --amber:#FFB238; --on-amber:#1A1208; --red:#B8361F; --red-fg:#B8361F;
+    --cap:#FFFFFF; --cap-ink:#2A1C10;
+    --card:linear-gradient(180deg,#FDF9F0 0%,#F8F1E2 100%); --glow:rgba(201,140,40,.22);
+    --mark:#7D766B; --mark-amp:#A39C90; --mark-line:#D9CCB0;
+    color-scheme:light;
+  }
+}
+:root[data-theme="light"]{
+  --bg:#F3EBDA; --surface:#FBF6EA; --surface2:#F7F0E1; --well:#EFE5D0;
+  --line:#E1D3B5; --line2:#CDB68A; --fg:#2A1C10; --fg2:#5A4428; --muted:#7D6648; --title:#1E1308;
+  --brass:#8A6326; --brass-hi:#6E4C18; --amber:#FFB238; --on-amber:#1A1208; --red:#B8361F; --red-fg:#B8361F;
+  --cap:#FFFFFF; --cap-ink:#2A1C10;
+  --card:linear-gradient(180deg,#FDF9F0 0%,#F8F1E2 100%); --glow:rgba(201,140,40,.22);
+  --mark:#7D766B; --mark-amp:#A39C90; --mark-line:#D9CCB0;
+  color-scheme:light;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%;background:var(--bg)}
+body{margin:0;background:var(--bg);color:var(--fg);font:15px/1.5 var(--sans);overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+a{color:var(--brass);text-decoration:underline 1px;text-underline-offset:3px}
+a:hover{color:var(--brass-hi)}
+:focus{outline:none}
+:focus-visible{outline:2px solid var(--amber);outline-offset:2px}
+code{font:.88em/1 var(--mono)}
+.mono{font-family:var(--mono);letter-spacing:.14em;text-transform:uppercase;font-size:10px;line-height:14px;color:var(--muted)}
+.sr{position:absolute;width:1px;height:1px;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+
+.wrap{max-width:960px;margin:0 auto;padding:max(14px,env(safe-area-inset-top)) 16px calc(28px + env(safe-area-inset-bottom))}
+section{margin-top:44px}
+
+/* ---------- top bar ---------- */
+.top{display:flex;align-items:center;justify-content:space-between;gap:8px;min-height:44px}
+.brand{margin:0;color:var(--brass);font:italic 600 22px/26px var(--serif);letter-spacing:.01em;text-decoration:none}
+.round{position:relative;width:44px;height:44px;border:0;background:none;padding:0;display:inline-flex;align-items:center;justify-content:center;border-radius:50%;color:var(--brass);cursor:pointer}
+.round::before{content:"";position:absolute;inset:4px;border:1px solid var(--line);border-radius:50%;transition:border-color .15s,background .15s}
+.round:hover::before{border-color:var(--line2);background:rgba(201,161,90,.06)}
+.round svg{position:relative}
+
+/* ---------- hero: the dial ---------- */
+.hero{margin-top:14px}
+.bezel{padding:6px;border-radius:16px;background:linear-gradient(180deg,#D8D2C6 0%,#8E877B 50%,#C9C2B5 100%);box-shadow:0 2px 0 rgba(0,0,0,.6),0 8px 18px rgba(0,0,0,.35)}
+.glass{position:relative;display:flex;flex-direction:column;gap:10px;padding:16px 18px 12px;border-radius:11px;
+  background:radial-gradient(circle farthest-corner at 50% 35%,#FBF0D4 0%,#EFDAA8 62%,#D6BA7E 100%)}
+.dial-head{display:flex;justify-content:space-between;gap:10px;color:#7A5E38;font:9.5px/13px var(--mono);letter-spacing:.18em;text-transform:uppercase}
+.dial-head span{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.dial-head span:last-child{flex:none}
+.hero h1{margin:4px 0 0;color:#1E1308;font:600 38px/42px var(--serif);letter-spacing:-.01em}
+.hero h1 em{font-style:italic;color:#6B4A1E}
+.lede{margin:0;max-width:34em;color:#3E2B16;font:16px/23px var(--sans)}
+.scale{position:relative;height:50px;margin-top:4px;overflow:hidden;
+  -webkit-mask-image:linear-gradient(90deg,transparent 0,#000 16%,#000 84%,transparent 100%);mask-image:linear-gradient(90deg,transparent 0,#000 16%,#000 84%,transparent 100%)}
+.strip{position:absolute;top:0;left:50%;height:50px;width:2000px;margin-left:-1000px;
+  background:linear-gradient(rgba(59,42,24,.7),rgba(59,42,24,.7)) 0 12px/100% 1px no-repeat,
+    repeating-linear-gradient(90deg,rgba(59,42,24,.7) 0 1px,transparent 1px 27.5px) 0 8px/100% 8px no-repeat}
+.st{position:absolute;top:0;width:110px;margin-left:-55px;text-align:center}
+.st::before{content:"";position:absolute;left:calc(50% - .5px);top:5px;width:1px;height:14px;background:rgba(59,42,24,.7)}
+.st-n{position:absolute;top:21px;left:0;right:0;font:8.5px/10px var(--mono);color:#7A5E38;letter-spacing:.08em}
+.st-nm{position:absolute;top:34px;left:4px;right:4px;font:11.5px/14px var(--serif);color:#5A4428;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.st.on .st-n{font-weight:600;color:#2E1F10}
+.st.on .st-nm{font-weight:700;font-size:12.5px;color:#1E1308}
+.needle{position:absolute;left:calc(50% - 1.5px);top:0;width:3px;height:21px;border-radius:1.5px;background:var(--needle)}
+
+/* ---------- section heads ---------- */
+.sec-head{display:flex;align-items:baseline;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.sec-head h2{margin:0;color:var(--title);font:600 28px/32px var(--serif)}
+.sec-head p{margin:0;color:var(--muted);font-size:13px}
+
+/* ---------- channels ---------- */
+.channels{display:grid;grid-template-columns:1fr;gap:12px}
+@media (min-width:760px){ .channels{grid-template-columns:repeat(3,minmax(0,1fr))} }
+.ch{display:flex;flex-direction:column;gap:12px;padding:16px;border:1px solid var(--line2);border-radius:14px;background:var(--card);min-width:0}
+.ch.unused{border-style:dashed;background:none}
+.ch-top{display:flex;align-items:center;gap:12px}
+.cap{flex:none;width:38px;height:44px;border-radius:5px 5px 8px 8px;background:var(--cap);color:var(--cap-ink);font:900 17px/44px var(--sans);text-align:center;
+  box-shadow:0 3px 0 #8F7F5E,0 4px 8px rgba(0,0,0,.25)}
+.ch.live .cap{box-shadow:inset 0 3px 0 var(--amber),0 1px 0 #8F7F5E,0 0 14px var(--glow)}
+.ch.unused .cap{background:var(--well);color:var(--muted);box-shadow:none;border:1px dashed var(--line2)}
+.ch-name{display:flex;flex-direction:column;gap:2px;min-width:0}
+.ch-name b{color:var(--title);font:600 20px/24px var(--serif)}
+.ch-ver{margin:0;color:var(--fg);font:700 34px/38px var(--serif);letter-spacing:-.01em}
+.ch-ver small{color:var(--muted);font:400 12px/1 var(--mono);letter-spacing:.06em;margin-left:6px}
+.ch-rows{display:flex;flex-direction:column;margin:0}
+.ch-rows div{display:flex;justify-content:space-between;gap:10px;padding:7px 0;border-top:1px solid var(--line)}
+.ch-rows dt{color:var(--muted);font:10px/18px var(--mono);letter-spacing:.12em;text-transform:uppercase}
+.ch-rows dd{margin:0;color:var(--fg);font:600 13px/18px var(--sans);text-align:right}
+.ch-blurb{margin:0;color:var(--fg2);font-size:13.5px;line-height:19px}
+.sig{display:flex;align-items:flex-start;gap:8px;margin:0;color:var(--fg2);font:12.5px/17px var(--sans)}
+.sig::before{content:"";flex:none;width:8px;height:8px;margin-top:4.5px;border-radius:50%;background:var(--muted)}
+.sig.ok::before{background:var(--amber);box-shadow:0 0 8px var(--glow)}
+.sig.bad{color:var(--red-fg);font-weight:600}
+.sig.bad::before{background:var(--red)}
+
+/* ---------- releases ---------- */
+.rels{display:flex;flex-direction:column;border:1px solid var(--line);border-radius:14px;background:var(--surface2);overflow:hidden}
+.rel{display:grid;grid-template-columns:1fr;gap:10px;padding:18px 16px;border-top:1px solid var(--line);min-width:0}
+.rel:first-child{border-top:0}
+@media (min-width:760px){ .rel{grid-template-columns:200px minmax(0,1fr);gap:8px 28px;padding:22px 22px} .rel-side{grid-row:span 4} }
+.rel-side{display:flex;flex-direction:column;gap:6px;min-width:0}
+.rel-v{margin:0;color:var(--title);font:600 26px/30px var(--serif)}
+.rel-v a{color:inherit;text-decoration:none}
+.rel-v a:hover{text-decoration:underline 1px;text-underline-offset:4px}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{display:inline-flex;align-items:center;min-height:24px;padding:2px 10px;border:1px solid var(--line2);border-radius:999px;color:var(--fg2);font:600 11px/1 var(--sans);letter-spacing:.02em;white-space:nowrap}
+.chip.cur{border-color:var(--amber);background:var(--amber);color:var(--on-amber)}
+.chip.halt{border-color:var(--red);color:var(--red-fg)}
+.chip.kind{font:10px/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--muted);border-style:dashed}
+.notes{margin:0;color:var(--fg2);font-size:14px;line-height:21px;min-width:0}
+.notes p{margin:0 0 6px}
+.notes ul{margin:0;padding-left:18px}
+.notes li{margin:0 0 5px}
+.notes li::marker{color:var(--brass)}
+.notes code{color:var(--fg);background:var(--well);padding:1px 4px;border-radius:4px}
+.links{display:flex;flex-wrap:wrap;gap:4px 18px;font:600 13px/20px var(--sans)}
+.links a{display:inline-flex;align-items:center;min-height:32px}
+.links span{color:var(--muted);font-weight:400;margin-left:5px;font-size:12px}
+.sha{display:flex;align-items:center;gap:10px;min-width:0;padding:8px 10px;border:1px solid var(--line);border-radius:10px;background:var(--well)}
+.sha .mono{flex:none}
+.sha code{flex:1;min-width:0;color:var(--fg);font:12px/16px var(--mono);overflow-wrap:anywhere;word-break:break-all}
+.copy{flex:none;min-height:32px;padding:0 10px;border:1px solid var(--line2);border-radius:8px;background:none;color:var(--brass);font:600 12px/1 var(--sans);cursor:pointer}
+.copy:hover{border-color:var(--brass)}
+.empty{padding:28px 18px;border:1px dashed var(--line2);border-radius:14px;text-align:center;color:var(--fg2)}
+
+/* ---------- how radios verify ---------- */
+.how{display:grid;grid-template-columns:1fr;gap:16px;padding:18px;border:1px solid var(--line2);border-radius:14px;background:var(--card)}
+@media (min-width:760px){ .how{grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:28px;padding:24px} }
+.steps{margin:0;padding-left:22px;color:var(--fg2);font-size:14.5px;line-height:21px}
+.steps li{margin:0 0 10px}
+.steps b{color:var(--fg);font-weight:600}
+.steps li::marker{font-family:var(--mono);color:var(--muted)}
+.trust{display:flex;flex-direction:column;gap:12px;min-width:0}
+.trust h3{margin:0;color:var(--title);font:600 20px/24px var(--serif)}
+.fp{display:flex;flex-direction:column;gap:6px;padding:12px;border:1px solid var(--line);border-radius:10px;background:var(--well)}
+.fp code{color:var(--amber);font:13px/19px var(--mono);overflow-wrap:anywhere;word-break:break-all}
+:root[data-theme="light"] .fp code{color:#8A5A10}
+@media (prefers-color-scheme:light){ :root:not([data-theme="dark"]) .fp code{color:#8A5A10} }
+.fp small{color:var(--muted);font-size:12px;line-height:16px}
+.hint{margin:0;color:var(--muted);font-size:13px;line-height:18px}
+
+/* ---------- footer ---------- */
+footer{margin-top:56px;padding-top:22px;border-top:1px solid var(--line);display:flex;flex-direction:column;align-items:center;gap:16px;text-align:center}
+.foot-links{display:flex;flex-wrap:wrap;justify-content:center;gap:4px 20px;font:600 13px/20px var(--sans)}
+.foot-links a{display:inline-flex;align-items:center;min-height:36px}
+.updated{margin:0;color:var(--muted);font:10px/14px var(--mono);letter-spacing:.12em;text-transform:uppercase}
+.mark{display:flex;align-items:center;justify-content:center;gap:10px;margin:0;color:var(--mark);
+  font:600 10px/12px system-ui,-apple-system,"Segoe UI",sans-serif;letter-spacing:.28em;text-transform:uppercase}
+.mark::before{content:"";flex:0 0 20px;height:1px;background:var(--mark-line)}
+.mark .amp{font:italic 400 10px/12px "Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;letter-spacing:0;text-transform:none;color:var(--mark-amp)}
+
+@media (min-width:760px){
+  .wrap{padding-top:24px}
+  .glass{padding:22px 28px 14px}
+  .hero h1{font-size:54px;line-height:58px}
+  .lede{font-size:17px;line-height:25px}
+}
 </style>
 </head>
 <body>
-<main>
-  <h1>Hasler releases</h1>
-  <p>Update channels for the Hasler radios. Radios read signed channel indexes
-     from <code>channels/&lt;bench|beta|stable&gt;.json</code> and the keyring from
-     <code>keyring.json</code> here.</p>
-  <p>No channel has a release yet: the indexes appear with the first signed release.</p>
-  <p><a href="https://github.com/Delgado-Murphy/hasler-releases">Signed releases and how they are verified</a></p>
-  <footer>Delgado &amp; Murphy</footer>
-</main>
+<div class="wrap">
+  <header class="top">
+    <a class="brand" href="./">Hasler</a>
+    <button type="button" class="round" id="themeBtn" aria-label="Switch light or dark">
+      <svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="6.5" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M10 3.5a6.5 6.5 0 0 1 0 13z" fill="currentColor"/></svg>
+    </button>
+  </header>
+
+  <div class="hero">
+    <div class="bezel">
+      <div class="glass">
+        <div class="dial-head"><span>Signed software · update channels</span><span aria-hidden="true">Hasler · D&amp;M</span></div>
+        <h1>Hasler <em>releases</em></h1>
+        <p class="lede">Signed software for the Hasler radios. You never need to download anything here: each radio checks for updates by itself, verifies the signatures and installs only what we signed.</p>
+        <div class="scale" aria-hidden="true"><div class="strip" id="strip"></div><div class="needle"></div></div>
+      </div>
+    </div>
+  </div>
+
+  <section id="channels" aria-labelledby="ch-h">
+    <div class="sec-head"><h2 id="ch-h">Channels</h2><p>What each kind of radio is offered right now</p></div>
+    <div class="channels" id="channelList">
+      <p class="hint">Loading the channel indexes…</p>
+    </div>
+  </section>
+
+  <section id="releases" aria-labelledby="rel-h">
+    <div class="sec-head"><h2 id="rel-h">Releases</h2><p>Newest first</p></div>
+    <div class="rels" id="releaseList"><p class="hint" style="padding:18px 16px">Loading releases…</p></div>
+  </section>
+
+  <section id="verify" aria-labelledby="how-h">
+    <div class="sec-head"><h2 id="how-h">How radios verify</h2><p>In plain words</p></div>
+    <div class="how">
+      <ol class="steps">
+        <li><b>Every radio is built with our root key.</b> It is a public key, written once onto the radio. The matching private key stays offline and never touches the internet.</li>
+        <li><b>The root key vouches for the working keys.</b> The keyring on this site lists the keys allowed to sign releases and channels. A radio only accepts a keyring signed by the root key, and only a newer one than it already has.</li>
+        <li><b>Each release is signed.</b> The release key signs <code>release.json</code>, which names the exact software file and its SHA-256. A radio refuses a file whose checksum does not match, byte for byte.</li>
+        <li><b>Channels say which release to take.</b> A short, signed channel index points Bench, Beta or Stable at one release. It expires after two weeks and is re-signed every day, so nobody can replay an old one to hold a radio back.</li>
+        <li><b>Install, test, or go back.</b> The radio installs next to the running version, checks its own health and keeps the new version only if everything works. Otherwise it returns to the previous one by itself.</li>
+      </ol>
+      <div class="trust">
+        <h3>The root key</h3>
+        <div class="fp">
+          <span class="mono">Fingerprint (SHA256)</span>
+          <code id="fp">SHA256:8bc/MCrWk9aekyhNhdtmPtL9jhgB7xcdStuu4G82Ack</code>
+          <small>hasler-root-2026 · ed25519 · <a href="https://github.com/Delgado-Murphy/hasler-releases/blob/main/trust/root.pub">trust/root.pub</a></small>
+        </div>
+        <p class="sig" id="ringStatus">Checking the keyring…</p>
+        <p class="hint">This page repeats the radio's checks in your browser: the keyring against the root key, then every channel index against the keyring. To check by hand: <code>ssh-keygen -lf root.pub</code> must print the fingerprint above.</p>
+        <p class="hint"><a href="keyring.json">keyring.json</a> · <a href="keyring.json.sig">signature</a></p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <nav class="foot-links" aria-label="More">
+      <a href="https://github.com/Delgado-Murphy/hasler">Source: Delgado-Murphy/hasler</a>
+      <a href="https://github.com/Delgado-Murphy/hasler/tree/master/docs">Docs</a>
+      <a href="https://github.com/Delgado-Murphy/hasler-releases">Releases repository</a>
+      <a href="releases.json">releases.json</a>
+    </nav>
+    <p class="updated" id="updated"></p>
+    <p class="mark">Delgado <span class="amp">&amp;</span> Murphy</p>
+  </footer>
+</div>
+
+<script>
+'use strict';
+const ROOT_KEYS = ['ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIF9gmAm746rpYzKa24jKiAZyiAiMw0bEuj30vRw38Cv7 hasler-root-2026'];
+const CHANNELS = [
+  {id:'bench', name:'Bench', cap:'B', blurb:'Our own test radios on the workbench. Every release starts here.'},
+  {id:'beta', name:'Beta', cap:'β', blurb:'Radios set to try new releases early.'},
+  {id:'stable', name:'Stable', cap:'S', blurb:'Every other radio. Releases reach it after Bench and Beta.'},
+];
+const $ = id => document.getElementById(id);
+const enc = new TextEncoder(), dec = new TextDecoder();
+
+/* ---------- theme ---------- */
+(function () {
+  let saved = null;
+  try { saved = localStorage.getItem('theme'); } catch (_) {}
+  if (saved === 'light' || saved === 'dark') document.documentElement.dataset.theme = saved;
+  $('themeBtn').addEventListener('click', () => {
+    const cur = document.documentElement.dataset.theme ||
+      (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+    const next = cur === 'light' ? 'dark' : 'light';
+    document.documentElement.dataset.theme = next;
+    try { localStorage.setItem('theme', next); } catch (_) {}
+  });
+})();
+
+/* ---------- helpers ---------- */
+function h(tag, attrs, ...kids) {
+  const el = document.createElement(tag);
+  for (const [k, v] of Object.entries(attrs || {})) {
+    if (v == null || v === false) continue;
+    if (k === 'class') el.className = v; else if (k === 'html') el.innerHTML = v; else el.setAttribute(k, v);
+  }
+  for (const c of kids.flat()) if (c != null && c !== false) el.append(c.nodeType ? c : String(c));
+  return el;
+}
+const esc = s => String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const fmtDate = s => { const d = new Date(s); return isNaN(d) ? '—' : d.toLocaleDateString('en-GB', {day:'numeric', month:'short', year:'numeric'}); };
+const fmtSize = n => n ? (n >= 1e6 ? (n / 1e6).toFixed(1) + ' MB' : Math.max(1, Math.round(n / 1e3)) + ' kB') : '';
+function relDays(s) {
+  const days = Math.round((new Date(s) - Date.now()) / 864e5);
+  if (isNaN(days)) return '';
+  if (days === 0) return 'today';
+  return days > 0 ? 'in ' + days + (days === 1 ? ' day' : ' days') : days * -1 + (days === -1 ? ' day ago' : ' days ago');
+}
+async function getBytes(path) {
+  const r = await fetch(path, {cache:'no-cache'});
+  if (!r.ok) { const e = new Error(path + ': ' + r.status); e.status = r.status; throw e; }
+  return new Uint8Array(await r.arrayBuffer());
+}
+async function getText(path) { return dec.decode(await getBytes(path)); }
+
+/* ---------- OpenSSH signatures (SSHSIG, ed25519), as the radio checks them ---------- */
+const b64d = s => Uint8Array.from(atob(s), c => c.charCodeAt(0));
+const b64e = u => { let s = ''; for (const b of u) s += String.fromCharCode(b); return btoa(s); };
+const same = (a, b) => a.length === b.length && a.every((x, i) => x === b[i]);
+function cat(...parts) { const out = new Uint8Array(parts.reduce((n, p) => n + p.length, 0)); let o = 0; for (const p of parts) { out.set(p, o); o += p.length; } return out; }
+function sshStr(b) { const out = new Uint8Array(4 + b.length); new DataView(out.buffer).setUint32(0, b.length); out.set(b, 4); return out; }
+function reader(u) {
+  let o = 0; const dv = new DataView(u.buffer, u.byteOffset, u.byteLength);
+  return {
+    raw(n) { if (o + n > u.length) throw new Error('short'); const s = u.subarray(o, o + n); o += n; return s; },
+    u32() { const v = dv.getUint32(o); o += 4; return v; },
+    str() { return this.raw(this.u32()); },
+  };
+}
+function parseKey(line) {
+  const blob = b64d(line.trim().split(/\s+/)[1]);
+  const r = reader(blob);
+  if (dec.decode(r.str()) !== 'ssh-ed25519') throw new Error('not ed25519');
+  return {blob, raw: r.str()};
+}
+async function fingerprint(line) {
+  const d = new Uint8Array(await crypto.subtle.digest('SHA-256', parseKey(line).blob));
+  return 'SHA256:' + b64e(d).replace(/=+$/, '');
+}
+const edOK = (async () => {
+  try {
+    await crypto.subtle.importKey('raw', new Uint8Array(32).fill(1), {name:'Ed25519'}, false, ['verify']);
+    return true;
+  } catch (_) { return false; }
+})();
+// true if one of keys (parsed) made armored over msg under namespace ns
+async function sshVerify(msg, armored, ns, keys) {
+  const body = armored.replace(/-----[^-]+-----/g, '').replace(/\s+/g, '');
+  const r = reader(b64d(body));
+  if (dec.decode(r.raw(6)) !== 'SSHSIG' || r.u32() !== 1) return false;
+  const pk = r.str(), nsb = r.str(), reserved = r.str(), halg = r.str(), sigBlob = r.str();
+  if (dec.decode(nsb) !== ns) return false;
+  const key = keys.find(k => same(k.blob, pk));
+  if (!key) return false;
+  const alg = {sha256:'SHA-256', sha512:'SHA-512'}[dec.decode(halg)];
+  if (!alg) return false;
+  const sr = reader(sigBlob);
+  if (dec.decode(sr.str()) !== 'ssh-ed25519') return false;
+  const sig = sr.str();
+  const digest = new Uint8Array(await crypto.subtle.digest(alg, msg));
+  const signed = cat(enc.encode('SSHSIG'), sshStr(nsb), sshStr(reserved), sshStr(halg), sshStr(digest));
+  const ck = await crypto.subtle.importKey('raw', key.raw, {name:'Ed25519'}, false, ['verify']);
+  return crypto.subtle.verify({name:'Ed25519'}, ck, sig, signed);
+}
+
+/* keyring: verified by a root key, then its timestamp keys verify channel indexes */
+const keyring = (async () => {
+  if (!(await edOK)) return {state:'unsupported'};
+  try {
+    const [msg, sig] = await Promise.all([getBytes('keyring.json'), getText('keyring.json.sig')]);
+    const roots = ROOT_KEYS.map(parseKey);
+    if (!(await sshVerify(msg, sig, 'hasler-keyring', roots))) return {state:'bad'};
+    const ring = JSON.parse(dec.decode(msg));
+    const now = Date.now();
+    if (new Date(ring.expires) < now) return {state:'expired', ring};
+    const keys = role => ring.keys.filter(k => k.role === role && new Date(k.not_after) > now).map(k => Object.assign(parseKey(k.pub), {id:k.id}));
+    return {state:'ok', ring, timestamp: keys('timestamp')};
+  } catch (e) { return {state:'error', error:e}; }
+})();
+
+/* ---------- channels ---------- */
+async function loadChannel(c) {
+  let msg;
+  try { msg = await getBytes('channels/' + c.id + '.json'); }
+  catch (e) { return {c, missing: e.status === 404, error: e.status === 404 ? null : e}; }
+  let idx;
+  try { idx = JSON.parse(dec.decode(msg)); } catch (e) { return {c, error:e}; }
+  let sig = 'unchecked';
+  const ring = await keyring;
+  if (ring.state === 'ok') {
+    try {
+      const s = await getText('channels/' + c.id + '.json.sig');
+      sig = (await sshVerify(msg, s, 'hasler-channel', ring.timestamp)) ? 'ok' : 'bad';
+    } catch (_) { sig = 'bad'; }
+  } else if (ring.state === 'bad' || ring.state === 'expired') sig = 'bad';
+  return {c, idx, sig};
+}
+
+function channelCard(ch, byVersion) {
+  const {c, idx} = ch;
+  if (!idx) {
+    return h('article', {class:'ch unused'},
+      h('div', {class:'ch-top'}, h('span', {class:'cap', 'aria-hidden':'true'}, c.cap),
+        h('div', {class:'ch-name'}, h('b', {}, c.name), h('span', {class:'mono'}, ch.missing ? 'Not used yet' : 'Could not load'))),
+      h('p', {class:'ch-blurb'}, c.blurb),
+      h('p', {class:'sig'}, ch.missing ? 'No release has been pointed at ' + c.name + ' yet.' : 'The index did not load; radios keep their current version.'));
+  }
+  const cur = idx.current || {};
+  const rel = byVersion[cur.version];
+  const expired = new Date(idx.expires) < Date.now();
+  let sigTxt, sigCls = '';
+  if (ch.sig === 'ok' && !expired) { sigTxt = 'Signature verified in your browser, the same check every radio makes.'; sigCls = 'ok'; }
+  else if (ch.sig === 'ok' && expired) { sigTxt = 'Signature good, but the index has expired: radios wait for a fresh one.'; sigCls = 'bad'; }
+  else if (ch.sig === 'bad') { sigTxt = 'Signature does not check out: radios ignore this index.'; sigCls = 'bad'; }
+  else sigTxt = 'Signed by our timestamp key. Your browser cannot check ed25519 here; every radio does.';
+  const halted = (idx.halted || []).length;
+  return h('article', {class:'ch live'},
+    h('div', {class:'ch-top'}, h('span', {class:'cap', 'aria-hidden':'true'}, c.cap),
+      h('div', {class:'ch-name'}, h('b', {}, c.name), h('span', {class:'mono'}, 'Current version'))),
+    h('p', {class:'ch-ver'}, cur.version || '—', rel && rel.kind ? h('small', {}, rel.kind) : null),
+    h('dl', {class:'ch-rows'},
+      h('div', {}, h('dt', {}, 'Published'), h('dd', {}, rel ? fmtDate(rel.date) : '—')),
+      h('div', {}, h('dt', {}, 'Index signed'), h('dd', {}, fmtDate(idx.issued))),
+      h('div', {}, h('dt', {}, 'Index expires'), h('dd', {}, fmtDate(idx.expires) + ' · ' + relDays(idx.expires))),
+      halted ? h('div', {}, h('dt', {}, 'Halted'), h('dd', {}, halted + (halted === 1 ? ' release' : ' releases'))) : null),
+    h('p', {class:'sig ' + sigCls}, sigTxt),
+    h('p', {class:'ch-blurb'}, c.blurb, ' ', h('a', {href:'channels/' + c.id + '.json'}, 'Index'), ' · ', h('a', {href:'channels/' + c.id + '.json.sig'}, 'signature')));
+}
+
+/* ---------- releases ---------- */
+function notesHtml(text) {
+  const inline = s => esc(s).replace(/`([^`]+)`/g, '<code>$1</code>');
+  const out = []; let list = null, para = null;
+  const flush = () => { if (para) { out.push('<p>' + inline(para) + '</p>'); para = null; } };
+  for (const line of String(text || '').split('\n')) {
+    if (/^\s*[-*] /.test(line)) { flush(); if (!list) list = []; list.push(line.replace(/^\s*[-*] /, '')); }
+    else if (!line.trim()) { flush(); if (list) { out.push('<ul>' + list.map(i => '<li>' + inline(i) + '</li>').join('') + '</ul>'); list = null; } }
+    else if (list && /^\s+/.test(line)) list[list.length - 1] += ' ' + line.trim();
+    else { if (list) { out.push('<ul>' + list.map(i => '<li>' + inline(i) + '</li>').join('') + '</ul>'); list = null; } para = para ? para + ' ' + line.trim() : line.trim(); }
+  }
+  flush();
+  if (list) out.push('<ul>' + list.map(i => '<li>' + inline(i) + '</li>').join('') + '</ul>');
+  return out.join('') || '<p>No notes.</p>';
+}
+
+function releaseRow(r, current) {
+  const a = r.assets || {};
+  const chips = [h('span', {class:'chip kind'}, r.kind || 'release')];
+  if (r.prerelease) chips.push(h('span', {class:'chip kind'}, 'pre-release'));
+  for (const c of CHANNELS) {
+    if ((r.halted || []).includes(c.id) || (current[c.id] && current[c.id].halted.includes(r.seq))) chips.push(h('span', {class:'chip halt'}, 'Halted on ' + c.name));
+    else if (current[c.id] && current[c.id].seq === r.seq) chips.push(h('span', {class:'chip cur'}, 'On ' + c.name + ' now'));
+    else if ((r.channels || []).includes(c.id)) chips.push(h('span', {class:'chip'}, 'Was on ' + c.name));
+  }
+  const link = (asset, label) => asset && asset.url ? h('a', {href:asset.url}, label, asset.size ? h('span', {}, fmtSize(asset.size)) : null) : null;
+  const sha = a.tarball && a.tarball.sha256;
+  const copy = h('button', {type:'button', class:'copy'}, 'Copy');
+  copy.addEventListener('click', async () => {
+    try { await navigator.clipboard.writeText(sha); copy.textContent = 'Copied'; }
+    catch (_) { copy.textContent = 'Select it'; }
+    setTimeout(() => { copy.textContent = 'Copy'; }, 1600);
+  });
+  return h('article', {class:'rel', id:'v' + r.version},
+    h('div', {class:'rel-side'},
+      h('h3', {class:'rel-v'}, r.release_page ? h('a', {href:r.release_page}, r.version) : r.version),
+      h('span', {class:'mono'}, fmtDate(r.date) + ' · seq ' + r.seq),
+      h('div', {class:'chips'}, chips)),
+    h('div', {class:'notes', html: notesHtml(r.notes)}),
+    h('nav', {class:'links', 'aria-label':'Downloads for ' + r.version},
+      r.release_page ? h('a', {href:r.release_page}, 'GitHub release') : null,
+      link(a.tarball, 'Tarball'), link(a.release_json, 'release.json'), link(a.signature, 'Signature'),
+      link(a.sbom, 'SBOM'), link(a.sha256sums, 'SHA256SUMS')),
+    sha ? h('div', {class:'sha'}, h('span', {class:'mono'}, 'SHA-256'), h('code', {}, sha), copy) : null);
+}
+
+function drawScale(releases) {
+  const strip = $('strip');
+  const list = releases.slice(0, 7).reverse();   // oldest left, newest under the needle
+  if (!list.length) return;
+  const sp = 110, centre = 1000;
+  list.forEach((r, i) => {
+    const x = centre - (list.length - 1 - i) * sp;
+    strip.append(h('div', {class:'st' + (i === list.length - 1 ? ' on' : ''), style:'left:' + x + 'px'},
+      h('span', {class:'st-n'}, fmtDate(r.date).toUpperCase()), h('span', {class:'st-nm'}, r.version)));
+  });
+}
+
+/* ---------- boot ---------- */
+(async () => {
+  const [relData, chans, ring] = await Promise.all([
+    getText('releases.json').then(JSON.parse).catch(() => null),
+    Promise.all(CHANNELS.map(loadChannel)),
+    keyring,
+  ]);
+  const releases = (relData && relData.releases || []).slice().sort((x, y) => y.seq - x.seq);
+  const byVersion = Object.fromEntries(releases.map(r => [r.version, r]));
+  const current = {};
+  for (const ch of chans) if (ch.idx && ch.idx.current) current[ch.c.id] = {seq: ch.idx.current.seq, halted: ch.idx.halted || []};
+
+  $('channelList').replaceChildren(...chans.map(ch => channelCard(ch, byVersion)));
+  $('releaseList').replaceChildren(...(releases.length ? releases.map(r => releaseRow(r, current))
+    : [h('p', {class:'empty'}, relData ? 'No releases yet.' : 'The release list did not load. The releases are also on GitHub.')]));
+  drawScale(releases);
+  if (relData && relData.updated) $('updated').textContent = 'List updated ' + fmtDate(relData.updated);
+
+  const rs = $('ringStatus');
+  const msgs = {
+    ok: ['ok', 'Keyring verified with this root key in your browser (keyring ' + (ring.ring ? ring.ring.keyring_seq : '') + ', valid until ' + (ring.ring ? fmtDate(ring.ring.expires) : '') + ').'],
+    bad: ['bad', 'The keyring signature does not match the root key. Radios would refuse it.'],
+    expired: ['bad', 'The keyring has expired. Radios wait for a new one.'],
+    unsupported: ['', 'Your browser cannot check ed25519 signatures; every radio does.'],
+    error: ['', 'Could not load the keyring to check it.'],
+  }[ring.state];
+  rs.className = 'sig ' + msgs[0]; rs.textContent = msgs[1];
+  try { $('fp').textContent = await fingerprint(ROOT_KEYS[0]); } catch (_) {}
+})();
+</script>
 </body>
 </html>
