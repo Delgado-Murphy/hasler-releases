@@ -2,6 +2,53 @@
   "schema": 1,
   "releases": [
     {
+      "version": "1.0.2",
+      "seq": 1000299,
+      "date": "2026-10-20T23:58:24Z",
+      "created": "2026-10-20T23:54:06Z",
+      "kind": "patch",
+      "prerelease": false,
+      "notes": "- The memory-card Wi-Fi rescue (hasler-wifi.txt) now arrives with updates\n  too, not only on new SD cards.\n- This radio -> Wi-Fi shows the setup network's name and password, to write\n  down for the day the radio can't find your Wi-Fi.\n- A last tidy-up of the key page and every document: plainer words, no\n  leftovers from older layouts, Home Assistant scenes no longer say\n  \"unknown\", the Bluetooth key reads simply \"Bluetooth\".",
+      "channels": [],
+      "halted": [],
+      "requires_migration": false,
+      "min_from_seq": 0,
+      "variants": [
+        "excelsior",
+        "hasler-hm"
+      ],
+      "release_page": "https://github.com/Delgado-Murphy/hasler-releases/releases/tag/v1.0.2",
+      "assets": {
+        "tarball": {
+          "name": "hasler-1.0.2-arm64.tar.zst",
+          "url": "https://github.com/Delgado-Murphy/hasler-releases/releases/download/v1.0.2/hasler-1.0.2-arm64.tar.zst",
+          "size": 40411282,
+          "sha256": "e2172535d077a9e33f97c24a5c553b5c639854e1f63de85630a5b2b49eb8963a"
+        },
+        "release_json": {
+          "name": "release.json",
+          "url": "https://github.com/Delgado-Murphy/hasler-releases/releases/download/v1.0.2/release.json",
+          "size": 1258,
+          "sha256": "c7543b4c92e73a24c5aff91d209a322bf3618870b36ca8bd41ec1728d35d1bd6"
+        },
+        "signature": {
+          "name": "release.json.sig",
+          "url": "https://github.com/Delgado-Murphy/hasler-releases/releases/download/v1.0.2/release.json.sig",
+          "size": 310
+        },
+        "sbom": {
+          "name": "hasler-1.0.2.cdx.json",
+          "url": "https://github.com/Delgado-Murphy/hasler-releases/releases/download/v1.0.2/hasler-1.0.2.cdx.json",
+          "size": 20023
+        },
+        "sha256sums": {
+          "name": "SHA256SUMS",
+          "url": "https://github.com/Delgado-Murphy/hasler-releases/releases/download/v1.0.2/SHA256SUMS",
+          "size": 255
+        }
+      }
+    },
+    {
       "version": "1.0.1",
       "seq": 1000199,
       "date": "2026-10-20T23:36:01Z",
@@ -884,5 +931,5 @@
       }
     }
   ],
-  "updated": "2026-10-20T23:36:15Z"
+  "updated": "2026-10-20T23:58:25Z"
 }
