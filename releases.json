@@ -2,6 +2,53 @@
   "schema": 1,
   "releases": [
     {
+      "version": "0.3.4",
+      "seq": 30499,
+      "date": "2026-10-20T02:51:15Z",
+      "created": "2026-10-20T02:47:51Z",
+      "kind": "patch",
+      "prerelease": false,
+      "notes": "- Two update channels: Bench and Stable; new radios update automatically for\n  small releases.",
+      "channels": [],
+      "halted": [],
+      "requires_migration": false,
+      "min_from_seq": 0,
+      "variants": [
+        "excelsior",
+        "hasler-hm"
+      ],
+      "release_page": "https://github.com/Delgado-Murphy/hasler-releases/releases/tag/v0.3.4",
+      "assets": {
+        "tarball": {
+          "name": "hasler-0.3.4-arm64.tar.zst",
+          "url": "https://github.com/Delgado-Murphy/hasler-releases/releases/download/v0.3.4/hasler-0.3.4-arm64.tar.zst",
+          "size": 40190055,
+          "sha256": "0a89584d2be14ce77b577d4e9399badd9a9ab7a18bc857fe55323e3bb944f5e1"
+        },
+        "release_json": {
+          "name": "release.json",
+          "url": "https://github.com/Delgado-Murphy/hasler-releases/releases/download/v0.3.4/release.json",
+          "size": 911,
+          "sha256": "4b206b3270b93ef96e4353099520d213292d4b6007f16ee76372c2b87d048b5e"
+        },
+        "signature": {
+          "name": "release.json.sig",
+          "url": "https://github.com/Delgado-Murphy/hasler-releases/releases/download/v0.3.4/release.json.sig",
+          "size": 310
+        },
+        "sbom": {
+          "name": "hasler-0.3.4.cdx.json",
+          "url": "https://github.com/Delgado-Murphy/hasler-releases/releases/download/v0.3.4/hasler-0.3.4.cdx.json",
+          "size": 20023
+        },
+        "sha256sums": {
+          "name": "SHA256SUMS",
+          "url": "https://github.com/Delgado-Murphy/hasler-releases/releases/download/v0.3.4/SHA256SUMS",
+          "size": 255
+        }
+      }
+    },
+    {
       "version": "0.3.3",
       "seq": 30399,
       "date": "2026-10-20T02:40:04Z",
@@ -149,5 +196,5 @@
       }
     }
   ],
-  "updated": "2026-10-20T02:40:18Z"
+  "updated": "2026-10-20T02:51:15Z"
 }
