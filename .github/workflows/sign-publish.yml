@@ -4,7 +4,7 @@
 #
 # workflow_dispatch, mode=publish: take a finished release.yml run of the
 # private repo, re-check everything, sign release.json with the release key
-# (environment `sign`, required reviewer), create the GitHub release, point a
+# (environment `sign`, main branch only), create the GitHub release, point a
 # channel at it (timestamp key).
 # workflow_dispatch, mode=promote: point another channel at an existing
 # release (the same artifact - never rebuilt).
