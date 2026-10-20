@@ -2,6 +2,53 @@
   "schema": 1,
   "releases": [
     {
+      "version": "0.4.3",
+      "seq": 40399,
+      "date": "2026-10-20T20:52:41Z",
+      "created": "2026-10-20T20:48:50Z",
+      "kind": "patch",
+      "prerelease": false,
+      "notes": "- Tone knob: now a tilt (warmer <-> brighter around 800 Hz, +-6 dB) - you\n  hear it. Settings -> Knobs: choose what a knob does (tilt, treble, bass,\n  loudness, presence, 1960s radio voice, stereo width) and how strong, with\n  \"Try it\" before saving. Boosts never clip. The Excelsior's knobs can use\n  any of them.\n- Pilot lamp: the phone blue is really blue now; a short glow shows where PU\n  landed (amber = radio, blue = phone); magenta glows when a radio joins or\n  leaves a group; a swell when a phone pairs; a dip when the volume keys hit\n  the end; ember breathes while an update installs (don't unplug) and stays\n  a steady deep red at night.\n- Settings -> Pilot lamp -> Lamp colours: tune each colour by eye on the\n  real lamp.\n- Bluetooth: phones see the radio as a loudspeaker.",
+      "channels": [],
+      "halted": [],
+      "requires_migration": false,
+      "min_from_seq": 0,
+      "variants": [
+        "excelsior",
+        "hasler-hm"
+      ],
+      "release_page": "https://github.com/Delgado-Murphy/hasler-releases/releases/tag/v0.4.3",
+      "assets": {
+        "tarball": {
+          "name": "hasler-0.4.3-arm64.tar.zst",
+          "url": "https://github.com/Delgado-Murphy/hasler-releases/releases/download/v0.4.3/hasler-0.4.3-arm64.tar.zst",
+          "size": 40285505,
+          "sha256": "a70f248379b468f55e0653bce63f1c010f8190d3f945f9f7a03b5c2e1fd3518d"
+        },
+        "release_json": {
+          "name": "release.json",
+          "url": "https://github.com/Delgado-Murphy/hasler-releases/releases/download/v0.4.3/release.json",
+          "size": 1618,
+          "sha256": "7489035d9b87fa212e6247b4f8bbe3cf14feadcfd639c79abfacd691331dcab4"
+        },
+        "signature": {
+          "name": "release.json.sig",
+          "url": "https://github.com/Delgado-Murphy/hasler-releases/releases/download/v0.4.3/release.json.sig",
+          "size": 310
+        },
+        "sbom": {
+          "name": "hasler-0.4.3.cdx.json",
+          "url": "https://github.com/Delgado-Murphy/hasler-releases/releases/download/v0.4.3/hasler-0.4.3.cdx.json",
+          "size": 20023
+        },
+        "sha256sums": {
+          "name": "SHA256SUMS",
+          "url": "https://github.com/Delgado-Murphy/hasler-releases/releases/download/v0.4.3/SHA256SUMS",
+          "size": 255
+        }
+      }
+    },
+    {
       "version": "0.4.2",
       "seq": 40299,
       "date": "2026-10-20T19:27:09Z",
@@ -590,5 +637,5 @@
       }
     }
   ],
-  "updated": "2026-10-20T19:27:24Z"
+  "updated": "2026-10-20T20:52:42Z"
 }
