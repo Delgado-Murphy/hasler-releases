@@ -1,0 +1,26 @@
+{
+  "schema": 1,
+  "channel": "bench",
+  "issued": "2026-10-20T02:17:56Z",
+  "expires": "2026-11-03T02:17:56Z",
+  "current": {
+    "version": "0.3.1",
+    "seq": 30199,
+    "release_url": "https://github.com/Delgado-Murphy/hasler-releases/releases/download/v0.3.1/release.json",
+    "release_sha256": "8c60295dcc0f9696344a72ab2394f8430e6b6006f6e087e0e19e779d257c48f4"
+  },
+  "halted": [],
+  "min_supported_seq": 0,
+  "rings": {
+    "0": [],
+    "1": [],
+    "2": [
+      "*"
+    ]
+  },
+  "ring_open": {
+    "0": "2026-10-20T02:17:56Z",
+    "1": "2026-10-20T02:17:56Z",
+    "2": "2026-10-20T02:17:56Z"
+  }
+}
