@@ -2,6 +2,53 @@
   "schema": 1,
   "releases": [
     {
+      "version": "0.4.0",
+      "seq": 40099,
+      "date": "2026-10-20T17:28:26Z",
+      "created": "2026-10-20T17:24:53Z",
+      "kind": "minor",
+      "prerelease": false,
+      "notes": "- Music in several rooms: Haslers on the same network can play in step\n  (Snapcast). Turn it on in Settings -> Multiroom, then \"Also play on...\" on\n  the front page, or give a key \"Join another Hasler\". Keys on a following\n  radio control the whole group (or leave it - a setting); volume, tone and\n  standby stay with each radio. Off by default; grouped, sound starts about\n  1 s after a key press.\n- AirPlay works: shairport-sync (classic AirPlay) is installed by bootstrap,\n  started by moOde as before.\n- A casting target's own reason (\"not installed\") is shown.",
+      "channels": [],
+      "halted": [],
+      "requires_migration": false,
+      "min_from_seq": 0,
+      "variants": [
+        "excelsior",
+        "hasler-hm"
+      ],
+      "release_page": "https://github.com/Delgado-Murphy/hasler-releases/releases/tag/v0.4.0",
+      "assets": {
+        "tarball": {
+          "name": "hasler-0.4.0-arm64.tar.zst",
+          "url": "https://github.com/Delgado-Murphy/hasler-releases/releases/download/v0.4.0/hasler-0.4.0-arm64.tar.zst",
+          "size": 40246430,
+          "sha256": "ab4f741eabdd689af674552c338ebacff9157dd652c30453f1c623ba640d9f67"
+        },
+        "release_json": {
+          "name": "release.json",
+          "url": "https://github.com/Delgado-Murphy/hasler-releases/releases/download/v0.4.0/release.json",
+          "size": 1396,
+          "sha256": "1b3cf3e9b33c63b868981a2c40738a2e8136aebea57d9ab5bc95c64fb0d05d0a"
+        },
+        "signature": {
+          "name": "release.json.sig",
+          "url": "https://github.com/Delgado-Murphy/hasler-releases/releases/download/v0.4.0/release.json.sig",
+          "size": 310
+        },
+        "sbom": {
+          "name": "hasler-0.4.0.cdx.json",
+          "url": "https://github.com/Delgado-Murphy/hasler-releases/releases/download/v0.4.0/hasler-0.4.0.cdx.json",
+          "size": 20023
+        },
+        "sha256sums": {
+          "name": "SHA256SUMS",
+          "url": "https://github.com/Delgado-Murphy/hasler-releases/releases/download/v0.4.0/SHA256SUMS",
+          "size": 255
+        }
+      }
+    },
+    {
       "version": "0.3.9",
       "seq": 30999,
       "date": "2026-10-20T04:27:11Z",
@@ -443,5 +490,5 @@
       }
     }
   ],
-  "updated": "2026-10-20T04:27:24Z"
+  "updated": "2026-10-20T17:28:28Z"
 }
