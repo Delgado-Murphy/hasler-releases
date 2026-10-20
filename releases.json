@@ -2,6 +2,53 @@
   "schema": 1,
   "releases": [
     {
+      "version": "0.4.4",
+      "seq": 40499,
+      "date": "2026-10-20T21:22:51Z",
+      "created": "2026-10-20T21:19:14Z",
+      "kind": "patch",
+      "prerelease": false,
+      "notes": "- Bluetooth: paired phones on the key page (connect, disconnect, forget,\n  battery, last used); which codec is playing (SBC / aptX / aptX HD); a\n  \"Bluetooth\" key action - tap to switch and call your last phone, again for\n  the next track, hold to pause (configurable); reconnect to the last phone\n  when you switch to Bluetooth or wake the radio (configurable).\n- Pilot lamp: ember is visible again - standby 22 % (night 15 %), picked by\n  eye; it was too faint to see, so standby looked like \"safe to unplug\".",
+      "channels": [],
+      "halted": [],
+      "requires_migration": false,
+      "min_from_seq": 0,
+      "variants": [
+        "excelsior",
+        "hasler-hm"
+      ],
+      "release_page": "https://github.com/Delgado-Murphy/hasler-releases/releases/tag/v0.4.4",
+      "assets": {
+        "tarball": {
+          "name": "hasler-0.4.4-arm64.tar.zst",
+          "url": "https://github.com/Delgado-Murphy/hasler-releases/releases/download/v0.4.4/hasler-0.4.4-arm64.tar.zst",
+          "size": 40297588,
+          "sha256": "333e27f5eacf5eb56e45ddb513616eace2df61d2b15b6a2e708280d494db8fcf"
+        },
+        "release_json": {
+          "name": "release.json",
+          "url": "https://github.com/Delgado-Murphy/hasler-releases/releases/download/v0.4.4/release.json",
+          "size": 1337,
+          "sha256": "8d27129f80b432a482ac6b936b3e215eeb45e479bbca986bce6ffcfda42e06fc"
+        },
+        "signature": {
+          "name": "release.json.sig",
+          "url": "https://github.com/Delgado-Murphy/hasler-releases/releases/download/v0.4.4/release.json.sig",
+          "size": 310
+        },
+        "sbom": {
+          "name": "hasler-0.4.4.cdx.json",
+          "url": "https://github.com/Delgado-Murphy/hasler-releases/releases/download/v0.4.4/hasler-0.4.4.cdx.json",
+          "size": 20023
+        },
+        "sha256sums": {
+          "name": "SHA256SUMS",
+          "url": "https://github.com/Delgado-Murphy/hasler-releases/releases/download/v0.4.4/SHA256SUMS",
+          "size": 255
+        }
+      }
+    },
+    {
       "version": "0.4.3",
       "seq": 40399,
       "date": "2026-10-20T20:52:41Z",
@@ -639,5 +686,5 @@
       }
     }
   ],
-  "updated": "2026-10-20T20:52:57Z"
+  "updated": "2026-10-20T21:22:52Z"
 }
