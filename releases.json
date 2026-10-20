@@ -2,6 +2,53 @@
   "schema": 1,
   "releases": [
     {
+      "version": "0.3.3",
+      "seq": 30399,
+      "date": "2026-10-20T02:40:04Z",
+      "created": "2026-10-20T02:36:25Z",
+      "kind": "patch",
+      "prerelease": false,
+      "notes": "- Keys: a bounced second tap no longer stops the station it just started\n  (an old key's contacts can register one press as two taps).\n- Key page: choose the update channel (Stable, Beta or Bench) in the Software\n  card, confirmed with a press on the radio.",
+      "channels": [],
+      "halted": [],
+      "requires_migration": false,
+      "min_from_seq": 0,
+      "variants": [
+        "excelsior",
+        "hasler-hm"
+      ],
+      "release_page": "https://github.com/Delgado-Murphy/hasler-releases/releases/tag/v0.3.3",
+      "assets": {
+        "tarball": {
+          "name": "hasler-0.3.3-arm64.tar.zst",
+          "url": "https://github.com/Delgado-Murphy/hasler-releases/releases/download/v0.3.3/hasler-0.3.3-arm64.tar.zst",
+          "size": 40196451,
+          "sha256": "49dfaab96441b71c9df5d0484ed7af0622734207fc39f4d93ac8eb8059220c0f"
+        },
+        "release_json": {
+          "name": "release.json",
+          "url": "https://github.com/Delgado-Murphy/hasler-releases/releases/download/v0.3.3/release.json",
+          "size": 1076,
+          "sha256": "9b11df42919281fd901c5359bf54c1d1ffd3b88e809ed590267274f2a18c5823"
+        },
+        "signature": {
+          "name": "release.json.sig",
+          "url": "https://github.com/Delgado-Murphy/hasler-releases/releases/download/v0.3.3/release.json.sig",
+          "size": 310
+        },
+        "sbom": {
+          "name": "hasler-0.3.3.cdx.json",
+          "url": "https://github.com/Delgado-Murphy/hasler-releases/releases/download/v0.3.3/hasler-0.3.3.cdx.json",
+          "size": 20023
+        },
+        "sha256sums": {
+          "name": "SHA256SUMS",
+          "url": "https://github.com/Delgado-Murphy/hasler-releases/releases/download/v0.3.3/SHA256SUMS",
+          "size": 255
+        }
+      }
+    },
+    {
       "version": "0.3.2",
       "seq": 30299,
       "date": "2026-10-20T02:24:07Z",
@@ -100,5 +147,5 @@
       }
     }
   ],
-  "updated": "2026-10-20T02:31:28Z"
+  "updated": "2026-10-20T02:40:06Z"
 }
