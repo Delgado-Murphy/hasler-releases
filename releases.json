@@ -9,7 +9,9 @@
       "kind": "patch",
       "prerelease": false,
       "notes": "- Tone knob: now a tilt (warmer <-> brighter around 800 Hz, +-6 dB) - you\n  hear it. Settings -> Knobs: choose what a knob does (tilt, treble, bass,\n  loudness, presence, 1960s radio voice, stereo width) and how strong, with\n  \"Try it\" before saving. Boosts never clip. The Excelsior's knobs can use\n  any of them.\n- Pilot lamp: the phone blue is really blue now; a short glow shows where PU\n  landed (amber = radio, blue = phone); magenta glows when a radio joins or\n  leaves a group; a swell when a phone pairs; a dip when the volume keys hit\n  the end; ember breathes while an update installs (don't unplug) and stays\n  a steady deep red at night.\n- Settings -> Pilot lamp -> Lamp colours: tune each colour by eye on the\n  real lamp.\n- Bluetooth: phones see the radio as a loudspeaker.",
-      "channels": [],
+      "channels": [
+        "bench"
+      ],
       "halted": [],
       "requires_migration": false,
       "min_from_seq": 0,
@@ -637,5 +639,5 @@
       }
     }
   ],
-  "updated": "2026-10-20T20:52:42Z"
+  "updated": "2026-10-20T20:52:57Z"
 }
