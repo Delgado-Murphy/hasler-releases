@@ -9,7 +9,9 @@
       "kind": "patch",
       "prerelease": false,
       "notes": "- Casting: a target whose program isn't installed (AirPlay without\n  shairport-sync) is shown as unavailable, with the reason, and can't be\n  switched on - moOde would otherwise restart it every 10 s, forever.\n- Casting: moOde can take a minute to answer while it starts a renderer;\n  that's no longer reported as a failure when the change went through.",
-      "channels": [],
+      "channels": [
+        "bench"
+      ],
       "halted": [],
       "requires_migration": false,
       "min_from_seq": 0,
@@ -441,5 +443,5 @@
       }
     }
   ],
-  "updated": "2026-10-20T04:27:12Z"
+  "updated": "2026-10-20T04:27:24Z"
 }
