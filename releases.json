@@ -9,7 +9,9 @@
       "kind": "patch",
       "prerelease": false,
       "notes": "- Room name: call each radio \"Kitchen\", \"Living\"... (Settings -> About this\n  radio). It shows in the room list, the page title and Home Assistant; the\n  page address stays the same. Optional: \"Use the room name for casting\"\n  makes AirPlay, Spotify, UPnP and Bluetooth \"Hasler Kitchen\".\n- Multiroom: when a following radio's key asks for a source the leading one\n  doesn't have (say Spotify), the pressed radio takes over and the group\n  carries on with its music.",
-      "channels": [],
+      "channels": [
+        "bench"
+      ],
       "halted": [],
       "requires_migration": false,
       "min_from_seq": 0,
@@ -539,5 +541,5 @@
       }
     }
   ],
-  "updated": "2026-10-20T17:51:08Z"
+  "updated": "2026-10-20T17:51:21Z"
 }
