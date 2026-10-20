@@ -9,7 +9,9 @@
       "kind": "patch",
       "prerelease": false,
       "notes": "- Bluetooth pairing works: while the pairing window is open the radio says\n  yes to the phone's code by itself (moOde's helper waited for a yes on its\n  own web page, which nobody sees on a Hasler).\n- AirPlay and UPnP show as running on the key page (no more \"Starting...\").\n- Spotify for guests reaches radios set up before: a switch in Sources &\n  casting, on by default.\n- Multiroom: a track keeps its place when a radio starts leading; better\n  resampling; quieter logs.\n- Updates: a release that brings a new kind of system file must be a major\n  one (always asked first); its own updater installs those files.\n- Docs: multiroom, casting, room names and Home Assistant; a photo in the\n  README; a short box.yaml example.",
-      "channels": [],
+      "channels": [
+        "bench"
+      ],
       "halted": [],
       "requires_migration": false,
       "min_from_seq": 0,
@@ -588,5 +590,5 @@
       }
     }
   ],
-  "updated": "2026-10-20T19:27:10Z"
+  "updated": "2026-10-20T19:27:24Z"
 }
