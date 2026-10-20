@@ -1,0 +1,19 @@
+{
+  "schema": 1,
+  "keyring_seq": 1,
+  "expires": "2027-10-20T00:00:00Z",
+  "keys": [
+    {
+      "id": "release-2026a",
+      "role": "release",
+      "pub": "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIApkQL8OXkzKlVRqfkvTLjbr9DHCgvB3CtDRgaU2qZV",
+      "not_after": "2027-10-20T00:00:00Z"
+    },
+    {
+      "id": "timestamp-2026a",
+      "role": "timestamp",
+      "pub": "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIO9jEfbvMoJjMtG9bHRx4BiPIHbqKiEwp3VO3TBMbu1x",
+      "not_after": "2027-10-20T00:00:00Z"
+    }
+  ]
+}
