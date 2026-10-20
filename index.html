@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hasler releases</title>
+<style>
+  :root { --bg: #faf8f4; --fg: #2a2723; --muted: #6f6a62; }
+  @media (prefers-color-scheme: dark) { :root { --bg: #1c1a18; --fg: #ece8e1; --muted: #a39d93; } }
+  body { margin: 0; background: var(--bg); color: var(--fg);
+         font: 16px/1.55 ui-serif, Georgia, serif; }
+  main { max-width: 36rem; margin: 0 auto; padding: 4rem 16px; }
+  h1 { font-weight: 500; font-size: 1.6rem; margin: 0 0 1rem; }
+  p { margin: 0 0 1rem; }
+  code { font: 0.9em ui-monospace, Menlo, monospace; }
+  footer { margin-top: 3rem; color: var(--muted); font-size: 0.85rem; }
+  a { color: inherit; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Hasler releases</h1>
+  <p>Update channels for the Hasler radios. Radios read signed channel indexes
+     from <code>channels/&lt;bench|beta|stable&gt;.json</code> and the keyring from
+     <code>keyring.json</code> here.</p>
+  <p>No channel has a release yet: the indexes appear with the first signed release.</p>
+  <p><a href="https://github.com/Delgado-Murphy/hasler-releases">Signed releases and how they are verified</a></p>
+  <footer>Delgado &amp; Murphy</footer>
+</main>
+</body>
+</html>
