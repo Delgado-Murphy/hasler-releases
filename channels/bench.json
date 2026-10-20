@@ -1,13 +1,13 @@
 {
   "schema": 1,
   "channel": "bench",
-  "issued": "2026-10-20T23:36:15Z",
-  "expires": "2026-11-03T23:36:15Z",
+  "issued": "2026-10-20T23:58:35Z",
+  "expires": "2026-11-03T23:58:35Z",
   "current": {
-    "version": "1.0.1",
-    "seq": 1000199,
-    "release_url": "https://github.com/Delgado-Murphy/hasler-releases/releases/download/v1.0.1/release.json",
-    "release_sha256": "cae6aba22d13a12d7633d8ee385d70672b2d77377c57c3517cc42a9875ce1384"
+    "version": "1.0.2",
+    "seq": 1000299,
+    "release_url": "https://github.com/Delgado-Murphy/hasler-releases/releases/download/v1.0.2/release.json",
+    "release_sha256": "c7543b4c92e73a24c5aff91d209a322bf3618870b36ca8bd41ec1728d35d1bd6"
   },
   "halted": [],
   "min_supported_seq": 0,
@@ -19,8 +19,8 @@
     ]
   },
   "ring_open": {
-    "0": "2026-10-20T23:36:15Z",
-    "1": "2026-10-20T23:36:15Z",
-    "2": "2026-10-20T23:36:15Z"
+    "0": "2026-10-20T23:58:35Z",
+    "1": "2026-10-20T23:58:35Z",
+    "2": "2026-10-20T23:58:35Z"
   }
 }

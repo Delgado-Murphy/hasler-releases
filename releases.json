@@ -9,7 +9,9 @@
       "kind": "patch",
       "prerelease": false,
       "notes": "- The memory-card Wi-Fi rescue (hasler-wifi.txt) now arrives with updates\n  too, not only on new SD cards.\n- This radio -> Wi-Fi shows the setup network's name and password, to write\n  down for the day the radio can't find your Wi-Fi.\n- A last tidy-up of the key page and every document: plainer words, no\n  leftovers from older layouts, Home Assistant scenes no longer say\n  \"unknown\", the Bluetooth key reads simply \"Bluetooth\".",
-      "channels": [],
+      "channels": [
+        "bench"
+      ],
       "halted": [],
       "requires_migration": false,
       "min_from_seq": 0,
@@ -931,5 +933,5 @@
       }
     }
   ],
-  "updated": "2026-10-20T23:58:25Z"
+  "updated": "2026-10-20T23:58:35Z"
 }
