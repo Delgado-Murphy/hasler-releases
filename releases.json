@@ -9,7 +9,9 @@
       "kind": "patch",
       "prerelease": false,
       "notes": "- Spotify: sign the radio in from the key page - a code to enter at\n  spotify.com/pair, no laptop. Change account or sign out there too.\n- Bluetooth: the phone's volume is the radio's volume (and follows the\n  knob); a steadier start after a phone connects (1 s buffer); phones see a\n  loudspeaker; the Bluetooth service can no longer hang at start.\n- Wi-Fi setup: the radio's setup network works again after a Wi-Fi change,\n  any web address on it opens the setup page, and after a power cut where\n  the router is slower the radio keeps trying your Wi-Fi instead of staying\n  in setup mode. The setup page works without JavaScript, in English and\n  Spanish, and says what the lamp will do. A file on the memory card can set\n  the Wi-Fi as a last resort.\n- This radio: remove the room name with one tap.",
-      "channels": [],
+      "channels": [
+        "bench"
+      ],
       "halted": [],
       "requires_migration": false,
       "min_from_seq": 0,
@@ -882,5 +884,5 @@
       }
     }
   ],
-  "updated": "2026-10-20T23:36:02Z"
+  "updated": "2026-10-20T23:36:15Z"
 }
