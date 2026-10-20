@@ -9,7 +9,9 @@
       "kind": "patch",
       "prerelease": false,
       "notes": "- Remote help: Settings -> This radio -> \"Let the makers help (24 h)\". After\n  a press on the radio, the page shows a link to send to the makers; once\n  they approve it in Delgado & Murphy's Tailscale network they can reach the\n  radio for 24 hours (or until you press Stop, or the radio restarts).\n  Nothing is stored on the SD card; any other network ends it at once.\n- Documentation reviewed against the code: the owner's guide (with \"The\n  first ten minutes\"), the build guide (signed releases earlier, as Phase\n  4b), hardware, lamp, multiroom, OTA and release notes.",
-      "channels": [],
+      "channels": [
+        "bench"
+      ],
       "halted": [],
       "requires_migration": false,
       "min_from_seq": 0,
@@ -784,5 +786,5 @@
       }
     }
   ],
-  "updated": "2026-10-20T22:16:57Z"
+  "updated": "2026-10-20T22:17:11Z"
 }
