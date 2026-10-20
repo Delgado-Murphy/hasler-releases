@@ -9,7 +9,9 @@
       "kind": "patch",
       "prerelease": false,
       "notes": "- Key page: easier to read (contrast), bigger buttons, settings grouped\n  (Sound, Connections, Pilot lamp, Knobs, About this radio, Keys); Next is\n  greyed out where it can't skip; the offline view is dimmed; lighter polling.\n- Faster and steadier: the radio no longer runs a heavy moOde tool every\n  second, reads the keys and knobs with fewer transfers, and survives a\n  glitch on the cabinet cable instead of restarting.\n- Settings files are written safely (power cuts), clearer errors, and an\n  \"off\" update mode written by hand is understood.",
-      "channels": [],
+      "channels": [
+        "bench"
+      ],
       "halted": [],
       "requires_migration": false,
       "min_from_seq": 0,
@@ -245,5 +247,5 @@
       }
     }
   ],
-  "updated": "2026-10-20T03:19:03Z"
+  "updated": "2026-10-20T03:19:13Z"
 }
