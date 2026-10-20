@@ -2,6 +2,53 @@
   "schema": 1,
   "releases": [
     {
+      "version": "0.4.6",
+      "seq": 40699,
+      "date": "2026-10-20T22:16:57Z",
+      "created": "2026-10-20T22:13:00Z",
+      "kind": "patch",
+      "prerelease": false,
+      "notes": "- Remote help: Settings -> This radio -> \"Let the makers help (24 h)\". After\n  a press on the radio, the page shows a link to send to the makers; once\n  they approve it in Delgado & Murphy's Tailscale network they can reach the\n  radio for 24 hours (or until you press Stop, or the radio restarts).\n  Nothing is stored on the SD card; any other network ends it at once.\n- Documentation reviewed against the code: the owner's guide (with \"The\n  first ten minutes\"), the build guide (signed releases earlier, as Phase\n  4b), hardware, lamp, multiroom, OTA and release notes.",
+      "channels": [],
+      "halted": [],
+      "requires_migration": false,
+      "min_from_seq": 0,
+      "variants": [
+        "excelsior",
+        "hasler-hm"
+      ],
+      "release_page": "https://github.com/Delgado-Murphy/hasler-releases/releases/tag/v0.4.6",
+      "assets": {
+        "tarball": {
+          "name": "hasler-0.4.6-arm64.tar.zst",
+          "url": "https://github.com/Delgado-Murphy/hasler-releases/releases/download/v0.4.6/hasler-0.4.6-arm64.tar.zst",
+          "size": 40312151,
+          "sha256": "c7e01c37d77c699c7c3f0ee82675e5200dfae4f198362ded97834d75697b437f"
+        },
+        "release_json": {
+          "name": "release.json",
+          "url": "https://github.com/Delgado-Murphy/hasler-releases/releases/download/v0.4.6/release.json",
+          "size": 1399,
+          "sha256": "3054c53e83dd214678c790961584601d5eb5d152a82dc01f4cbd7917665e38bf"
+        },
+        "signature": {
+          "name": "release.json.sig",
+          "url": "https://github.com/Delgado-Murphy/hasler-releases/releases/download/v0.4.6/release.json.sig",
+          "size": 310
+        },
+        "sbom": {
+          "name": "hasler-0.4.6.cdx.json",
+          "url": "https://github.com/Delgado-Murphy/hasler-releases/releases/download/v0.4.6/hasler-0.4.6.cdx.json",
+          "size": 20023
+        },
+        "sha256sums": {
+          "name": "SHA256SUMS",
+          "url": "https://github.com/Delgado-Murphy/hasler-releases/releases/download/v0.4.6/SHA256SUMS",
+          "size": 255
+        }
+      }
+    },
+    {
       "version": "0.4.5",
       "seq": 40599,
       "date": "2026-10-20T21:59:04Z",
@@ -737,5 +784,5 @@
       }
     }
   ],
-  "updated": "2026-10-20T21:59:19Z"
+  "updated": "2026-10-20T22:16:57Z"
 }
