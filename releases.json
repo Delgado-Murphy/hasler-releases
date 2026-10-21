@@ -2,6 +2,53 @@
   "schema": 1,
   "releases": [
     {
+      "version": "1.0.3",
+      "seq": 1000399,
+      "date": "2026-10-21T20:56:29Z",
+      "created": "2026-10-21T20:52:22Z",
+      "kind": "patch",
+      "prerelease": false,
+      "notes": "- A station that stops by itself comes back by itself: the radio notices\n  within seconds, plays it again (and, if needed, starts the preset again),\n  waiting a little longer each time; after three tries the lamp pulses red\n  once (not at night). It never undoes a stop you made. The key page says\n  \"Reconnecting...\" meanwhile instead of claiming it plays.\n- Each stop and recovery is written to a small file on the memory card, so\n  a silent radio can be explained afterwards (Maker tools -> Diagnostics).",
+      "channels": [],
+      "halted": [],
+      "requires_migration": false,
+      "min_from_seq": 0,
+      "variants": [
+        "excelsior",
+        "hasler-hm"
+      ],
+      "release_page": "https://github.com/Delgado-Murphy/hasler-releases/releases/tag/v1.0.3",
+      "assets": {
+        "tarball": {
+          "name": "hasler-1.0.3-arm64.tar.zst",
+          "url": "https://github.com/Delgado-Murphy/hasler-releases/releases/download/v1.0.3/hasler-1.0.3-arm64.tar.zst",
+          "size": 40422642,
+          "sha256": "42c1230a5d39c2b8a1ecaa0a72983eca75847274a8a3f9c7b85be70ff57bb94a"
+        },
+        "release_json": {
+          "name": "release.json",
+          "url": "https://github.com/Delgado-Murphy/hasler-releases/releases/download/v1.0.3/release.json",
+          "size": 1333,
+          "sha256": "f6185b95d1e0fdec2f32620c2cbd7c2f71f7fcc61c36bbedaa3cf072f2ffd395"
+        },
+        "signature": {
+          "name": "release.json.sig",
+          "url": "https://github.com/Delgado-Murphy/hasler-releases/releases/download/v1.0.3/release.json.sig",
+          "size": 310
+        },
+        "sbom": {
+          "name": "hasler-1.0.3.cdx.json",
+          "url": "https://github.com/Delgado-Murphy/hasler-releases/releases/download/v1.0.3/hasler-1.0.3.cdx.json",
+          "size": 20023
+        },
+        "sha256sums": {
+          "name": "SHA256SUMS",
+          "url": "https://github.com/Delgado-Murphy/hasler-releases/releases/download/v1.0.3/SHA256SUMS",
+          "size": 255
+        }
+      }
+    },
+    {
       "version": "1.0.2",
       "seq": 1000299,
       "date": "2026-10-20T23:58:24Z",
@@ -933,5 +980,5 @@
       }
     }
   ],
-  "updated": "2026-10-20T23:58:35Z"
+  "updated": "2026-10-21T20:56:30Z"
 }
