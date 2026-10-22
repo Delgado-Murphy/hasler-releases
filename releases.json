@@ -2,6 +2,54 @@
   "schema": 1,
   "releases": [
     {
+      "version": "1.0.4",
+      "seq": 1000499,
+      "date": "2026-10-22T09:18:43Z",
+      "created": "2026-10-22T08:15:54Z",
+      "kind": "patch",
+      "prerelease": false,
+      "notes": "- A brief power dip on the key board can no longer press every key at once:\n  until the board is set up again the radio keeps the keys as they were\n  (before, for up to a second, it could change the station by itself).\n- The tone knob's switch arms the 5-second shutdown only after it has\n  clearly read on, so a loose ribbon can't power the radio off just after\n  it starts.\n- Ships the cabinet description for the Hasler HAT circuit board\n  (`hasler-hm-hat`), used only once a radio is set to it.",
+      "channels": [],
+      "halted": [],
+      "requires_migration": false,
+      "min_from_seq": 0,
+      "variants": [
+        "excelsior",
+        "hasler-hm",
+        "hasler-hm-hat"
+      ],
+      "release_page": "https://github.com/Delgado-Murphy/hasler-releases/releases/tag/v1.0.4",
+      "assets": {
+        "tarball": {
+          "name": "hasler-1.0.4-arm64.tar.zst",
+          "url": "https://github.com/Delgado-Murphy/hasler-releases/releases/download/v1.0.4/hasler-1.0.4-arm64.tar.zst",
+          "size": 40429039,
+          "sha256": "337fe770bf773437db510fdfd1c5e57398e41df7ab63545cf72b5e375dd97ca5"
+        },
+        "release_json": {
+          "name": "release.json",
+          "url": "https://github.com/Delgado-Murphy/hasler-releases/releases/download/v1.0.4/release.json",
+          "size": 1344,
+          "sha256": "1e096d046b5a20d7e0f5b23f634ae977abb74d096ed8d300fa02c8dc5930a0a5"
+        },
+        "signature": {
+          "name": "release.json.sig",
+          "url": "https://github.com/Delgado-Murphy/hasler-releases/releases/download/v1.0.4/release.json.sig",
+          "size": 310
+        },
+        "sbom": {
+          "name": "hasler-1.0.4.cdx.json",
+          "url": "https://github.com/Delgado-Murphy/hasler-releases/releases/download/v1.0.4/hasler-1.0.4.cdx.json",
+          "size": 20023
+        },
+        "sha256sums": {
+          "name": "SHA256SUMS",
+          "url": "https://github.com/Delgado-Murphy/hasler-releases/releases/download/v1.0.4/SHA256SUMS",
+          "size": 255
+        }
+      }
+    },
+    {
       "version": "1.0.3",
       "seq": 1000399,
       "date": "2026-10-21T20:56:29Z",
@@ -982,5 +1030,5 @@
       }
     }
   ],
-  "updated": "2026-10-21T20:56:45Z"
+  "updated": "2026-10-22T09:18:44Z"
 }
