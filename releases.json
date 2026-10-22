@@ -9,7 +9,9 @@
       "kind": "patch",
       "prerelease": false,
       "notes": "- A brief power dip on the key board can no longer press every key at once:\n  until the board is set up again the radio keeps the keys as they were\n  (before, for up to a second, it could change the station by itself).\n- The tone knob's switch arms the 5-second shutdown only after it has\n  clearly read on, so a loose ribbon can't power the radio off just after\n  it starts.\n- Ships the cabinet description for the Hasler HAT circuit board\n  (`hasler-hm-hat`), used only once a radio is set to it.",
-      "channels": [],
+      "channels": [
+        "bench"
+      ],
       "halted": [],
       "requires_migration": false,
       "min_from_seq": 0,
@@ -1030,5 +1032,5 @@
       }
     }
   ],
-  "updated": "2026-10-22T09:18:44Z"
+  "updated": "2026-10-22T09:18:58Z"
 }
