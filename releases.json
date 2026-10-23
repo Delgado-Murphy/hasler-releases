@@ -10,7 +10,8 @@
       "prerelease": false,
       "notes": "- YouTube Music keeps working by itself: the radio checks for a newer\n  yt-dlp every 6 hours (and right after coming back online, or as soon as\n  tracks start failing), takes the newest from PyPI - stable, or the nightly\n  when stable can't play - from a signed, hash-checked list, tests it on a\n  real YouTube Music track before switching, and switches back by itself if\n  tracks fail in the next three days. This radio -> Updates shows it; Maker\n  tools can update or go back by hand.\n- Security updates for the system install at night in standby (Debian\n  security only; never the kernel, firmware, moOde's audio or Bluetooth),\n  with a health check afterwards and the old packages put back if anything\n  broke. Off with `os_updates: off` in box.yaml.\n- Spotify engine go-librespot 0.10.5 and Deno 2.9.8 (what the current\n  yt-dlp asks for).",
       "channels": [
-        "bench"
+        "bench",
+        "stable"
       ],
       "halted": [],
       "requires_migration": false,
@@ -1082,5 +1083,5 @@
       }
     }
   ],
-  "updated": "2026-10-23T18:40:58Z"
+  "updated": "2026-10-23T19:24:59Z"
 }
