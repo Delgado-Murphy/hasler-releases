@@ -59,7 +59,11 @@ TARGET_PY = "3.13"
 TARGET_ABI = "cp313"
 GLIBC_MAX = 39
 VERSION_RE = re.compile(r"^[0-9]+(\.[0-9]+)*(\.dev[0-9]+|(a|b|rc)[0-9]+)?$")
-REQ_LINE_RE = re.compile(r"^[A-Za-z0-9][A-Za-z0-9._-]*==[A-Za-z0-9.!+_-]+( --hash=sha256:[0-9a-f]{64})+$")
+# The lock format the radio accepts (scripts/hasler-ytdlp-update validate_requirements):
+# a "name[extras]==version \\" line, then "    --hash=sha256:<hex>" lines (all but
+# the last ending in " \\"). No options, URLs, paths, markers or -e.
+REQ_PKG_RE = re.compile(r"^[A-Za-z0-9][A-Za-z0-9._-]*(\[[A-Za-z0-9,._-]+\])?==[A-Za-z0-9.!+_-]+ \\$")
+REQ_HASH_RE = re.compile(r"^--hash=sha256:[0-9a-f]{64}( \\)?$")
 YTM_ID_RE = re.compile(r"^[A-Za-z0-9_-]{11}$")
 # yt-dlp's message when YouTube wants a login: the runner's IP is bot-flagged.
 BOT_RE = re.compile(r"Sign in to confirm|not a bot|HTTP Error 429|po_token|PO Token", re.I)
@@ -125,16 +129,37 @@ def gh_output(**kv: str) -> None:
 # --- validation ------------------------------------------------------------------
 
 def validate_requirements(text: str, version: str) -> None:
-    lines = [ln for ln in text.splitlines() if ln.strip()]
-    if not lines:
-        raise ComponentsError(f"{version}: empty requirements")
-    names = set()
-    for ln in lines:
-        if not REQ_LINE_RE.match(ln):
-            raise ComponentsError(f"{version}: requirement line not name==version --hash=sha256:...: {ln[:80]!r}")
-        names.add(ln.split("==", 1)[0].lower().replace("_", "-"))
-    if not any(ln.split(" ", 1)[0].lower() == f"{PKG}=={version}" for ln in lines):
-        raise ComponentsError(f"{version}: requirements do not pin {PKG}=={version}")
+    """The first package is yt-dlp[default]==<version>; every package has a hash;
+    yt-dlp-ejs is in it; nothing but package and hash lines."""
+    if not isinstance(text, str) or not text.strip() or len(text) > 256 * 1024:
+        raise ComponentsError(f"{version}: empty or oversized requirements")
+    pkgs: list[str] = []
+    hashes = 0
+    cont = False                     # the previous line ended in a backslash
+    for raw in text.splitlines():
+        line = raw.strip()
+        if not line:
+            raise ComponentsError(f"{version}: blank line in the lock")
+        if REQ_HASH_RE.match(line):
+            if not pkgs or not cont:
+                raise ComponentsError(f"{version}: a hash that belongs to no package")
+            hashes += 1
+            cont = line.endswith("\\")
+            continue
+        if REQ_PKG_RE.match(line):
+            if cont or (pkgs and not hashes):
+                raise ComponentsError(f"{version}: {pkgs[-1] if pkgs else line} has no hash")
+            pkgs.append(line[:-1].strip())
+            hashes, cont = 0, True
+            continue
+        raise ComponentsError(f"{version}: not allowed in the lock: {line[:80]!r}")
+    if not pkgs or not hashes or cont:
+        raise ComponentsError(f"{version}: the lock ends without a hash")
+    if pkgs[0] != f"{PKG}[{SPEC_EXTRA}]=={version}":
+        raise ComponentsError(f"{version}: the first line must be {PKG}[{SPEC_EXTRA}]=={version}, not {pkgs[0]!r}")
+    names = [re.split(r"[\[=]", p_, maxsplit=1)[0].lower().replace("_", "-") for p_ in pkgs]
+    if len(set(names)) != len(names):
+        raise ComponentsError(f"{version}: a package listed twice")
     if "yt-dlp-ejs" not in names:
         raise ComponentsError(f"{version}: requirements lack yt-dlp-ejs (YouTube's JS challenges)")
 
@@ -267,19 +292,25 @@ def platform_args() -> list[str]:
     return args
 
 
-def lock_from_dir(dl: Path) -> str:
-    lines = {}
+def lock_from_dir(dl: Path, version: str) -> str:
+    """pip's --require-hashes format, yt-dlp[default] first, the rest by name."""
+    entries = {}
     for f in sorted(dl.iterdir()):
         m = WHEEL_RE.match(f.name)
         if not m:
             raise ComponentsError(f"lock: {f.name} is not a wheel (sdists are never installed on a radio)")
         name = m.group("name").lower().replace("_", "-").replace(".", "-")
-        ver = m.group("ver")
-        h = hashlib.sha256(f.read_bytes()).hexdigest()
-        if name in lines:
+        if name in entries:
             raise ComponentsError(f"lock: two wheels for {name}")
-        lines[name] = f"{name}=={ver} --hash=sha256:{h}"
-    return "".join(lines[k] + "\n" for k in sorted(lines))
+        entries[name] = (m.group("ver"), hashlib.sha256(f.read_bytes()).hexdigest())
+    if entries.get(PKG, ("",))[0] != version:
+        raise ComponentsError(f"lock: pip fetched {PKG} {entries.get(PKG, ('none',))[0]}, not {version}")
+
+    def block(spec: str, h: str) -> str:
+        return f"{spec} \\\n    --hash=sha256:{h}\n"
+    out = block(f"{PKG}[{SPEC_EXTRA}]=={version}", entries.pop(PKG)[1])
+    out += "".join(block(f"{n}=={v}", h) for n, (v, h) in sorted(entries.items()))
+    return out
 
 
 def cmd_lock(a: argparse.Namespace) -> None:
@@ -288,10 +319,10 @@ def cmd_lock(a: argparse.Namespace) -> None:
         cmd = [a.python, "-m", "pip", "download", "--quiet", "--disable-pip-version-check", "--no-cache-dir",
                "--dest", str(dl), *([] if a.native else platform_args()), f"{PKG}[{SPEC_EXTRA}]=={a.version}"]
         subprocess.run(cmd, check=True)
-        text = lock_from_dir(dl)
+        text = lock_from_dir(dl, a.version)
     validate_requirements(text, a.version)
     Path(a.out).write_text(text)
-    print(f"lock: {a.version}: {len(text.splitlines())} wheels -> {a.out}")
+    print(f"lock: {a.version}: {text.count('--hash=')} wheels -> {a.out}")
     sys.stdout.write(text)
 
 
