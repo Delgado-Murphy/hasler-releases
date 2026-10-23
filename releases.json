@@ -9,7 +9,9 @@
       "kind": "patch",
       "prerelease": false,
       "notes": "- Keys: a station key pressed again stops the radio for good. An old key's\n  contacts can send one press as two taps a fifth of a second apart; the\n  second used to start the station again. A second tap of the same key\n  within 0.35 s is now ignored.",
-      "channels": [],
+      "channels": [
+        "bench"
+      ],
       "halted": [],
       "requires_migration": false,
       "min_from_seq": 0,
@@ -1131,5 +1133,5 @@
       }
     }
   ],
-  "updated": "2026-10-23T20:54:19Z"
+  "updated": "2026-10-23T20:54:32Z"
 }
