@@ -2,6 +2,54 @@
   "schema": 1,
   "releases": [
     {
+      "version": "1.0.6",
+      "seq": 1000699,
+      "date": "2026-10-23T20:54:18Z",
+      "created": "2026-10-23T20:50:02Z",
+      "kind": "patch",
+      "prerelease": false,
+      "notes": "- Keys: a station key pressed again stops the radio for good. An old key's\n  contacts can send one press as two taps a fifth of a second apart; the\n  second used to start the station again. A second tap of the same key\n  within 0.35 s is now ignored.",
+      "channels": [],
+      "halted": [],
+      "requires_migration": false,
+      "min_from_seq": 0,
+      "variants": [
+        "excelsior",
+        "hasler-hm",
+        "hasler-hm-hat"
+      ],
+      "release_page": "https://github.com/Delgado-Murphy/hasler-releases/releases/tag/v1.0.6",
+      "assets": {
+        "tarball": {
+          "name": "hasler-1.0.6-arm64.tar.zst",
+          "url": "https://github.com/Delgado-Murphy/hasler-releases/releases/download/v1.0.6/hasler-1.0.6-arm64.tar.zst",
+          "size": 40577518,
+          "sha256": "fb78bb7ce2bbd0b069e9dde16a88ac123833f50017686cacfb82b04d2d1505f3"
+        },
+        "release_json": {
+          "name": "release.json",
+          "url": "https://github.com/Delgado-Murphy/hasler-releases/releases/download/v1.0.6/release.json",
+          "size": 1092,
+          "sha256": "60a94ef0bb2e7b00aa6b8eca3f8fab1e9ae43d1f36678554d066242b8986a6c8"
+        },
+        "signature": {
+          "name": "release.json.sig",
+          "url": "https://github.com/Delgado-Murphy/hasler-releases/releases/download/v1.0.6/release.json.sig",
+          "size": 310
+        },
+        "sbom": {
+          "name": "hasler-1.0.6.cdx.json",
+          "url": "https://github.com/Delgado-Murphy/hasler-releases/releases/download/v1.0.6/hasler-1.0.6.cdx.json",
+          "size": 20023
+        },
+        "sha256sums": {
+          "name": "SHA256SUMS",
+          "url": "https://github.com/Delgado-Murphy/hasler-releases/releases/download/v1.0.6/SHA256SUMS",
+          "size": 255
+        }
+      }
+    },
+    {
       "version": "1.0.5",
       "seq": 1000599,
       "date": "2026-10-23T18:40:46Z",
@@ -1083,5 +1131,5 @@
       }
     }
   ],
-  "updated": "2026-10-23T19:24:59Z"
+  "updated": "2026-10-23T20:54:19Z"
 }
