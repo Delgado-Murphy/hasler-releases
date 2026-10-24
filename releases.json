@@ -2,6 +2,54 @@
   "schema": 1,
   "releases": [
     {
+      "version": "1.1.1",
+      "seq": 1010199,
+      "date": "2026-10-24T14:25:25Z",
+      "created": "2026-10-24T14:21:34Z",
+      "kind": "patch",
+      "prerelease": false,
+      "notes": "- Browse: the Radio tab opened empty on a real radio (the world regions\n  arrived in a different shape than the page expected). Fixed; Arabic and\n  other right-to-left language names no longer swallow their counts.",
+      "channels": [],
+      "halted": [],
+      "requires_migration": false,
+      "min_from_seq": 0,
+      "variants": [
+        "excelsior",
+        "hasler-hm",
+        "hasler-hm-hat"
+      ],
+      "release_page": "https://github.com/Delgado-Murphy/hasler-releases/releases/tag/v1.1.1",
+      "assets": {
+        "tarball": {
+          "name": "hasler-1.1.1-arm64.tar.zst",
+          "url": "https://github.com/Delgado-Murphy/hasler-releases/releases/download/v1.1.1/hasler-1.1.1-arm64.tar.zst",
+          "size": 40665836,
+          "sha256": "ef2b4d6b205a1aaa0d4d061831235dc4263158c4bc80fc949cb5f528c7052219"
+        },
+        "release_json": {
+          "name": "release.json",
+          "url": "https://github.com/Delgado-Murphy/hasler-releases/releases/download/v1.1.1/release.json",
+          "size": 1055,
+          "sha256": "301df3455fdca0e3504fc39bf89d3f4abeb0d4699a72b6c81458d3eb292d9892"
+        },
+        "signature": {
+          "name": "release.json.sig",
+          "url": "https://github.com/Delgado-Murphy/hasler-releases/releases/download/v1.1.1/release.json.sig",
+          "size": 310
+        },
+        "sbom": {
+          "name": "hasler-1.1.1.cdx.json",
+          "url": "https://github.com/Delgado-Murphy/hasler-releases/releases/download/v1.1.1/hasler-1.1.1.cdx.json",
+          "size": 20023
+        },
+        "sha256sums": {
+          "name": "SHA256SUMS",
+          "url": "https://github.com/Delgado-Murphy/hasler-releases/releases/download/v1.1.1/SHA256SUMS",
+          "size": 255
+        }
+      }
+    },
+    {
       "version": "1.1.0",
       "seq": 1010099,
       "date": "2026-10-24T14:15:00Z",
@@ -1333,5 +1381,5 @@
       }
     }
   ],
-  "updated": "2026-10-24T14:15:14Z"
+  "updated": "2026-10-24T14:25:26Z"
 }
