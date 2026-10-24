@@ -9,7 +9,9 @@
       "kind": "patch",
       "prerelease": false,
       "notes": "- Browse: the Radio tab opened empty on a real radio (the world regions\n  arrived in a different shape than the page expected). Fixed; Arabic and\n  other right-to-left language names no longer swallow their counts.",
-      "channels": [],
+      "channels": [
+        "bench"
+      ],
       "halted": [],
       "requires_migration": false,
       "min_from_seq": 0,
@@ -1381,5 +1383,5 @@
       }
     }
   ],
-  "updated": "2026-10-24T14:25:26Z"
+  "updated": "2026-10-24T14:25:39Z"
 }
