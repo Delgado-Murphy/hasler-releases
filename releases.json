@@ -9,7 +9,9 @@
       "kind": "patch",
       "prerelease": false,
       "notes": "- Keys: the bounce window is half a second (was 0.35 s). Keys 2 and 3 were\n  seen bouncing up to 0.34 s after a press.",
-      "channels": [],
+      "channels": [
+        "bench"
+      ],
       "halted": [],
       "requires_migration": false,
       "min_from_seq": 0,
@@ -1181,5 +1183,5 @@
       }
     }
   ],
-  "updated": "2026-10-24T11:45:06Z"
+  "updated": "2026-10-24T11:45:18Z"
 }
