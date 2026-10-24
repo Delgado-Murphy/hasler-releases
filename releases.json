@@ -9,7 +9,9 @@
       "kind": "patch",
       "prerelease": false,
       "notes": "- Key combinations: hold two keys together for about a second to do\n  something extra. Out of the box, 1 + 2 opens Bluetooth pairing for two\n  minutes. Neither key then does its own tap or hold, and letting go early\n  does nothing. Edit keys -> Key combinations: add up to 8, each with its\n  own keys, hold time and action, and try it on the radio.",
-      "channels": [],
+      "channels": [
+        "bench"
+      ],
       "halted": [],
       "requires_migration": false,
       "min_from_seq": 0,
@@ -1231,5 +1233,5 @@
       }
     }
   ],
-  "updated": "2026-10-24T12:09:27Z"
+  "updated": "2026-10-24T12:09:40Z"
 }
