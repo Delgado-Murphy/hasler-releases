@@ -2,6 +2,54 @@
   "schema": 1,
   "releases": [
     {
+      "version": "1.1.2",
+      "seq": 1010299,
+      "date": "2026-10-24T19:49:36Z",
+      "created": "2026-10-24T19:45:18Z",
+      "kind": "patch",
+      "prerelease": false,
+      "notes": "- The key page rides out a lost request: lookups and saves quietly try\n  again (key presses, Next and Play are never sent twice), and a short gap\n  shows \"Reconnecting...\" over the last-known state instead of \"Can't reach\n  the radio\", which now waits for several misses. Coming back to the page\n  after the phone sleeps no longer flashes \"No connection\".\n- Saving a key says Saving, Still trying, Saved or \"Couldn't save - your\n  changes are still here\" with Try again; if the answer was lost but the\n  radio saved, the page sees that. Put on a key, Settings and My stations\n  keep a Try again instead of a fading message.\n- The key page answers on IPv6 as well as IPv4 (phones that try IPv6 first\n  no longer get refused); IPv6 clients must be on the home network.\n- Every change made from the page is one line in the radio's log, so a save\n  that never arrived can be told from one that failed.",
+      "channels": [],
+      "halted": [],
+      "requires_migration": false,
+      "min_from_seq": 0,
+      "variants": [
+        "excelsior",
+        "hasler-hm",
+        "hasler-hm-hat"
+      ],
+      "release_page": "https://github.com/Delgado-Murphy/hasler-releases/releases/tag/v1.1.2",
+      "assets": {
+        "tarball": {
+          "name": "hasler-1.1.2-arm64.tar.zst",
+          "url": "https://github.com/Delgado-Murphy/hasler-releases/releases/download/v1.1.2/hasler-1.1.2-arm64.tar.zst",
+          "size": 40675804,
+          "sha256": "4b20b9ae0c76f7522d55327e1ed114a962b3cf832bf3a30024476a0eb732e3c4"
+        },
+        "release_json": {
+          "name": "release.json",
+          "url": "https://github.com/Delgado-Murphy/hasler-releases/releases/download/v1.1.2/release.json",
+          "size": 1756,
+          "sha256": "abc5534f1fe45d293267d0ed6af731c823a07bbc2fcac24dc946b447e7101bee"
+        },
+        "signature": {
+          "name": "release.json.sig",
+          "url": "https://github.com/Delgado-Murphy/hasler-releases/releases/download/v1.1.2/release.json.sig",
+          "size": 310
+        },
+        "sbom": {
+          "name": "hasler-1.1.2.cdx.json",
+          "url": "https://github.com/Delgado-Murphy/hasler-releases/releases/download/v1.1.2/hasler-1.1.2.cdx.json",
+          "size": 20023
+        },
+        "sha256sums": {
+          "name": "SHA256SUMS",
+          "url": "https://github.com/Delgado-Murphy/hasler-releases/releases/download/v1.1.2/SHA256SUMS",
+          "size": 255
+        }
+      }
+    },
+    {
       "version": "1.1.1",
       "seq": 1010199,
       "date": "2026-10-24T14:25:25Z",
@@ -1383,5 +1431,5 @@
       }
     }
   ],
-  "updated": "2026-10-24T14:25:39Z"
+  "updated": "2026-10-24T19:49:37Z"
 }
