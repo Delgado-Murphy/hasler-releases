@@ -1,8 +1,8 @@
 {
   "schema": 1,
   "channel": "stable",
-  "issued": "2026-10-23T19:24:59Z",
-  "expires": "2026-11-06T19:24:59Z",
+  "issued": "2026-10-24T08:13:40Z",
+  "expires": "2026-11-07T08:13:40Z",
   "current": {
     "version": "1.0.5",
     "seq": 1000599,
