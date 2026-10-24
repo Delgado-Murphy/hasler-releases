@@ -9,7 +9,9 @@
       "kind": "patch",
       "prerelease": false,
       "notes": "- Key combinations: the default is now 1 + 6 (Bluetooth pairing). On the\n  Hasler HM neighbouring keys block each other - with 1 held, 2 can't\n  close - so 1 + 2 never worked. Radios that never changed their\n  combinations get 1 + 6 by themselves.\n- Edit keys -> Key combinations: \"Check this pair\" - hold the two keys and\n  the page shows whether the radio sees both at once. While it checks, the\n  keys do nothing else.",
-      "channels": [],
+      "channels": [
+        "bench"
+      ],
       "halted": [],
       "requires_migration": false,
       "min_from_seq": 0,
@@ -1281,5 +1283,5 @@
       }
     }
   ],
-  "updated": "2026-10-24T12:31:34Z"
+  "updated": "2026-10-24T12:31:49Z"
 }
