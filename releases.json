@@ -9,7 +9,9 @@
       "kind": "minor",
       "prerelease": false,
       "notes": "- A world of radio: 585 hand-picked stations from 118 countries - public\n  broadcasters, iconic music stations, college and community radio, and\n  specialists in every genre - each one checked by playing it on a Hasler.\n- A new music browser with one tab per source: Radio, YouTube Music and\n  Spotify. Radio: search as you type, filters (genre, where, language,\n  quality), Near you, Staff picks, genres, a world map and languages; every\n  station has a card with Play now, Put on a key, Save and \"Doesn't play?\".\n  Internet search (unchecked stations) only when the collection has fewer\n  than five matches. Edit keys uses the same browser.\n- My stations: a shortlist of favourites and your own stream links (tested\n  on the radio before saving), plus Recently played.\n- YouTube Music: search with suggestions, artist and album pages, Moods &\n  genres, Charts by country, your library when signed in, and 201 curated\n  Staff picks (playlists and classic albums). A key can now hold an album,\n  an artist (top songs, radio or shuffle), a radio from a song or album, a\n  country chart, a mood or your Liked songs. The front screen shows the\n  album art with Start radio from this song, Put this on a key, Like (when\n  signed in) and lyrics. \"Hide explicit songs\" in This radio -> YouTube Music.",
-      "channels": [],
+      "channels": [
+        "bench"
+      ],
       "halted": [],
       "requires_migration": false,
       "min_from_seq": 0,
@@ -1331,5 +1333,5 @@
       }
     }
   ],
-  "updated": "2026-10-24T14:15:01Z"
+  "updated": "2026-10-24T14:15:14Z"
 }
