@@ -2,6 +2,54 @@
   "schema": 1,
   "releases": [
     {
+      "version": "1.0.8",
+      "seq": 1000899,
+      "date": "2026-10-24T12:09:26Z",
+      "created": "2026-10-24T12:05:42Z",
+      "kind": "patch",
+      "prerelease": false,
+      "notes": "- Key combinations: hold two keys together for about a second to do\n  something extra. Out of the box, 1 + 2 opens Bluetooth pairing for two\n  minutes. Neither key then does its own tap or hold, and letting go early\n  does nothing. Edit keys -> Key combinations: add up to 8, each with its\n  own keys, hold time and action, and try it on the radio.",
+      "channels": [],
+      "halted": [],
+      "requires_migration": false,
+      "min_from_seq": 0,
+      "variants": [
+        "excelsior",
+        "hasler-hm",
+        "hasler-hm-hat"
+      ],
+      "release_page": "https://github.com/Delgado-Murphy/hasler-releases/releases/tag/v1.0.8",
+      "assets": {
+        "tarball": {
+          "name": "hasler-1.0.8-arm64.tar.zst",
+          "url": "https://github.com/Delgado-Murphy/hasler-releases/releases/download/v1.0.8/hasler-1.0.8-arm64.tar.zst",
+          "size": 40585319,
+          "sha256": "bcbe7656500129fbde2d2ac3d775a23f75fe12e9627bf561da22cd780a92f4c0"
+        },
+        "release_json": {
+          "name": "release.json",
+          "url": "https://github.com/Delgado-Murphy/hasler-releases/releases/download/v1.0.8/release.json",
+          "size": 1191,
+          "sha256": "d23cfa2b66aec061e63a71bdcfb5cb491544c2859e2598b1f587d7ea6d7ebcbc"
+        },
+        "signature": {
+          "name": "release.json.sig",
+          "url": "https://github.com/Delgado-Murphy/hasler-releases/releases/download/v1.0.8/release.json.sig",
+          "size": 310
+        },
+        "sbom": {
+          "name": "hasler-1.0.8.cdx.json",
+          "url": "https://github.com/Delgado-Murphy/hasler-releases/releases/download/v1.0.8/hasler-1.0.8.cdx.json",
+          "size": 20023
+        },
+        "sha256sums": {
+          "name": "SHA256SUMS",
+          "url": "https://github.com/Delgado-Murphy/hasler-releases/releases/download/v1.0.8/SHA256SUMS",
+          "size": 255
+        }
+      }
+    },
+    {
       "version": "1.0.7",
       "seq": 1000799,
       "date": "2026-10-24T11:45:06Z",
@@ -1183,5 +1231,5 @@
       }
     }
   ],
-  "updated": "2026-10-24T11:45:18Z"
+  "updated": "2026-10-24T12:09:27Z"
 }
