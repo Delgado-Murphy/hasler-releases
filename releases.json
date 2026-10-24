@@ -2,6 +2,54 @@
   "schema": 1,
   "releases": [
     {
+      "version": "1.1.0",
+      "seq": 1010099,
+      "date": "2026-10-24T14:15:00Z",
+      "created": "2026-10-24T14:11:19Z",
+      "kind": "minor",
+      "prerelease": false,
+      "notes": "- A world of radio: 585 hand-picked stations from 118 countries - public\n  broadcasters, iconic music stations, college and community radio, and\n  specialists in every genre - each one checked by playing it on a Hasler.\n- A new music browser with one tab per source: Radio, YouTube Music and\n  Spotify. Radio: search as you type, filters (genre, where, language,\n  quality), Near you, Staff picks, genres, a world map and languages; every\n  station has a card with Play now, Put on a key, Save and \"Doesn't play?\".\n  Internet search (unchecked stations) only when the collection has fewer\n  than five matches. Edit keys uses the same browser.\n- My stations: a shortlist of favourites and your own stream links (tested\n  on the radio before saving), plus Recently played.\n- YouTube Music: search with suggestions, artist and album pages, Moods &\n  genres, Charts by country, your library when signed in, and 201 curated\n  Staff picks (playlists and classic albums). A key can now hold an album,\n  an artist (top songs, radio or shuffle), a radio from a song or album, a\n  country chart, a mood or your Liked songs. The front screen shows the\n  album art with Start radio from this song, Put this on a key, Like (when\n  signed in) and lyrics. \"Hide explicit songs\" in This radio -> YouTube Music.",
+      "channels": [],
+      "halted": [],
+      "requires_migration": false,
+      "min_from_seq": 0,
+      "variants": [
+        "excelsior",
+        "hasler-hm",
+        "hasler-hm-hat"
+      ],
+      "release_page": "https://github.com/Delgado-Murphy/hasler-releases/releases/tag/v1.1.0",
+      "assets": {
+        "tarball": {
+          "name": "hasler-1.1.0-arm64.tar.zst",
+          "url": "https://github.com/Delgado-Murphy/hasler-releases/releases/download/v1.1.0/hasler-1.1.0-arm64.tar.zst",
+          "size": 40668736,
+          "sha256": "59260e8014905015d4ebf236e8c25712f3fef3e3236b6def10c9adc37bb3420d"
+        },
+        "release_json": {
+          "name": "release.json",
+          "url": "https://github.com/Delgado-Murphy/hasler-releases/releases/download/v1.1.0/release.json",
+          "size": 2154,
+          "sha256": "9f9792791daa7c4cf40a83a8d4c941c2321f75b2341f4e72576a8618e34f05fe"
+        },
+        "signature": {
+          "name": "release.json.sig",
+          "url": "https://github.com/Delgado-Murphy/hasler-releases/releases/download/v1.1.0/release.json.sig",
+          "size": 310
+        },
+        "sbom": {
+          "name": "hasler-1.1.0.cdx.json",
+          "url": "https://github.com/Delgado-Murphy/hasler-releases/releases/download/v1.1.0/hasler-1.1.0.cdx.json",
+          "size": 20023
+        },
+        "sha256sums": {
+          "name": "SHA256SUMS",
+          "url": "https://github.com/Delgado-Murphy/hasler-releases/releases/download/v1.1.0/SHA256SUMS",
+          "size": 255
+        }
+      }
+    },
+    {
       "version": "1.0.9",
       "seq": 1000999,
       "date": "2026-10-24T12:31:33Z",
@@ -1283,5 +1331,5 @@
       }
     }
   ],
-  "updated": "2026-10-24T12:31:49Z"
+  "updated": "2026-10-24T14:15:01Z"
 }
