@@ -2,6 +2,54 @@
   "schema": 1,
   "releases": [
     {
+      "version": "1.1.4",
+      "seq": 1010499,
+      "date": "2026-10-25T04:20:07Z",
+      "created": "2026-10-25T04:15:46Z",
+      "kind": "patch",
+      "prerelease": false,
+      "notes": "- Fixed: switching away from an HLS radio station (RNE Radio 3, Onda Cero,\n  Europa FM, BBC Radio 1 and 33 more) could freeze the player for good, and\n  the whole radio with it. The radio now turns HLS stations into an ordinary\n  stream itself, so the player never runs the decoder that got stuck (MPD\n  0.24's; fixed upstream only in 0.25). HLS stations take 0.5-3 s longer to\n  start.\n- If the player ever stops answering for another reason, the keys and the\n  key page keep working, systemd restarts the player within about 20 s (the\n  radio itself does it after 30 s if needed, at most 3 times an hour), and\n  what you were playing comes back. The lamp breathes meanwhile, and the\n  health report says why.\n- A player that stopped answering no longer makes an update roll back: an\n  update is judged on the radio's own software.\n- Includes 1.1.3 (the radio follows its Home Assistant to a new address),\n  which the player freeze had rolled back.",
+      "channels": [],
+      "halted": [],
+      "requires_migration": false,
+      "min_from_seq": 0,
+      "variants": [
+        "excelsior",
+        "hasler-hm",
+        "hasler-hm-hat"
+      ],
+      "release_page": "https://github.com/Delgado-Murphy/hasler-releases/releases/tag/v1.1.4",
+      "assets": {
+        "tarball": {
+          "name": "hasler-1.1.4-arm64.tar.zst",
+          "url": "https://github.com/Delgado-Murphy/hasler-releases/releases/download/v1.1.4/hasler-1.1.4-arm64.tar.zst",
+          "size": 40719656,
+          "sha256": "bbdf0e536c3f50e5e1b30c63a9d12c7be68da8c74ccd35d20457d28322db32f5"
+        },
+        "release_json": {
+          "name": "release.json",
+          "url": "https://github.com/Delgado-Murphy/hasler-releases/releases/download/v1.1.4/release.json",
+          "size": 1802,
+          "sha256": "1385a02feb4ff37397a2fbc9076e469859d3bd0a21fe777138e2ae316aeb1079"
+        },
+        "signature": {
+          "name": "release.json.sig",
+          "url": "https://github.com/Delgado-Murphy/hasler-releases/releases/download/v1.1.4/release.json.sig",
+          "size": 310
+        },
+        "sbom": {
+          "name": "hasler-1.1.4.cdx.json",
+          "url": "https://github.com/Delgado-Murphy/hasler-releases/releases/download/v1.1.4/hasler-1.1.4.cdx.json",
+          "size": 20023
+        },
+        "sha256sums": {
+          "name": "SHA256SUMS",
+          "url": "https://github.com/Delgado-Murphy/hasler-releases/releases/download/v1.1.4/SHA256SUMS",
+          "size": 255
+        }
+      }
+    },
+    {
       "version": "1.1.3",
       "seq": 1010399,
       "date": "2026-10-25T02:13:48Z",
@@ -1483,5 +1531,5 @@
       }
     }
   ],
-  "updated": "2026-10-25T02:14:01Z"
+  "updated": "2026-10-25T04:20:08Z"
 }
