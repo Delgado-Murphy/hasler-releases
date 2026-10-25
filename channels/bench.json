@@ -1,8 +1,8 @@
 {
   "schema": 1,
   "channel": "bench",
-  "issued": "2026-10-25T04:20:20Z",
-  "expires": "2026-11-08T04:20:20Z",
+  "issued": "2026-10-25T08:31:37Z",
+  "expires": "2026-11-08T08:31:37Z",
   "current": {
     "version": "1.1.4",
     "seq": 1010499,
