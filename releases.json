@@ -9,7 +9,9 @@
       "kind": "patch",
       "prerelease": false,
       "notes": "- The radio follows its Home Assistant to a new address. If HA stops\n  answering (a new IP from the router, a new router, HA reinstalled), the\n  radio looks for it on the network and switches only to the same HA - the\n  one that announces the same identity - after checking its access token\n  works there. Scenes, lights and HA sync carry on without a restart. The\n  token never goes to any other address; a different HA (say, the radio has\n  moved house) is never adopted.\n- Settings -> Home Assistant shows the address in use, says when the radio\n  found HA at a new one, and has Change address while connected. First set-up\n  looks for HA as soon as the page opens.",
-      "channels": [],
+      "channels": [
+        "bench"
+      ],
       "halted": [],
       "requires_migration": false,
       "min_from_seq": 0,
@@ -1481,5 +1483,5 @@
       }
     }
   ],
-  "updated": "2026-10-25T02:13:49Z"
+  "updated": "2026-10-25T02:14:01Z"
 }
