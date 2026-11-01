@@ -1,0 +1,14 @@
+{
+  "schema": 1,
+  "paused": false,
+  "history": [
+    {
+      "version": "1.1.4",
+      "channel": "stable",
+      "bench_since": "2026-10-25T04:20:20Z",
+      "dispatched": "2026-11-01T13:45:11Z",
+      "run": "https://github.com/Delgado-Murphy/hasler-releases/actions/runs/41312751984"
+    }
+  ],
+  "updated": "2026-11-01T13:45:11Z"
+}
