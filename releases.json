@@ -2,6 +2,54 @@
   "schema": 1,
   "releases": [
     {
+      "version": "1.1.7",
+      "seq": 1010799,
+      "date": "2026-11-06T23:50:05Z",
+      "created": "2026-11-06T23:45:02Z",
+      "kind": "patch",
+      "prerelease": false,
+      "notes": "- After \"Allow this address\", the change that was refused goes through by\n  itself: a key's Save is sent again (and its red \"not this radio's address\"\n  message goes), and any other refused change is re-sent and the page reads\n  the radio again. Nothing needs saving twice.",
+      "channels": [],
+      "halted": [],
+      "requires_migration": false,
+      "min_from_seq": 0,
+      "variants": [
+        "excelsior",
+        "hasler-hm",
+        "hasler-hm-hat"
+      ],
+      "release_page": "https://github.com/Delgado-Murphy/hasler-releases/releases/tag/v1.1.7",
+      "assets": {
+        "tarball": {
+          "name": "hasler-1.1.7-arm64.tar.zst",
+          "url": "https://github.com/Delgado-Murphy/hasler-releases/releases/download/v1.1.7/hasler-1.1.7-arm64.tar.zst",
+          "size": 40701156,
+          "sha256": "4b39924b4565eb5e5e6ac9637da2f3de3932349fd8c43df81ef0fa89ccdfcf77"
+        },
+        "release_json": {
+          "name": "release.json",
+          "url": "https://github.com/Delgado-Murphy/hasler-releases/releases/download/v1.1.7/release.json",
+          "size": 1119,
+          "sha256": "ddbde44d16145078195c16a61a019370d589592080b7de6699c36969adc3c218"
+        },
+        "signature": {
+          "name": "release.json.sig",
+          "url": "https://github.com/Delgado-Murphy/hasler-releases/releases/download/v1.1.7/release.json.sig",
+          "size": 310
+        },
+        "sbom": {
+          "name": "hasler-1.1.7.cdx.json",
+          "url": "https://github.com/Delgado-Murphy/hasler-releases/releases/download/v1.1.7/hasler-1.1.7.cdx.json",
+          "size": 20404
+        },
+        "sha256sums": {
+          "name": "SHA256SUMS",
+          "url": "https://github.com/Delgado-Murphy/hasler-releases/releases/download/v1.1.7/SHA256SUMS",
+          "size": 255
+        }
+      }
+    },
+    {
       "version": "1.1.6",
       "seq": 1010699,
       "date": "2026-11-06T23:30:02Z",
@@ -1634,5 +1682,5 @@
       }
     }
   ],
-  "updated": "2026-11-06T23:30:16Z"
+  "updated": "2026-11-06T23:50:05Z"
 }
