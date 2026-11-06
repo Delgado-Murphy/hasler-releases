@@ -2,6 +2,54 @@
   "schema": 1,
   "releases": [
     {
+      "version": "1.1.6",
+      "seq": 1010699,
+      "date": "2026-11-06T23:30:02Z",
+      "created": "2026-11-06T23:26:03Z",
+      "kind": "patch",
+      "prerelease": false,
+      "notes": "- Changes through your own address: when the key page is open through a name\n  of yours - a home dashboard, Home Assistant's remote access, Tailscale, a\n  domain - and a change is refused because the radio doesn't know that\n  address, the page offers \"Allow this address\". One press of any key on the\n  radio confirms it (a page reached from outside can ask, but can't press),\n  and changes made there work from then on. Only the address the page is\n  open at can be allowed, and always with a real key press, even on a bench\n  radio. This radio -> Other addresses lists them, with Remove; box.yaml's\n  web.hostnames still works and is listed there too.",
+      "channels": [],
+      "halted": [],
+      "requires_migration": false,
+      "min_from_seq": 0,
+      "variants": [
+        "excelsior",
+        "hasler-hm",
+        "hasler-hm-hat"
+      ],
+      "release_page": "https://github.com/Delgado-Murphy/hasler-releases/releases/tag/v1.1.6",
+      "assets": {
+        "tarball": {
+          "name": "hasler-1.1.6-arm64.tar.zst",
+          "url": "https://github.com/Delgado-Murphy/hasler-releases/releases/download/v1.1.6/hasler-1.1.6-arm64.tar.zst",
+          "size": 40734394,
+          "sha256": "bc54bf4ed507901216dfd32cd4c9d2aa6851d9091d64a52cfb6cebeb7d4bbe0d"
+        },
+        "release_json": {
+          "name": "release.json",
+          "url": "https://github.com/Delgado-Murphy/hasler-releases/releases/download/v1.1.6/release.json",
+          "size": 1502,
+          "sha256": "0a8416b3029c9e1d4cdf23a1f77dd292179965768df4bd9fd855b23199aabf6d"
+        },
+        "signature": {
+          "name": "release.json.sig",
+          "url": "https://github.com/Delgado-Murphy/hasler-releases/releases/download/v1.1.6/release.json.sig",
+          "size": 310
+        },
+        "sbom": {
+          "name": "hasler-1.1.6.cdx.json",
+          "url": "https://github.com/Delgado-Murphy/hasler-releases/releases/download/v1.1.6/hasler-1.1.6.cdx.json",
+          "size": 20404
+        },
+        "sha256sums": {
+          "name": "SHA256SUMS",
+          "url": "https://github.com/Delgado-Murphy/hasler-releases/releases/download/v1.1.6/SHA256SUMS",
+          "size": 255
+        }
+      }
+    },
+    {
       "version": "1.1.5",
       "seq": 1010599,
       "date": "2026-11-06T22:58:44Z",
@@ -1584,5 +1632,5 @@
       }
     }
   ],
-  "updated": "2026-11-06T22:58:57Z"
+  "updated": "2026-11-06T23:30:03Z"
 }
