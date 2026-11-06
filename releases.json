@@ -9,7 +9,9 @@
       "kind": "patch",
       "prerelease": false,
       "notes": "- Changes through your own address: when the key page is open through a name\n  of yours - a home dashboard, Home Assistant's remote access, Tailscale, a\n  domain - and a change is refused because the radio doesn't know that\n  address, the page offers \"Allow this address\". One press of any key on the\n  radio confirms it (a page reached from outside can ask, but can't press),\n  and changes made there work from then on. Only the address the page is\n  open at can be allowed, and always with a real key press, even on a bench\n  radio. This radio -> Other addresses lists them, with Remove; box.yaml's\n  web.hostnames still works and is listed there too.",
-      "channels": [],
+      "channels": [
+        "bench"
+      ],
       "halted": [],
       "requires_migration": false,
       "min_from_seq": 0,
@@ -1632,5 +1634,5 @@
       }
     }
   ],
-  "updated": "2026-11-06T23:30:03Z"
+  "updated": "2026-11-06T23:30:16Z"
 }
