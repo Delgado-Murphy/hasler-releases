@@ -9,7 +9,9 @@
       "kind": "patch",
       "prerelease": false,
       "notes": "- The tone knob keeps up with your hand: each step reaches the sound in\n  about 0.13 s instead of 0.5-0.7 s, so turning it no longer trails behind\n  and catches up afterwards. The DSP helper now stays running instead of\n  starting afresh for every step, and saves the setting for the next stream\n  once the knob has been still for a second. The anti-clipping order (master\n  level down before a boost) is unchanged.\n- Bench-tested on the Hasler HAT (rev A): keys, PU, both knobs, the tone\n  end switch and USB-C power all work with `variant: hasler-hm-hat`.",
-      "channels": [],
+      "channels": [
+        "bench"
+      ],
       "halted": [],
       "requires_migration": false,
       "min_from_seq": 0,
@@ -1582,5 +1584,5 @@
       }
     }
   ],
-  "updated": "2026-11-06T22:58:45Z"
+  "updated": "2026-11-06T22:58:57Z"
 }
