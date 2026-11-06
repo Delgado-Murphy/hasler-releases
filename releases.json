@@ -2,6 +2,54 @@
   "schema": 1,
   "releases": [
     {
+      "version": "1.1.5",
+      "seq": 1010599,
+      "date": "2026-11-06T22:58:44Z",
+      "created": "2026-11-06T22:54:42Z",
+      "kind": "patch",
+      "prerelease": false,
+      "notes": "- The tone knob keeps up with your hand: each step reaches the sound in\n  about 0.13 s instead of 0.5-0.7 s, so turning it no longer trails behind\n  and catches up afterwards. The DSP helper now stays running instead of\n  starting afresh for every step, and saves the setting for the next stream\n  once the knob has been still for a second. The anti-clipping order (master\n  level down before a boost) is unchanged.\n- Bench-tested on the Hasler HAT (rev A): keys, PU, both knobs, the tone\n  end switch and USB-C power all work with `variant: hasler-hm-hat`.",
+      "channels": [],
+      "halted": [],
+      "requires_migration": false,
+      "min_from_seq": 0,
+      "variants": [
+        "excelsior",
+        "hasler-hm",
+        "hasler-hm-hat"
+      ],
+      "release_page": "https://github.com/Delgado-Murphy/hasler-releases/releases/tag/v1.1.5",
+      "assets": {
+        "tarball": {
+          "name": "hasler-1.1.5-arm64.tar.zst",
+          "url": "https://github.com/Delgado-Murphy/hasler-releases/releases/download/v1.1.5/hasler-1.1.5-arm64.tar.zst",
+          "size": 40703347,
+          "sha256": "1430e0f27fc003e1c0c7e6cf09378d3fdd3c93d05efa1d7688021d794ef146ba"
+        },
+        "release_json": {
+          "name": "release.json",
+          "url": "https://github.com/Delgado-Murphy/hasler-releases/releases/download/v1.1.5/release.json",
+          "size": 1403,
+          "sha256": "32a22b21d75da013c1c1c57d683a720317105b330330c8dd9f43c55e7423b761"
+        },
+        "signature": {
+          "name": "release.json.sig",
+          "url": "https://github.com/Delgado-Murphy/hasler-releases/releases/download/v1.1.5/release.json.sig",
+          "size": 310
+        },
+        "sbom": {
+          "name": "hasler-1.1.5.cdx.json",
+          "url": "https://github.com/Delgado-Murphy/hasler-releases/releases/download/v1.1.5/hasler-1.1.5.cdx.json",
+          "size": 20404
+        },
+        "sha256sums": {
+          "name": "SHA256SUMS",
+          "url": "https://github.com/Delgado-Murphy/hasler-releases/releases/download/v1.1.5/SHA256SUMS",
+          "size": 255
+        }
+      }
+    },
+    {
       "version": "1.1.4",
       "seq": 1010499,
       "date": "2026-10-25T04:20:07Z",
@@ -1534,5 +1582,5 @@
       }
     }
   ],
-  "updated": "2026-11-01T13:45:21Z"
+  "updated": "2026-11-06T22:58:45Z"
 }
