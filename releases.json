@@ -9,7 +9,9 @@
       "kind": "patch",
       "prerelease": false,
       "notes": "- After \"Allow this address\", the change that was refused goes through by\n  itself: a key's Save is sent again (and its red \"not this radio's address\"\n  message goes), and any other refused change is re-sent and the page reads\n  the radio again. Nothing needs saving twice.",
-      "channels": [],
+      "channels": [
+        "bench"
+      ],
       "halted": [],
       "requires_migration": false,
       "min_from_seq": 0,
@@ -1682,5 +1684,5 @@
       }
     }
   ],
-  "updated": "2026-11-06T23:50:05Z"
+  "updated": "2026-11-06T23:50:16Z"
 }
