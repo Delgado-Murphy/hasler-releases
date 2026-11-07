@@ -2,6 +2,54 @@
   "schema": 1,
   "releases": [
     {
+      "version": "1.2.1",
+      "seq": 1020199,
+      "date": "2026-11-07T01:50:36Z",
+      "created": "2026-11-07T01:46:32Z",
+      "kind": "patch",
+      "prerelease": false,
+      "notes": "- The Excelsior gets the same key page as the HM. Its keys 1-6, PU and Tape\n  show and can be set; a latching bank shows the key that is down, key 0 is\n  drawn as the off key, and the front page shows SP, the speaker selector\n  (both / left / right), treble and bass. Wording follows the model (\"Select\"\n  for latching keys, no source key where there is none, the model's name).\n  Latching keys have no hold job (a latched key reads as held); key 0 is\n  standby, held it shuts down. Excelsiors modified so the keys spring back:\n  `controls: {presets: {latching: false}}` in\n  /etc/hasler/variant.d/excelsior.yaml, then tap and hold work as on the HM\n  (docs/hardware.md, \"Excelsior: latching or not\").\n- Fixed: Standby, or the tone knob, while a phone played over Bluetooth woke\n  the radio again at once. Standby now asks a Bluetooth phone to pause, and\n  only a new start on a phone wakes the radio.",
+      "channels": [],
+      "halted": [],
+      "requires_migration": false,
+      "min_from_seq": 0,
+      "variants": [
+        "excelsior",
+        "hasler-hm",
+        "hasler-hm-hat"
+      ],
+      "release_page": "https://github.com/Delgado-Murphy/hasler-releases/releases/tag/v1.2.1",
+      "assets": {
+        "tarball": {
+          "name": "hasler-1.2.1-arm64.tar.zst",
+          "url": "https://github.com/Delgado-Murphy/hasler-releases/releases/download/v1.2.1/hasler-1.2.1-arm64.tar.zst",
+          "size": 40789264,
+          "sha256": "bbc6e4e3fa5b1d1114ec1e53d349d43aeb413861ade0fa66d6180d390c3a1b8a"
+        },
+        "release_json": {
+          "name": "release.json",
+          "url": "https://github.com/Delgado-Murphy/hasler-releases/releases/download/v1.2.1/release.json",
+          "size": 1756,
+          "sha256": "5fea548bcdbab3573f832f182852500839bb1d169d5e92c7b6198d7b2e2e72ac"
+        },
+        "signature": {
+          "name": "release.json.sig",
+          "url": "https://github.com/Delgado-Murphy/hasler-releases/releases/download/v1.2.1/release.json.sig",
+          "size": 310
+        },
+        "sbom": {
+          "name": "hasler-1.2.1.cdx.json",
+          "url": "https://github.com/Delgado-Murphy/hasler-releases/releases/download/v1.2.1/hasler-1.2.1.cdx.json",
+          "size": 20404
+        },
+        "sha256sums": {
+          "name": "SHA256SUMS",
+          "url": "https://github.com/Delgado-Murphy/hasler-releases/releases/download/v1.2.1/SHA256SUMS",
+          "size": 255
+        }
+      }
+    },
+    {
       "version": "1.2.0",
       "seq": 1020099,
       "date": "2026-11-07T01:29:32Z",
@@ -1784,5 +1832,5 @@
       }
     }
   ],
-  "updated": "2026-11-07T01:29:44Z"
+  "updated": "2026-11-07T01:50:37Z"
 }
