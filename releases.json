@@ -9,7 +9,9 @@
       "kind": "patch",
       "prerelease": false,
       "notes": "- A radio coming from an older version (Stable 1.1.4) keeps its keys and can\n  save its settings after the update: files an old updater left as root are\n  handed back before the radio starts.\n- The Eclectic set plays RNE Radio 3 on key 3, instead of the Coffee Shop list.\n- The update channels have one name each, everywhere: **Bench versions** (new\n  versions reach the makers' radios first, and may break) and **Stable**\n  (everyone). The page's picker said \"Test versions\".\n\nFor makers\n- New: [How the radio works](docs/architecture.md), a one-page map with\n  diagrams; a fuller [Contributing](docs/contributing.md) (running a fake\n  radio on a laptop, every test suite); issue and pull-request templates;\n  [SECURITY.md](SECURITY.md).\n- The HAT's CERN-OHL-P licence now sits next to its design files too\n  (`hardware/hat/LICENSE`).\n- Docs: moOde 10.3.7 throughout, ten starter sets, the HAT brought up.",
-      "channels": [],
+      "channels": [
+        "bench"
+      ],
       "halted": [],
       "requires_migration": false,
       "min_from_seq": 0,
@@ -2232,5 +2234,5 @@
       }
     }
   ],
-  "updated": "2026-11-07T15:48:01Z"
+  "updated": "2026-11-07T15:48:13Z"
 }
