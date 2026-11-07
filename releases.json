@@ -9,7 +9,9 @@
       "kind": "patch",
       "prerelease": false,
       "notes": "- The 1.6.1 repair now actually runs: it hands the radio's files to the\n  radio's own user (it was asking systemd for the wrong name).",
-      "channels": [],
+      "channels": [
+        "bench"
+      ],
       "halted": [],
       "requires_migration": false,
       "min_from_seq": 0,
@@ -2282,5 +2284,5 @@
       }
     }
   ],
-  "updated": "2026-11-07T15:58:29Z"
+  "updated": "2026-11-07T15:58:43Z"
 }
