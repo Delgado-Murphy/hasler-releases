@@ -9,7 +9,9 @@
       "kind": "patch",
       "prerelease": false,
       "notes": "- Settings: the version sits under Delgado & Murphy, a little smaller.",
-      "channels": [],
+      "channels": [
+        "bench"
+      ],
       "halted": [],
       "requires_migration": false,
       "min_from_seq": 0,
@@ -2586,5 +2588,5 @@
       }
     }
   ],
-  "updated": "2026-11-07T21:47:45Z"
+  "updated": "2026-11-07T21:47:57Z"
 }
