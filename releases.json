@@ -2,6 +2,54 @@
   "schema": 1,
   "releases": [
     {
+      "version": "1.1.8",
+      "seq": 1010899,
+      "date": "2026-11-07T00:45:24Z",
+      "created": "2026-11-07T00:41:05Z",
+      "kind": "patch",
+      "prerelease": false,
+      "notes": "- After \"Allow this address\", whatever was refused now goes through with its\n  real answer - not only a key's Save: \"Try it\" on a Home Assistant action,\n  a setting, anything. The page sends the same request again once the radio\n  has allowed the address, so its red \"not this radio's address\" message is\n  replaced by the actual result. (1.1.7 re-sent only key saves properly.)",
+      "channels": [],
+      "halted": [],
+      "requires_migration": false,
+      "min_from_seq": 0,
+      "variants": [
+        "excelsior",
+        "hasler-hm",
+        "hasler-hm-hat"
+      ],
+      "release_page": "https://github.com/Delgado-Murphy/hasler-releases/releases/tag/v1.1.8",
+      "assets": {
+        "tarball": {
+          "name": "hasler-1.1.8-arm64.tar.zst",
+          "url": "https://github.com/Delgado-Murphy/hasler-releases/releases/download/v1.1.8/hasler-1.1.8-arm64.tar.zst",
+          "size": 40734160,
+          "sha256": "8431fe8f22e8622051c1955196c38b1e0bf012f3be5e97a15efea477437f2047"
+        },
+        "release_json": {
+          "name": "release.json",
+          "url": "https://github.com/Delgado-Murphy/hasler-releases/releases/download/v1.1.8/release.json",
+          "size": 1227,
+          "sha256": "eb1729b4eab3e3fc77b50285418e5ca298ad88d82b62b66c1ed81a7644dc0b32"
+        },
+        "signature": {
+          "name": "release.json.sig",
+          "url": "https://github.com/Delgado-Murphy/hasler-releases/releases/download/v1.1.8/release.json.sig",
+          "size": 310
+        },
+        "sbom": {
+          "name": "hasler-1.1.8.cdx.json",
+          "url": "https://github.com/Delgado-Murphy/hasler-releases/releases/download/v1.1.8/hasler-1.1.8.cdx.json",
+          "size": 20404
+        },
+        "sha256sums": {
+          "name": "SHA256SUMS",
+          "url": "https://github.com/Delgado-Murphy/hasler-releases/releases/download/v1.1.8/SHA256SUMS",
+          "size": 255
+        }
+      }
+    },
+    {
       "version": "1.1.7",
       "seq": 1010799,
       "date": "2026-11-06T23:50:05Z",
@@ -1684,5 +1732,5 @@
       }
     }
   ],
-  "updated": "2026-11-06T23:50:16Z"
+  "updated": "2026-11-07T00:45:25Z"
 }
