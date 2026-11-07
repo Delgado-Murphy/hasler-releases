@@ -10,7 +10,8 @@
       "prerelease": false,
       "notes": "- Settings: the version sits under Delgado & Murphy, a little smaller.",
       "channels": [
-        "bench"
+        "bench",
+        "stable"
       ],
       "halted": [],
       "requires_migration": false,
@@ -2588,5 +2589,5 @@
       }
     }
   ],
-  "updated": "2026-11-07T21:47:57Z"
+  "updated": "2026-11-07T22:12:39Z"
 }
