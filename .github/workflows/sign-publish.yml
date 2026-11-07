@@ -42,7 +42,7 @@ on:
         required: false
         type: string
       channel:
-        description: channel to point at this release - bench = Bench (makers' radios first, may break), stable = Stable (everyone); for halt, the channel to halt it on
+        description: channel to point at this release - bench = Bench versions (makers' radios first, may break), stable = Stable (everyone); for halt, the channel to halt it on
         type: choice
         options: [bench, stable]
         default: bench

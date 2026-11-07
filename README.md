@@ -46,13 +46,13 @@ sends us what we need, and nothing private
 
 ## Channels
 
-There are two update channels, always called **Bench** and **Stable** (their
+There are two update channels, always called **Bench versions** and **Stable** (their
 ids in files and workflow inputs are `bench` and `stable`).
 
 | Channel (id) | Who | How a release gets there |
 |---|---|---|
-| **Bench** (`bench`) | development, unstable: the makers' own radios get every release first; may break. Every release starts here. | `sign-publish` publish - by hand, or by `hasler`'s `auto-release.yml` for automatic dependency updates |
-| **Stable** (`stable`) | every other radio (the default) | `sign-publish` promote - automatically after 7 days on Bench (`auto-promote.yml`), or by hand. The first promotion to Stable and every `major` release are done by hand. Until the first one, radios on Stable report "no update info" and keep their version. |
+| **Bench versions** (`bench`) | development, unstable: the makers' own radios get every release first; may break. Every release starts here. | `sign-publish` publish - by hand, or by `hasler`'s `auto-release.yml` for automatic dependency updates |
+| **Stable** (`stable`) | every other radio (the default) | `sign-publish` promote - automatically after 7 days on Bench versions (`auto-promote.yml`), or by hand. The first promotion to Stable and every `major` release are done by hand. Until the first one, radios on Stable report "no update info" and keep their version. |
 
 A release moves from Bench to Stable as the *same artifact*, never rebuilt.
 What each channel points at today: the [website](https://delgado-murphy.github.io/hasler-releases/)
