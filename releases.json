@@ -9,7 +9,9 @@
       "kind": "patch",
       "prerelease": false,
       "notes": "- Ten new starter sets, by taste and occasion: Turn the Dial (the one a radio\n  comes with), Mixtape, Level Up, Deep Cuts, After Hours, Encore, Passport,\n  Sobremesa, Saturday Morning and Night Light. A radio on an old set moves to\n  the closest new one; keys you changed stay yours.\n- Lyrics is a small button beside the song; \"Start a radio\" and \"Put on a key\"\n  live behind ⋯ next to it, so the keys sit higher on a phone.\n- **Send to the makers** opens a request with us on every radio, and\n  **Your requests** shows its state and our replies.\n- Without internet, a request waits on the radio and goes by itself.\n- The setup network's password shows on This radio, and the printed key card\n  and welcome card carry it unless you untick it.\n\nFor makers\n- Radios enrol their own support token on first send; the shared token\n  still works. `checkin_url` defaults to the support server; `\"\"` turns it off.",
-      "channels": [],
+      "channels": [
+        "bench"
+      ],
       "halted": [],
       "requires_migration": false,
       "min_from_seq": 0,
@@ -2333,5 +2335,5 @@
       }
     }
   ],
-  "updated": "2026-11-07T16:25:13Z"
+  "updated": "2026-11-07T16:25:27Z"
 }
