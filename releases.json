@@ -2,6 +2,54 @@
   "schema": 1,
   "releases": [
     {
+      "version": "1.6.1",
+      "seq": 1060199,
+      "date": "2026-11-07T15:48:00Z",
+      "created": "2026-11-07T15:43:47Z",
+      "kind": "patch",
+      "prerelease": false,
+      "notes": "- A radio coming from an older version (Stable 1.1.4) keeps its keys and can\n  save its settings after the update: files an old updater left as root are\n  handed back before the radio starts.\n- The Eclectic set plays RNE Radio 3 on key 3, instead of the Coffee Shop list.\n- The update channels have one name each, everywhere: **Bench versions** (new\n  versions reach the makers' radios first, and may break) and **Stable**\n  (everyone). The page's picker said \"Test versions\".\n\nFor makers\n- New: [How the radio works](docs/architecture.md), a one-page map with\n  diagrams; a fuller [Contributing](docs/contributing.md) (running a fake\n  radio on a laptop, every test suite); issue and pull-request templates;\n  [SECURITY.md](SECURITY.md).\n- The HAT's CERN-OHL-P licence now sits next to its design files too\n  (`hardware/hat/LICENSE`).\n- Docs: moOde 10.3.7 throughout, ten starter sets, the HAT brought up.",
+      "channels": [],
+      "halted": [],
+      "requires_migration": false,
+      "min_from_seq": 0,
+      "variants": [
+        "excelsior",
+        "hasler-hm",
+        "hasler-hm-hat"
+      ],
+      "release_page": "https://github.com/Delgado-Murphy/hasler-releases/releases/tag/v1.6.1",
+      "assets": {
+        "tarball": {
+          "name": "hasler-1.6.1-arm64.tar.zst",
+          "url": "https://github.com/Delgado-Murphy/hasler-releases/releases/download/v1.6.1/hasler-1.6.1-arm64.tar.zst",
+          "size": 40922141,
+          "sha256": "a09d8bc202e98b7bd29a54e7c87e6259c43bbfb7adf0c2787991c8fc1674c805"
+        },
+        "release_json": {
+          "name": "release.json",
+          "url": "https://github.com/Delgado-Murphy/hasler-releases/releases/download/v1.6.1/release.json",
+          "size": 1762,
+          "sha256": "28c33798065db468ef2fe16637a6a1556240ba79aae078e7554b44e173922db1"
+        },
+        "signature": {
+          "name": "release.json.sig",
+          "url": "https://github.com/Delgado-Murphy/hasler-releases/releases/download/v1.6.1/release.json.sig",
+          "size": 310
+        },
+        "sbom": {
+          "name": "hasler-1.6.1.cdx.json",
+          "url": "https://github.com/Delgado-Murphy/hasler-releases/releases/download/v1.6.1/hasler-1.6.1.cdx.json",
+          "size": 20404
+        },
+        "sha256sums": {
+          "name": "SHA256SUMS",
+          "url": "https://github.com/Delgado-Murphy/hasler-releases/releases/download/v1.6.1/SHA256SUMS",
+          "size": 255
+        }
+      }
+    },
+    {
       "version": "1.6.0",
       "seq": 1060099,
       "date": "2026-11-07T14:58:54Z",
@@ -2184,5 +2232,5 @@
       }
     }
   ],
-  "updated": "2026-11-07T14:59:07Z"
+  "updated": "2026-11-07T15:48:01Z"
 }
