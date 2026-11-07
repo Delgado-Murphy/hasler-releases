@@ -1,5 +1,7 @@
 # Hasler releases
 
+<sub><i>A Delgado &amp; Murphy restoration</i></sub>
+
 Signed software and update channels for the Hasler radios by Delgado & Murphy.
 
 You never need to download anything here: each radio checks for updates by
@@ -11,16 +13,48 @@ No source code lives here. The code is in
 [Delgado-Murphy/hasler](https://github.com/Delgado-Murphy/hasler) (MIT); this
 repository only signs finished builds, hosts them as GitHub releases, and
 serves the signed channel indexes from GitHub Pages (branch `gh-pages`, written
-by the workflow).
+by the workflow). The site lives at `/hasler-releases/` under the org's
+Pages domain; the org site itself (`https://delgado-murphy.github.io/`, repo
+`Delgado-Murphy/delgado-murphy.github.io`) must never get a
+`hasler-releases/` folder or page of its own: it would conflict with this
+site, and every radio's update URL points here.
+
+**Own a Hasler and something is wrong?** Don't open an issue here: on the
+radio's key page use **Settings → Something's wrong? → Tell the makers**. It
+sends us what we need, and nothing private
+([Using your Hasler](https://github.com/Delgado-Murphy/hasler/blob/master/docs/using.md#help-from-the-makers)).
+
+## How a radio uses this
+
+- Once a day (or at once with **Check now**, Settings → This radio →
+  Updates) the radio fetches its channel's signed index from GitHub Pages,
+  then the release it names, and checks every signature before it touches
+  anything (below). Small updates install at night when the owner chose
+  Automatic; bigger ones ask first and need a press on the radio.
+- Every radio is on Stable unless a maker moved it. The **Update channel**
+  picker shows with Maker tools on (tap the version number seven times) or
+  when the radio isn't on Stable.
+- yt-dlp is updated separately, from `components.json` (below).
+- New radios are installed from the `install/` kit on the same site
+  (`hasler-firstboot.zip`, or `hasler-install` + `.sig` over SSH), signed
+  offline with the root key, namespace `hasler-install`:
+  [docs/new-install.md](https://github.com/Delgado-Murphy/hasler/blob/master/docs/new-install.md).
+- No makers, no GitHub? The updater also takes `file://`: a copy of this
+  site's signed files on a USB stick installs the same way while the index is
+  fresh (14 days) and the release under 120 days old
+  ([docs/ota.md](https://github.com/Delgado-Murphy/hasler/blob/master/docs/ota.md#5-channels-and-the-fleet)).
 
 ## Channels
 
-| Channel | Who | How a release gets there |
-|---|---|---|
-| `bench` | our own test radios on the workbench; may break. Every release starts here. | `sign-publish` publish - by hand, or by `hasler`'s `auto-release.yml` for automatic dependency updates |
-| `stable` | every other radio (the default) | `sign-publish` promote - automatically after 7 days on bench (`auto-promote.yml`), or by hand. The first stable promotion and every `major` release are done by hand. Until the first one, radios on Stable report "no update info" and keep their version. |
+There are two update channels, always called **Bench** and **Stable** (their
+ids in files and workflow inputs are `bench` and `stable`).
 
-A release moves from bench to stable as the *same artifact*, never rebuilt.
+| Channel (id) | Who | How a release gets there |
+|---|---|---|
+| **Bench** (`bench`) | development, unstable: the makers' own radios get every release first; may break. Every release starts here. | `sign-publish` publish - by hand, or by `hasler`'s `auto-release.yml` for automatic dependency updates |
+| **Stable** (`stable`) | every other radio (the default) | `sign-publish` promote - automatically after 7 days on Bench (`auto-promote.yml`), or by hand. The first promotion to Stable and every `major` release are done by hand. Until the first one, radios on Stable report "no update info" and keep their version. |
+
+A release moves from Bench to Stable as the *same artifact*, never rebuilt.
 What each channel points at today: the [website](https://delgado-murphy.github.io/hasler-releases/)
 (it reads the signed indexes). Every automatic promotion is recorded in
 [`auto-promote.json`](https://delgado-murphy.github.io/hasler-releases/auto-promote.json)
@@ -33,8 +67,8 @@ Base URL: `https://delgado-murphy.github.io/hasler-releases`
 | URL | what | signed by (namespace) |
 |---|---|---|
 | `<base>/keyring.json` + `.sig` | the current release and timestamp public keys | root key (`hasler-keyring`) |
-| `<base>/channels/bench.json` + `.sig` | the bench channel index | timestamp key (`hasler-channel`) |
-| `<base>/channels/stable.json` + `.sig` | the stable channel index (appears with the first promotion) | timestamp key (`hasler-channel`) |
+| `<base>/channels/bench.json` + `.sig` | the Bench channel index | timestamp key (`hasler-channel`) |
+| `<base>/channels/stable.json` + `.sig` | the Stable channel index (appears with the first promotion) | timestamp key (`hasler-channel`) |
 | `https://github.com/Delgado-Murphy/hasler-releases/releases/download/v<version>/release.json` + `.sig` | the release manifest | release key (`hasler-release`) |
 | `<base>/components.json` + `.sig` | the yt-dlp builds a radio may install, each a hash-locked wheel list | release key (`hasler-components`) |
 | `.../v<version>/hasler-<version>-arm64.tar.zst` | the release tarball | its sha256 is in `release.json` |
@@ -101,7 +135,9 @@ only `main` may use them. The full checklist is
   Actions says so, otherwise every radio sees "no fresh update info" 14 days
   later.
 
-`seq` = `(X*10000 + Y*100 + Z)*100 + (N for -rc.N, 99 for a final)`.
+`seq` = `(X*10000 + Y*100 + Z)*100 + (N for -rc.N, 99 for a final)`, with Y
+and Z below 100: 1.6.0 is `1060099`, 1.6.1-rc.2 is `1060102`. There is no
+counter to keep; radios only ever move to a higher seq.
 
 ## The components workflow (yt-dlp)
 
@@ -136,10 +172,10 @@ YouTube" art tracks of old catalogue recordings from three labels. Edit it on
 ## The auto-promote workflow
 
 [`.github/workflows/auto-promote.yml`](.github/workflows/auto-promote.yml),
-daily at 06:41 UTC. It promotes bench's current release to stable (by
-dispatching `sign-publish` mode `promote`) when it has been bench's release
+daily at 06:41 UTC. It promotes Bench's current release to Stable (by
+dispatching `sign-publish` mode `promote`) when it has been Bench's release
 for 7 days, is not halted, is a final and not `major`, its `release.json` is
-valid for 2 more days, and stable exists with an older release. A newer bench
+valid for 2 more days, and Stable exists with an older release. A newer Bench
 release restarts the clock; halting a release stops it for good.
 
 ```sh
@@ -149,6 +185,26 @@ gh workflow run auto-promote.yml -R Delgado-Murphy/hasler-releases -f action=che
 ```
 
 Emergency stop: `gh workflow disable auto-promote.yml -R Delgado-Murphy/hasler-releases`.
+
+## Keys and rotation
+
+Three kinds of key (OpenSSH ed25519, `ssh-keygen -Y`):
+
+| key | lives | signs (namespace) |
+|---|---|---|
+| root | offline only, two USB sticks + paper | `keyring.json` (`hasler-keyring`), the installer (`hasler-install`) |
+| release | secret `RELEASE_SIGNING_KEY`, environment `sign` | `release.json` (`hasler-release`), `components.json` (`hasler-components`) |
+| timestamp | secret `TIMESTAMP_SIGNING_KEY`, environment `timestamp` | channel indexes (`hasler-channel`) |
+
+Rotating or revoking a release or timestamp key (a leak, or yearly) never
+touches the radios' trust root: make a new pair, write a new `keyring.json`
+with a higher `keyring_seq` (`tools/keyring.py new --from keyring.json --drop
+<old> --key <new>:release:<new>.pub`), sign it offline with root, publish it
+to gh-pages, then replace the secret. After a timestamp key change re-sign
+each channel once (mode `promote`). The keyring itself expires on
+2027-10-20: renew it well before. The full procedure, and the key ceremony:
+[docs/release.md, "Key ceremony"](https://github.com/Delgado-Murphy/hasler/blob/master/docs/release.md#key-ceremony).
+The root public key: [`trust/`](trust/).
 
 ## tools/
 
@@ -188,6 +244,14 @@ the yt-dlp lane `actions/setup-python`, `actions/upload-artifact`,
 auto-promote) stop if GitHub disables them after 60 days without activity:
 re-enable them if Actions says so.
 
+## Contributing and security
+
+Changes to the workflows and tools start in `hasler` and are copied here:
+[CONTRIBUTING.md](CONTRIBUTING.md). A security problem in the signing or
+update path: [SECURITY.md](SECURITY.md), not a public issue.
+
 ## Licence
 
 MIT - see [LICENSE](LICENSE).
+
+<sub>Delgado &amp; Murphy</sub>

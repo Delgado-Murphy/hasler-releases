@@ -1,0 +1,11 @@
+blank_issues_enabled: false
+contact_links:
+  - name: I own a Hasler radio and something is wrong
+    url: https://github.com/Delgado-Murphy/hasler/blob/master/docs/using.md#help-from-the-makers
+    about: "On the radio's key page: Settings → Something's wrong? → Tell the makers. It sends us what we need - no GitHub account."
+  - name: A security problem
+    url: https://github.com/Delgado-Murphy/hasler-releases/blob/main/SECURITY.md
+    about: Please report it privately, not as an issue.
+  - name: The radio's software
+    url: https://github.com/Delgado-Murphy/hasler/issues
+    about: Bugs in the radio, the updater or the file formats belong in the hasler repository.

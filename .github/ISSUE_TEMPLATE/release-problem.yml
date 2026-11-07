@@ -1,0 +1,31 @@
+name: A release, channel or workflow problem
+description: For makers - a signing run failed, a channel looks wrong, the website disagrees with the radios.
+labels: [release]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        **Own a radio?** Please use **Settings → Something's wrong? → Tell the makers** on its key page instead.
+        **Security problem?** Report it privately (see SECURITY.md).
+  - type: dropdown
+    id: what
+    attributes:
+      label: Where
+      options: [sign-publish, auto-promote, components (yt-dlp), nightly refresh, website, install kit, other]
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Version and channel
+      placeholder: 1.6.0 on Bench
+  - type: input
+    id: run
+    attributes:
+      label: Actions run link
+  - type: textarea
+    id: details
+    attributes:
+      label: What happened, and what you expected
+    validations:
+      required: true
