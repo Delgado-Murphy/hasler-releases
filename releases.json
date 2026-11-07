@@ -9,7 +9,9 @@
       "kind": "patch",
       "prerelease": false,
       "notes": "- Fixed: when a phone took over (Bluetooth, AirPlay, Spotify Connect), the\n  page went on showing the last station instead of the phone's song, until\n  the radio had been in standby. While a phone has the speaker, no preset is\n  reported as playing.",
-      "channels": [],
+      "channels": [
+        "bench"
+      ],
       "halted": [],
       "requires_migration": false,
       "min_from_seq": 0,
@@ -1882,5 +1884,5 @@
       }
     }
   ],
-  "updated": "2026-11-07T02:18:21Z"
+  "updated": "2026-11-07T02:18:32Z"
 }
