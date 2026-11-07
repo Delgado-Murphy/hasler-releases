@@ -9,7 +9,9 @@
       "kind": "patch",
       "prerelease": false,
       "notes": "- After \"Allow this address\", whatever was refused now goes through with its\n  real answer - not only a key's Save: \"Try it\" on a Home Assistant action,\n  a setting, anything. The page sends the same request again once the radio\n  has allowed the address, so its red \"not this radio's address\" message is\n  replaced by the actual result. (1.1.7 re-sent only key saves properly.)",
-      "channels": [],
+      "channels": [
+        "bench"
+      ],
       "halted": [],
       "requires_migration": false,
       "min_from_seq": 0,
@@ -1732,5 +1734,5 @@
       }
     }
   ],
-  "updated": "2026-11-07T00:45:25Z"
+  "updated": "2026-11-07T00:45:38Z"
 }
