@@ -2,6 +2,54 @@
   "schema": 1,
   "releases": [
     {
+      "version": "1.7.3",
+      "seq": 1070399,
+      "date": "2026-11-07T21:41:07Z",
+      "created": "2026-11-07T21:36:28Z",
+      "kind": "patch",
+      "prerelease": false,
+      "notes": "- Shortcuts for your phone are gone again, with the Add to Home Screen\n  hint. The page works as it did in 1.7.1.",
+      "channels": [],
+      "halted": [],
+      "requires_migration": false,
+      "min_from_seq": 0,
+      "variants": [
+        "excelsior",
+        "hasler-hm",
+        "hasler-hm-hat"
+      ],
+      "release_page": "https://github.com/Delgado-Murphy/hasler-releases/releases/tag/v1.7.3",
+      "assets": {
+        "tarball": {
+          "name": "hasler-1.7.3-arm64.tar.zst",
+          "url": "https://github.com/Delgado-Murphy/hasler-releases/releases/download/v1.7.3/hasler-1.7.3-arm64.tar.zst",
+          "size": 40962292,
+          "sha256": "aee766adaa428777522e3d2cfc286cb0c2121087e9280f93a4e7bf2a01980911"
+        },
+        "release_json": {
+          "name": "release.json",
+          "url": "https://github.com/Delgado-Murphy/hasler-releases/releases/download/v1.7.3/release.json",
+          "size": 953,
+          "sha256": "ca79e72fb8220a52b6ded3cd418d8b20d9a1448245cae6487014c6fec4355882"
+        },
+        "signature": {
+          "name": "release.json.sig",
+          "url": "https://github.com/Delgado-Murphy/hasler-releases/releases/download/v1.7.3/release.json.sig",
+          "size": 310
+        },
+        "sbom": {
+          "name": "hasler-1.7.3.cdx.json",
+          "url": "https://github.com/Delgado-Murphy/hasler-releases/releases/download/v1.7.3/hasler-1.7.3.cdx.json",
+          "size": 20404
+        },
+        "sha256sums": {
+          "name": "SHA256SUMS",
+          "url": "https://github.com/Delgado-Murphy/hasler-releases/releases/download/v1.7.3/SHA256SUMS",
+          "size": 255
+        }
+      }
+    },
+    {
       "version": "1.7.2",
       "seq": 1070299,
       "date": "2026-11-07T19:01:15Z",
@@ -2488,5 +2536,5 @@
       }
     }
   ],
-  "updated": "2026-11-07T19:01:30Z"
+  "updated": "2026-11-07T21:41:08Z"
 }
