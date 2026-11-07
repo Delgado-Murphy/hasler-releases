@@ -2,6 +2,54 @@
   "schema": 1,
   "releases": [
     {
+      "version": "1.5.1",
+      "seq": 1050199,
+      "date": "2026-11-07T13:12:42Z",
+      "created": "2026-11-07T13:08:10Z",
+      "kind": "patch",
+      "prerelease": false,
+      "notes": "- Updating no longer trips over a stray named pipe in the radio's state folder\n  (it stopped the switch to 1.5.0 on the bench radio).\n- An update that rewrites your keys keeps them yours: 1.5.0 handed the\n  migrated keys file to the radio as root, so it came up on the built-in\n  stations until the owner was put back by hand.\n- The 1.5.0 notes below, rewritten so they can be read.",
+      "channels": [],
+      "halted": [],
+      "requires_migration": false,
+      "min_from_seq": 0,
+      "variants": [
+        "excelsior",
+        "hasler-hm",
+        "hasler-hm-hat"
+      ],
+      "release_page": "https://github.com/Delgado-Murphy/hasler-releases/releases/tag/v1.5.1",
+      "assets": {
+        "tarball": {
+          "name": "hasler-1.5.1-arm64.tar.zst",
+          "url": "https://github.com/Delgado-Murphy/hasler-releases/releases/download/v1.5.1/hasler-1.5.1-arm64.tar.zst",
+          "size": 40912301,
+          "sha256": "b7f5c5124374b024e4eda586016d8a19e7d648fe25557cf3c4da36573a688629"
+        },
+        "release_json": {
+          "name": "release.json",
+          "url": "https://github.com/Delgado-Murphy/hasler-releases/releases/download/v1.5.1/release.json",
+          "size": 1226,
+          "sha256": "ef953be930b3413e848c5d393d97383898ef55e19ec125c6ec7793a20d8cf490"
+        },
+        "signature": {
+          "name": "release.json.sig",
+          "url": "https://github.com/Delgado-Murphy/hasler-releases/releases/download/v1.5.1/release.json.sig",
+          "size": 310
+        },
+        "sbom": {
+          "name": "hasler-1.5.1.cdx.json",
+          "url": "https://github.com/Delgado-Murphy/hasler-releases/releases/download/v1.5.1/hasler-1.5.1.cdx.json",
+          "size": 20404
+        },
+        "sha256sums": {
+          "name": "SHA256SUMS",
+          "url": "https://github.com/Delgado-Murphy/hasler-releases/releases/download/v1.5.1/SHA256SUMS",
+          "size": 255
+        }
+      }
+    },
+    {
       "version": "1.5.0",
       "seq": 1050099,
       "date": "2026-11-07T12:59:50Z",
@@ -2034,5 +2082,5 @@
       }
     }
   ],
-  "updated": "2026-11-07T13:00:04Z"
+  "updated": "2026-11-07T13:12:43Z"
 }
