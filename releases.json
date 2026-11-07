@@ -2,6 +2,54 @@
   "schema": 1,
   "releases": [
     {
+      "version": "1.7.0",
+      "seq": 1070099,
+      "date": "2026-11-07T17:28:19Z",
+      "created": "2026-11-07T17:23:46Z",
+      "kind": "minor",
+      "prerelease": false,
+      "notes": "Support\n- **Write to the makers**: with nothing sent, the page is where you write.\n- **Your requests** are threads: Sent · Seen · Answered · Done, our replies\n  with their line breaks and simple formatting, and **Write back** (it opens\n  a finished request again).\n- Our replies show up within a minute while the page is open.\n\nThe page\n- Lyrics follow the song: the line being sung lights up amber, from YouTube\n  Music or LRCLIB; plain lyrics as before when nobody has the timing.\n- **Something's wrong?** sits at the bottom of Settings, easy to find.\n- Handover is calmer: one \"Prepare for handover\", and ! only for what really\n  blocks it.\n\nWi-Fi and the lamp\n- Re-typing the password of the network you're on saves it without a restart.\n- After joining a network the lamp breathes amber, then says OK - never a\n  red that nothing clears; with no network at all it calls CQ for setup.\n- A setup network named after the room works (Hasler-Kitchen).\n- The radio's logs are kept across restarts.\n\nFor makers\n- Check-ins carry more (schema 2); the dashboard is redesigned, with a page\n  per radio, 60 days of history, fleet roll-ups and alert issues.\n- Worker: `POST /v1/reply` for write-backs; `/owner` replies keep line breaks\n  and edits; requests show open · seen · answered · done.",
+      "channels": [],
+      "halted": [],
+      "requires_migration": false,
+      "min_from_seq": 0,
+      "variants": [
+        "excelsior",
+        "hasler-hm",
+        "hasler-hm-hat"
+      ],
+      "release_page": "https://github.com/Delgado-Murphy/hasler-releases/releases/tag/v1.7.0",
+      "assets": {
+        "tarball": {
+          "name": "hasler-1.7.0-arm64.tar.zst",
+          "url": "https://github.com/Delgado-Murphy/hasler-releases/releases/download/v1.7.0/hasler-1.7.0-arm64.tar.zst",
+          "size": 40986300,
+          "sha256": "5cbda2a2ad7deb823c1bf2034360e444d8984b2e9452dc5891c1fb9b5fc8d56a"
+        },
+        "release_json": {
+          "name": "release.json",
+          "url": "https://github.com/Delgado-Murphy/hasler-releases/releases/download/v1.7.0/release.json",
+          "size": 2182,
+          "sha256": "fe61ec5b898100c160d9a597e5fa82f0fd41ae3174c511e05a66dab075eafade"
+        },
+        "signature": {
+          "name": "release.json.sig",
+          "url": "https://github.com/Delgado-Murphy/hasler-releases/releases/download/v1.7.0/release.json.sig",
+          "size": 310
+        },
+        "sbom": {
+          "name": "hasler-1.7.0.cdx.json",
+          "url": "https://github.com/Delgado-Murphy/hasler-releases/releases/download/v1.7.0/hasler-1.7.0.cdx.json",
+          "size": 20404
+        },
+        "sha256sums": {
+          "name": "SHA256SUMS",
+          "url": "https://github.com/Delgado-Murphy/hasler-releases/releases/download/v1.7.0/SHA256SUMS",
+          "size": 255
+        }
+      }
+    },
+    {
       "version": "1.6.3",
       "seq": 1060399,
       "date": "2026-11-07T16:25:12Z",
@@ -2336,5 +2384,5 @@
       }
     }
   ],
-  "updated": "2026-11-07T16:29:17Z"
+  "updated": "2026-11-07T17:28:20Z"
 }
