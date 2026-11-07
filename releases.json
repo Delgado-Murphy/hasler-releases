@@ -2,6 +2,54 @@
   "schema": 1,
   "releases": [
     {
+      "version": "1.2.2",
+      "seq": 1020299,
+      "date": "2026-11-07T02:18:20Z",
+      "created": "2026-11-07T02:13:55Z",
+      "kind": "patch",
+      "prerelease": false,
+      "notes": "- Fixed: when a phone took over (Bluetooth, AirPlay, Spotify Connect), the\n  page went on showing the last station instead of the phone's song, until\n  the radio had been in standby. While a phone has the speaker, no preset is\n  reported as playing.",
+      "channels": [],
+      "halted": [],
+      "requires_migration": false,
+      "min_from_seq": 0,
+      "variants": [
+        "excelsior",
+        "hasler-hm",
+        "hasler-hm-hat"
+      ],
+      "release_page": "https://github.com/Delgado-Murphy/hasler-releases/releases/tag/v1.2.2",
+      "assets": {
+        "tarball": {
+          "name": "hasler-1.2.2-arm64.tar.zst",
+          "url": "https://github.com/Delgado-Murphy/hasler-releases/releases/download/v1.2.2/hasler-1.2.2-arm64.tar.zst",
+          "size": 40789755,
+          "sha256": "102af01905bb704d96c08ed48c22864081a38a781515484365d72478e87f8eff"
+        },
+        "release_json": {
+          "name": "release.json",
+          "url": "https://github.com/Delgado-Murphy/hasler-releases/releases/download/v1.2.2/release.json",
+          "size": 1091,
+          "sha256": "4c8b6e490483957b041eb149dd196ef143e3fb793c4ed1885afb109566464b4a"
+        },
+        "signature": {
+          "name": "release.json.sig",
+          "url": "https://github.com/Delgado-Murphy/hasler-releases/releases/download/v1.2.2/release.json.sig",
+          "size": 310
+        },
+        "sbom": {
+          "name": "hasler-1.2.2.cdx.json",
+          "url": "https://github.com/Delgado-Murphy/hasler-releases/releases/download/v1.2.2/hasler-1.2.2.cdx.json",
+          "size": 20404
+        },
+        "sha256sums": {
+          "name": "SHA256SUMS",
+          "url": "https://github.com/Delgado-Murphy/hasler-releases/releases/download/v1.2.2/SHA256SUMS",
+          "size": 255
+        }
+      }
+    },
+    {
       "version": "1.2.1",
       "seq": 1020199,
       "date": "2026-11-07T01:50:36Z",
@@ -1834,5 +1882,5 @@
       }
     }
   ],
-  "updated": "2026-11-07T01:50:49Z"
+  "updated": "2026-11-07T02:18:21Z"
 }
