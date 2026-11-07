@@ -9,7 +9,9 @@
       "kind": "patch",
       "prerelease": false,
       "notes": "- Updating no longer trips over a stray named pipe in the radio's state folder\n  (it stopped the switch to 1.5.0 on the bench radio).\n- An update that rewrites your keys keeps them yours: 1.5.0 handed the\n  migrated keys file to the radio as root, so it came up on the built-in\n  stations until the owner was put back by hand.\n- The 1.5.0 notes below, rewritten so they can be read.",
-      "channels": [],
+      "channels": [
+        "bench"
+      ],
       "halted": [],
       "requires_migration": false,
       "min_from_seq": 0,
@@ -2082,5 +2084,5 @@
       }
     }
   ],
-  "updated": "2026-11-07T13:12:43Z"
+  "updated": "2026-11-07T13:12:55Z"
 }
