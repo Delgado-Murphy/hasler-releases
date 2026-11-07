@@ -9,7 +9,9 @@
       "kind": "patch",
       "prerelease": false,
       "notes": "- When a Bluetooth phone disconnects, the radio's own music comes back in\n  about two seconds instead of half a minute. A phone that only pauses still\n  gets its 20 seconds.",
-      "channels": [],
+      "channels": [
+        "bench"
+      ],
       "halted": [],
       "requires_migration": false,
       "min_from_seq": 0,
@@ -2132,5 +2134,5 @@
       }
     }
   ],
-  "updated": "2026-11-07T13:39:44Z"
+  "updated": "2026-11-07T13:39:55Z"
 }
