@@ -9,7 +9,9 @@
       "kind": "patch",
       "prerelease": false,
       "notes": "Write to the makers\n- Each request is titled with your own words, and keeps your whole message.\n- New replies come first, and the page opens on the request that has one.\n- Done requests fold to one line; **Write back** opens them again.\n- Times read \"17:45\" and \"Yesterday\"; the makers' name shows once per run.\n- Replies read better: code blocks, quotes, nested and tick lists.\n- Replies no longer also show under \"From the makers\".\n- \"Couldn't reach the radio\" when it can't check, with Try again.",
-      "channels": [],
+      "channels": [
+        "bench"
+      ],
       "halted": [],
       "requires_migration": false,
       "min_from_seq": 0,
@@ -2637,5 +2639,5 @@
       }
     }
   ],
-  "updated": "2026-11-07T22:57:08Z"
+  "updated": "2026-11-07T22:57:20Z"
 }
