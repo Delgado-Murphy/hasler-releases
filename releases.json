@@ -9,7 +9,9 @@
       "kind": "patch",
       "prerelease": false,
       "notes": "- Shortcuts for your phone are gone again, with the Add to Home Screen\n  hint. The page works as it did in 1.7.1.",
-      "channels": [],
+      "channels": [
+        "bench"
+      ],
       "halted": [],
       "requires_migration": false,
       "min_from_seq": 0,
@@ -2536,5 +2538,5 @@
       }
     }
   ],
-  "updated": "2026-11-07T21:41:08Z"
+  "updated": "2026-11-07T21:41:22Z"
 }
