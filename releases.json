@@ -9,7 +9,9 @@
       "kind": "patch",
       "prerelease": false,
       "notes": "- **Shortcuts for your phone** (Settings → Phones): Louder, Quieter, keys\n  1–6, Standby, Play/pause and Next song. iPhone: add them from our site, then\n  use Siri, Back Tap, the Action button, Control Center or the Lock Screen.\n  Android: put the radio's own links on the home screen. No app.\n- A one-time hint on phones: put the page on your Home Screen.\n- New `POST /api/playpause`; the phone shortcuts API is documented as stable.",
-      "channels": [],
+      "channels": [
+        "bench"
+      ],
       "halted": [],
       "requires_migration": false,
       "min_from_seq": 0,
@@ -2486,5 +2488,5 @@
       }
     }
   ],
-  "updated": "2026-11-07T19:01:16Z"
+  "updated": "2026-11-07T19:01:30Z"
 }
