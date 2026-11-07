@@ -2,6 +2,54 @@
   "schema": 1,
   "releases": [
     {
+      "version": "1.7.5",
+      "seq": 1070599,
+      "date": "2026-11-07T22:57:07Z",
+      "created": "2026-11-07T22:52:33Z",
+      "kind": "patch",
+      "prerelease": false,
+      "notes": "Write to the makers\n- Each request is titled with your own words, and keeps your whole message.\n- New replies come first, and the page opens on the request that has one.\n- Done requests fold to one line; **Write back** opens them again.\n- Times read \"17:45\" and \"Yesterday\"; the makers' name shows once per run.\n- Replies read better: code blocks, quotes, nested and tick lists.\n- Replies no longer also show under \"From the makers\".\n- \"Couldn't reach the radio\" when it can't check, with Try again.",
+      "channels": [],
+      "halted": [],
+      "requires_migration": false,
+      "min_from_seq": 0,
+      "variants": [
+        "excelsior",
+        "hasler-hm",
+        "hasler-hm-hat"
+      ],
+      "release_page": "https://github.com/Delgado-Murphy/hasler-releases/releases/tag/v1.7.5",
+      "assets": {
+        "tarball": {
+          "name": "hasler-1.7.5-arm64.tar.zst",
+          "url": "https://github.com/Delgado-Murphy/hasler-releases/releases/download/v1.7.5/hasler-1.7.5-arm64.tar.zst",
+          "size": 40989997,
+          "sha256": "67a28f2c4704b8ca29fb54a2a7c2bba6d71ca319b8f87cd835985d66f8461bbc"
+        },
+        "release_json": {
+          "name": "release.json",
+          "url": "https://github.com/Delgado-Murphy/hasler-releases/releases/download/v1.7.5/release.json",
+          "size": 1353,
+          "sha256": "06e4fb2cf8b5a71ba4dc8bc94bc3e7516735af0a68b1c3597ee67680c651b127"
+        },
+        "signature": {
+          "name": "release.json.sig",
+          "url": "https://github.com/Delgado-Murphy/hasler-releases/releases/download/v1.7.5/release.json.sig",
+          "size": 310
+        },
+        "sbom": {
+          "name": "hasler-1.7.5.cdx.json",
+          "url": "https://github.com/Delgado-Murphy/hasler-releases/releases/download/v1.7.5/hasler-1.7.5.cdx.json",
+          "size": 20404
+        },
+        "sha256sums": {
+          "name": "SHA256SUMS",
+          "url": "https://github.com/Delgado-Murphy/hasler-releases/releases/download/v1.7.5/SHA256SUMS",
+          "size": 255
+        }
+      }
+    },
+    {
       "version": "1.7.4",
       "seq": 1070499,
       "date": "2026-11-07T21:47:44Z",
@@ -2589,5 +2637,5 @@
       }
     }
   ],
-  "updated": "2026-11-07T22:12:39Z"
+  "updated": "2026-11-07T22:57:08Z"
 }
