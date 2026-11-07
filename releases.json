@@ -2,6 +2,54 @@
   "schema": 1,
   "releases": [
     {
+      "version": "1.6.0",
+      "seq": 1060099,
+      "date": "2026-11-07T14:58:54Z",
+      "created": "2026-11-07T14:28:47Z",
+      "kind": "minor",
+      "prerelease": false,
+      "notes": "The page\n- Open **http://hasler.local** - no more `:8080` (that still works).\n  moOde's own pages move to `:8081`.\n- Simpler Settings: short labels, one-line summaries, details folded away.\n- Phone fixes: no zoom when you tap a field, Back closes a sheet, sheets fit\n  short screens, bigger tap targets.\n- Fixed: the slider that floated away from its track; a key's label after\n  you put something new on it.\n\nKeys\n- Ten starter sets, by who's listening: little ones, kids, teens, indie,\n  grown-up eclectic, classical, jazz, golden oldies, España, world.\n\nHelp\n- **Send to the makers**: your report goes straight to their private support\n  list, and their answer comes back under This radio. You see when they've\n  seen it and when it's done.\n\nPlayer\n- Tested on moOde 10.3.7 with MPD 0.24.17. A new radio on an older moOde\n  updates it during setup.\n\nFor makers\n- Owner requests arrive as issues in the private `hasler-support` repo;\n  reply with a line starting `/owner`, label `seen`, close when done.\n- The check-in server is live (`tools/checkin/`).\n- The owner's guide is shorter and only for owners; maker material lives in\n  the build guide.",
+      "channels": [],
+      "halted": [],
+      "requires_migration": false,
+      "min_from_seq": 0,
+      "variants": [
+        "excelsior",
+        "hasler-hm",
+        "hasler-hm-hat"
+      ],
+      "release_page": "https://github.com/Delgado-Murphy/hasler-releases/releases/tag/v1.6.0",
+      "assets": {
+        "tarball": {
+          "name": "hasler-1.6.0-arm64.tar.zst",
+          "url": "https://github.com/Delgado-Murphy/hasler-releases/releases/download/v1.6.0/hasler-1.6.0-arm64.tar.zst",
+          "size": 40953701,
+          "sha256": "e0dea16003670153baf0de2586a950e19c0cf4462f3a6b1a73e5b867dd626459"
+        },
+        "release_json": {
+          "name": "release.json",
+          "url": "https://github.com/Delgado-Murphy/hasler-releases/releases/download/v1.6.0/release.json",
+          "size": 2021,
+          "sha256": "cbc159a5a0712ce15ee7add0aa1bbe420cf19a7af51dfaf5689841eab4bb90d5"
+        },
+        "signature": {
+          "name": "release.json.sig",
+          "url": "https://github.com/Delgado-Murphy/hasler-releases/releases/download/v1.6.0/release.json.sig",
+          "size": 310
+        },
+        "sbom": {
+          "name": "hasler-1.6.0.cdx.json",
+          "url": "https://github.com/Delgado-Murphy/hasler-releases/releases/download/v1.6.0/hasler-1.6.0.cdx.json",
+          "size": 20404
+        },
+        "sha256sums": {
+          "name": "SHA256SUMS",
+          "url": "https://github.com/Delgado-Murphy/hasler-releases/releases/download/v1.6.0/SHA256SUMS",
+          "size": 255
+        }
+      }
+    },
+    {
       "version": "1.5.2",
       "seq": 1050299,
       "date": "2026-11-07T13:39:43Z",
@@ -2134,5 +2182,5 @@
       }
     }
   ],
-  "updated": "2026-11-07T13:39:55Z"
+  "updated": "2026-11-07T14:58:55Z"
 }
