@@ -2,6 +2,54 @@
   "schema": 1,
   "releases": [
     {
+      "version": "1.7.1",
+      "seq": 1070199,
+      "date": "2026-11-07T18:18:55Z",
+      "created": "2026-11-07T18:07:38Z",
+      "kind": "patch",
+      "prerelease": false,
+      "notes": "- Lyrics land on time: the radio now allows for the 1.7 s its sound takes to\n  reach the speaker, Earlier/Later move a quarter second and show the value,\n  and **Sync** sets it with one tap on the line being sung.\n- Lyrics timed for a different recording are no longer used.\n- A new radio's setup network has the password **haslerhm**, easy to say and\n  printed on the card. A hand-over goes back to it; \"Make a new one\" still\n  makes a random one.",
+      "channels": [],
+      "halted": [],
+      "requires_migration": false,
+      "min_from_seq": 0,
+      "variants": [
+        "excelsior",
+        "hasler-hm",
+        "hasler-hm-hat"
+      ],
+      "release_page": "https://github.com/Delgado-Murphy/hasler-releases/releases/tag/v1.7.1",
+      "assets": {
+        "tarball": {
+          "name": "hasler-1.7.1-arm64.tar.zst",
+          "url": "https://github.com/Delgado-Murphy/hasler-releases/releases/download/v1.7.1/hasler-1.7.1-arm64.tar.zst",
+          "size": 40986504,
+          "sha256": "b9a113e197e86be9abeb96686c5d4a13beb3f6fbdb72cbb2ee7802416002a951"
+        },
+        "release_json": {
+          "name": "release.json",
+          "url": "https://github.com/Delgado-Murphy/hasler-releases/releases/download/v1.7.1/release.json",
+          "size": 1295,
+          "sha256": "22827787112dc1898f91b11addfd1c5794fd171fe7851eff1786eeeb2545ff9f"
+        },
+        "signature": {
+          "name": "release.json.sig",
+          "url": "https://github.com/Delgado-Murphy/hasler-releases/releases/download/v1.7.1/release.json.sig",
+          "size": 310
+        },
+        "sbom": {
+          "name": "hasler-1.7.1.cdx.json",
+          "url": "https://github.com/Delgado-Murphy/hasler-releases/releases/download/v1.7.1/hasler-1.7.1.cdx.json",
+          "size": 20404
+        },
+        "sha256sums": {
+          "name": "SHA256SUMS",
+          "url": "https://github.com/Delgado-Murphy/hasler-releases/releases/download/v1.7.1/SHA256SUMS",
+          "size": 255
+        }
+      }
+    },
+    {
       "version": "1.7.0",
       "seq": 1070099,
       "date": "2026-11-07T17:28:19Z",
@@ -2387,5 +2435,5 @@
       }
     }
   ],
-  "updated": "2026-11-07T17:44:36Z"
+  "updated": "2026-11-07T18:18:56Z"
 }
