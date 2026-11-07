@@ -9,7 +9,9 @@
       "kind": "minor",
       "prerelease": false,
       "notes": "Keys\n- Tap | Hold on every key: each key's page has two tabs, each showing what it\n  does now; the hold is one tap away instead of below the whole station\n  browser. \"Reassign\" from Home Assistant's \"needs attention\" opens the Hold\n  tab with the search ready and the missing name shown.\n- See what holding does: Edit keys lists \"Tap ·\" and \"Hold ·\" for every key,\n  and the keys show a small mark when they have a hold job (a \"!\" when Home\n  Assistant no longer has its target). Holding a key works from the keyboard\n  too (Space or Enter, longer than half a second).\n- Your own short label for a key's cap (up to 12 letters), under Rename.\n- A printable key card (A6, or a strip for behind the keys): Edit keys ->\n  Print a key card.\n- Done never throws work away: with unsaved changes it asks \"Save and close /\n  Discard / Keep editing\", the same question as Back and leaving Settings.\n- Two phones can't undo each other: a save that started from older keys is\n  merged with the other phone's change instead of wiping it, and says so if\n  both changed the same key. An idle page shows the other phone's change.\n- Test on the radio shows \"Trying on the radio · 0:30\" with Back; tapping\n  the station that's playing says \"Standby - tap again to play\"; the toast no\n  longer covers Save; a refused change explains \"This page is open at ...,\n  which can't make changes yet\" with \"Allow this address\".\n- Back no longer leaves the page after a cancelled Back.\n\nSleep timer\n- The clock on the Standby button: 15, 30 or 60 minutes. In the last minute\n  the volume fades and the lamp dims, then the radio goes to standby; the\n  next wake plays at your usual volume. Any key or knob cancels it; a chip on\n  the front page shows the time left.\n\nSettings\n- One rule: switches and choices apply at once, with Undo; names and places\n  wait for Save. The tone knob's effect applies straight away.\n- Plain words instead of internal names (no more \"moOde\" or \"avahi\").\n- The room name lives in This radio -> Name and address only; \"Source key &\n  knobs\" (or \"Knobs & keys\" on a radio without a source key).\n- The front page's tone bar no longer looks like a slider you can drag.\n\nAlso\n- Add the page to your phone's home screen: it opens like an app, named\n  after the room.\n- Keyboard and screen reader: focus stays put while saving, status messages\n  are announced, the pairing countdown no longer talks every second.",
-      "channels": [],
+      "channels": [
+        "bench"
+      ],
       "halted": [],
       "requires_migration": false,
       "min_from_seq": 0,
@@ -1782,5 +1784,5 @@
       }
     }
   ],
-  "updated": "2026-11-07T01:29:33Z"
+  "updated": "2026-11-07T01:29:44Z"
 }
