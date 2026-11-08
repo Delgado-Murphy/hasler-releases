@@ -1,7 +1,7 @@
 {
   "schema": 1,
-  "issued": "2026-11-07T13:20:39Z",
-  "expires": "2026-11-21T13:20:39Z",
+  "issued": "2026-11-08T13:40:46Z",
+  "expires": "2026-11-22T13:40:46Z",
   "components": {
     "yt-dlp": {
       "candidates": [
