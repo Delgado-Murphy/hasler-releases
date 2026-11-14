@@ -9,7 +9,9 @@
       "kind": "patch",
       "prerelease": false,
       "notes": "- Security updates for the system underneath install at night again. Since\n  11 November one package (Tailscale, for remote help) had stopped them.\n- The music player and the sound processor answer only the radio itself: no\n  other device on the Wi-Fi can turn it past its volume ceiling.\n\nFor makers\n- The night OS lane now saves packages that ship `/lib/...` on merged /usr,\n  and holds back one it can't save instead of stopping the whole run.\n- MPD (6600) and CamillaDSP (1234) bind 127.0.0.1 (`hasler-local-only`);\n  `/api/health` lists any still open in `exposed_controls`.",
-      "channels": [],
+      "channels": [
+        "bench"
+      ],
       "halted": [],
       "requires_migration": false,
       "min_from_seq": 0,
@@ -2687,5 +2689,5 @@
       }
     }
   ],
-  "updated": "2026-11-14T16:16:55Z"
+  "updated": "2026-11-14T16:17:15Z"
 }
