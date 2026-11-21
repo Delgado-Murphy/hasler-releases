@@ -9,7 +9,9 @@
       "kind": "patch",
       "prerelease": false,
       "notes": "- Updates are more patient after a restart: 1.7.8 undid itself because the\n  player's own page was still starting. The faint red glow at power-on comes\n  back in 1.7.10. No restart with this one.\n\nFor makers\n- Health hold: a lost moOde UI counts only after 30 s in a row.\n- Rollback: the state snapshot sync skips haslerd's `.hasler-*` temp files and\n  a file vanishing mid-sync (it died on ENOENT and left the trial half undone).\n- `hasler.block` is back to 1.7.7's, so this release installs without a reboot.",
-      "channels": [],
+      "channels": [
+        "bench"
+      ],
       "halted": [],
       "requires_migration": false,
       "min_from_seq": 0,
@@ -2837,5 +2839,5 @@
       }
     }
   ],
-  "updated": "2026-11-21T18:32:32Z"
+  "updated": "2026-11-21T18:32:44Z"
 }
