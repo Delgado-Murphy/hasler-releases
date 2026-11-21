@@ -2,6 +2,54 @@
   "schema": 1,
   "releases": [
     {
+      "version": "1.7.9",
+      "seq": 1070999,
+      "date": "2026-11-21T18:32:32Z",
+      "created": "2026-11-21T18:27:47Z",
+      "kind": "patch",
+      "prerelease": false,
+      "notes": "- Updates are more patient after a restart: 1.7.8 undid itself because the\n  player's own page was still starting. The faint red glow at power-on comes\n  back in 1.7.10. No restart with this one.\n\nFor makers\n- Health hold: a lost moOde UI counts only after 30 s in a row.\n- Rollback: the state snapshot sync skips haslerd's `.hasler-*` temp files and\n  a file vanishing mid-sync (it died on ENOENT and left the trial half undone).\n- `hasler.block` is back to 1.7.7's, so this release installs without a reboot.",
+      "channels": [],
+      "halted": [],
+      "requires_migration": false,
+      "min_from_seq": 0,
+      "variants": [
+        "excelsior",
+        "hasler-hm",
+        "hasler-hm-hat"
+      ],
+      "release_page": "https://github.com/Delgado-Murphy/hasler-releases/releases/tag/v1.7.9",
+      "assets": {
+        "tarball": {
+          "name": "hasler-1.7.9-arm64.tar.zst",
+          "url": "https://github.com/Delgado-Murphy/hasler-releases/releases/download/v1.7.9/hasler-1.7.9-arm64.tar.zst",
+          "size": 41067705,
+          "sha256": "174cf1da5bd2fc56f5d41474c93b2146fdbcc63d1290f3957acb971e60ab450f"
+        },
+        "release_json": {
+          "name": "release.json",
+          "url": "https://github.com/Delgado-Murphy/hasler-releases/releases/download/v1.7.9/release.json",
+          "size": 1357,
+          "sha256": "7c7ee6fd78f133f51b40c33e5500ae52f4a2a23d990d0d8a496e561e4bde3d84"
+        },
+        "signature": {
+          "name": "release.json.sig",
+          "url": "https://github.com/Delgado-Murphy/hasler-releases/releases/download/v1.7.9/release.json.sig",
+          "size": 310
+        },
+        "sbom": {
+          "name": "hasler-1.7.9.cdx.json",
+          "url": "https://github.com/Delgado-Murphy/hasler-releases/releases/download/v1.7.9/hasler-1.7.9.cdx.json",
+          "size": 20404
+        },
+        "sha256sums": {
+          "name": "SHA256SUMS",
+          "url": "https://github.com/Delgado-Murphy/hasler-releases/releases/download/v1.7.9/SHA256SUMS",
+          "size": 255
+        }
+      }
+    },
+    {
       "version": "1.7.8",
       "seq": 1070899,
       "date": "2026-11-21T14:55:24Z",
@@ -2789,5 +2837,5 @@
       }
     }
   ],
-  "updated": "2026-11-21T14:55:38Z"
+  "updated": "2026-11-21T18:32:32Z"
 }
