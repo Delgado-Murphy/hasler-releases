@@ -2,6 +2,54 @@
   "schema": 1,
   "releases": [
     {
+      "version": "1.7.10",
+      "seq": 1071099,
+      "date": "2026-11-21T18:40:07Z",
+      "created": "2026-11-21T18:28:38Z",
+      "kind": "patch",
+      "prerelease": false,
+      "notes": "- The lamp glows faint red as soon as the power comes on, then breathes amber\n  while the radio starts (1.7.8 again). This update restarts the radio once.\n\nFor makers\n- `hasler.block`: `gpio=17=ip,pd`, `gpio=22,27=op,dh`, as in 1.7.8. Needs\n  `hasler-update apply --allow-reboot`; judged by 1.7.9's more patient updater.",
+      "channels": [],
+      "halted": [],
+      "requires_migration": false,
+      "min_from_seq": 0,
+      "variants": [
+        "excelsior",
+        "hasler-hm",
+        "hasler-hm-hat"
+      ],
+      "release_page": "https://github.com/Delgado-Murphy/hasler-releases/releases/tag/v1.7.10",
+      "assets": {
+        "tarball": {
+          "name": "hasler-1.7.10-arm64.tar.zst",
+          "url": "https://github.com/Delgado-Murphy/hasler-releases/releases/download/v1.7.10/hasler-1.7.10-arm64.tar.zst",
+          "size": 41040386,
+          "sha256": "97987e0b9c70fc51b6792be9d6ef44a096daec50beb851b11b275871b381c200"
+        },
+        "release_json": {
+          "name": "release.json",
+          "url": "https://github.com/Delgado-Murphy/hasler-releases/releases/download/v1.7.10/release.json",
+          "size": 1168,
+          "sha256": "362933472b7ba3fdffdca27843d4ea91bd2fd5b6305f3b4bdbf3071b3615ee31"
+        },
+        "signature": {
+          "name": "release.json.sig",
+          "url": "https://github.com/Delgado-Murphy/hasler-releases/releases/download/v1.7.10/release.json.sig",
+          "size": 310
+        },
+        "sbom": {
+          "name": "hasler-1.7.10.cdx.json",
+          "url": "https://github.com/Delgado-Murphy/hasler-releases/releases/download/v1.7.10/hasler-1.7.10.cdx.json",
+          "size": 20404
+        },
+        "sha256sums": {
+          "name": "SHA256SUMS",
+          "url": "https://github.com/Delgado-Murphy/hasler-releases/releases/download/v1.7.10/SHA256SUMS",
+          "size": 256
+        }
+      }
+    },
+    {
       "version": "1.7.9",
       "seq": 1070999,
       "date": "2026-11-21T18:32:32Z",
@@ -2839,5 +2887,5 @@
       }
     }
   ],
-  "updated": "2026-11-21T18:32:44Z"
+  "updated": "2026-11-21T18:40:08Z"
 }
