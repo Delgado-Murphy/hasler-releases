@@ -2,6 +2,54 @@
   "schema": 1,
   "releases": [
     {
+      "version": "1.7.7",
+      "seq": 1070799,
+      "date": "2026-11-21T14:35:52Z",
+      "created": "2026-11-21T14:30:49Z",
+      "kind": "patch",
+      "prerelease": false,
+      "notes": "- A power cut can no longer leave a YouTube Music song that won't play:\n  songs are saved safely, and empty ones are thrown away.\n- A YouTube Music key that keeps failing skips the bad song, then switches to\n  a radio station (or goes quiet at night). Press the key to try again.\n- Choose what happens after a power cut: play, play but not at night, or stay\n  quiet. Settings → Sound.\n- An Excelsior key left down no longer starts music after a power cut.\n- The boot lamp grows out of a faint glow instead of from dark.\n\nFor makers\n- `ytm.py`: fsync before rename, 0-byte or non-audio files dropped on load and\n  reuse, `forget(vid)` for the watchdog; links bound to an old `ip=` dropped.\n- Watchdog: relapses counted across recoveries, mid-playlist skip, fallback\n  (`when_music_fails`, `fallback_preset`; `status.fallback`).\n- `after_power_cut` (`resume|night_only|standby`, default `night_only`).\n- `hasler-bootcfg-guard repair` puts moOde back on the amp when it fell back\n  to HDMI (`adevname`, `amixname`, `alsa_output_mode`), and a restored\n  known-good copy keeps the release's lamp block.",
+      "channels": [],
+      "halted": [],
+      "requires_migration": false,
+      "min_from_seq": 0,
+      "variants": [
+        "excelsior",
+        "hasler-hm",
+        "hasler-hm-hat"
+      ],
+      "release_page": "https://github.com/Delgado-Murphy/hasler-releases/releases/tag/v1.7.7",
+      "assets": {
+        "tarball": {
+          "name": "hasler-1.7.7-arm64.tar.zst",
+          "url": "https://github.com/Delgado-Murphy/hasler-releases/releases/download/v1.7.7/hasler-1.7.7-arm64.tar.zst",
+          "size": 41034291,
+          "sha256": "321a94cc4045f892377b4af78c16bd07140bdf3f854f01afcf0914df1bc3ddf8"
+        },
+        "release_json": {
+          "name": "release.json",
+          "url": "https://github.com/Delgado-Murphy/hasler-releases/releases/download/v1.7.7/release.json",
+          "size": 1958,
+          "sha256": "817f10b4c7fefacdc78ff9b7a1f929e383af508ee8b54bb8fe522b9584e52ce6"
+        },
+        "signature": {
+          "name": "release.json.sig",
+          "url": "https://github.com/Delgado-Murphy/hasler-releases/releases/download/v1.7.7/release.json.sig",
+          "size": 310
+        },
+        "sbom": {
+          "name": "hasler-1.7.7.cdx.json",
+          "url": "https://github.com/Delgado-Murphy/hasler-releases/releases/download/v1.7.7/hasler-1.7.7.cdx.json",
+          "size": 20404
+        },
+        "sha256sums": {
+          "name": "SHA256SUMS",
+          "url": "https://github.com/Delgado-Murphy/hasler-releases/releases/download/v1.7.7/SHA256SUMS",
+          "size": 255
+        }
+      }
+    },
+    {
       "version": "1.7.6",
       "seq": 1070699,
       "date": "2026-11-14T16:16:54Z",
@@ -2689,5 +2737,5 @@
       }
     }
   ],
-  "updated": "2026-11-14T16:17:15Z"
+  "updated": "2026-11-21T14:35:53Z"
 }
