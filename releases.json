@@ -9,7 +9,9 @@
       "kind": "patch",
       "prerelease": false,
       "notes": "- After a power cut that left the player on the wrong output, the radio no\n  longer comes back silent: its volume goes back to the amp as well.\n  No restart with this one.\n\nFor makers\n- `hasler-bootcfg-guard`: with the Amp4 Pro chosen, a \"software\" moOde mixer\n  (`mpdmixer`, `cfg_mpd mixer_type`) goes back to \"hardware\", and mpd.conf's\n  ALSA Default output gets the `Digital` mixer before MPD starts (moOde's\n  worker rewrites it later, after MPD has read the silent one).",
-      "channels": [],
+      "channels": [
+        "bench"
+      ],
       "halted": [],
       "requires_migration": false,
       "min_from_seq": 0,
@@ -2937,5 +2939,5 @@
       }
     }
   ],
-  "updated": "2026-11-21T19:04:53Z"
+  "updated": "2026-11-21T19:05:12Z"
 }
