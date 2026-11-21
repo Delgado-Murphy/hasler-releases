@@ -9,7 +9,9 @@
       "kind": "patch",
       "prerelease": false,
       "notes": "- The lamp glows faint red as soon as the power comes on, then breathes amber\n  while the radio starts. This update restarts the radio once.\n\nFor makers\n- `hasler.block`: `gpio=17=ip,pd` (red on its pull-down, the stage-0 ember),\n  `gpio=22,27=op,dh`. Needs `hasler-update apply --allow-reboot`.",
-      "channels": [],
+      "channels": [
+        "bench"
+      ],
       "halted": [],
       "requires_migration": false,
       "min_from_seq": 0,
@@ -2787,5 +2789,5 @@
       }
     }
   ],
-  "updated": "2026-11-21T14:55:24Z"
+  "updated": "2026-11-21T14:55:38Z"
 }
