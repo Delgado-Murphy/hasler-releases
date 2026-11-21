@@ -9,7 +9,9 @@
       "kind": "patch",
       "prerelease": false,
       "notes": "- After a power cut that brings the radio up before the router, it looks for\n  your Wi-Fi every minute for the first 10 minutes, then every 5 for an hour,\n  then every 10. It used to wait 3 minutes, then longer and longer.\n  No restart with this one.\n\nFor makers\n- `wifiwatch.py`: `retry_delay()` by time since the hotspot appeared; the\n  journal now says when a phone on the hotspot or the music puts a look off.",
-      "channels": [],
+      "channels": [
+        "bench"
+      ],
       "halted": [],
       "requires_migration": false,
       "min_from_seq": 0,
@@ -2987,5 +2989,5 @@
       }
     }
   ],
-  "updated": "2026-11-21T23:47:28Z"
+  "updated": "2026-11-21T23:47:42Z"
 }
