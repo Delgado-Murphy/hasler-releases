@@ -2,6 +2,54 @@
   "schema": 1,
   "releases": [
     {
+      "version": "1.7.12",
+      "seq": 1071299,
+      "date": "2026-11-21T23:47:27Z",
+      "created": "2026-11-21T23:42:18Z",
+      "kind": "patch",
+      "prerelease": false,
+      "notes": "- After a power cut that brings the radio up before the router, it looks for\n  your Wi-Fi every minute for the first 10 minutes, then every 5 for an hour,\n  then every 10. It used to wait 3 minutes, then longer and longer.\n  No restart with this one.\n\nFor makers\n- `wifiwatch.py`: `retry_delay()` by time since the hotspot appeared; the\n  journal now says when a phone on the hotspot or the music puts a look off.",
+      "channels": [],
+      "halted": [],
+      "requires_migration": false,
+      "min_from_seq": 0,
+      "variants": [
+        "excelsior",
+        "hasler-hm",
+        "hasler-hm-hat"
+      ],
+      "release_page": "https://github.com/Delgado-Murphy/hasler-releases/releases/tag/v1.7.12",
+      "assets": {
+        "tarball": {
+          "name": "hasler-1.7.12-arm64.tar.zst",
+          "url": "https://github.com/Delgado-Murphy/hasler-releases/releases/download/v1.7.12/hasler-1.7.12-arm64.tar.zst",
+          "size": 41038053,
+          "sha256": "91d6527b70fec4edddcfe8630a81739c2b508966b4235d3a3fb0d9a4f9c948c9"
+        },
+        "release_json": {
+          "name": "release.json",
+          "url": "https://github.com/Delgado-Murphy/hasler-releases/releases/download/v1.7.12/release.json",
+          "size": 1263,
+          "sha256": "974413da13745f50f879bac416c2b76428d2e2871f4accd512fa5e75e8b27ac7"
+        },
+        "signature": {
+          "name": "release.json.sig",
+          "url": "https://github.com/Delgado-Murphy/hasler-releases/releases/download/v1.7.12/release.json.sig",
+          "size": 310
+        },
+        "sbom": {
+          "name": "hasler-1.7.12.cdx.json",
+          "url": "https://github.com/Delgado-Murphy/hasler-releases/releases/download/v1.7.12/hasler-1.7.12.cdx.json",
+          "size": 20404
+        },
+        "sha256sums": {
+          "name": "SHA256SUMS",
+          "url": "https://github.com/Delgado-Murphy/hasler-releases/releases/download/v1.7.12/SHA256SUMS",
+          "size": 256
+        }
+      }
+    },
+    {
       "version": "1.7.11",
       "seq": 1071199,
       "date": "2026-11-21T19:04:52Z",
@@ -2939,5 +2987,5 @@
       }
     }
   ],
-  "updated": "2026-11-21T19:05:12Z"
+  "updated": "2026-11-21T23:47:28Z"
 }
