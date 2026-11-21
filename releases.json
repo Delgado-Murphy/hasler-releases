@@ -2,6 +2,54 @@
   "schema": 1,
   "releases": [
     {
+      "version": "1.7.8",
+      "seq": 1070899,
+      "date": "2026-11-21T14:55:24Z",
+      "created": "2026-11-21T14:50:38Z",
+      "kind": "patch",
+      "prerelease": false,
+      "notes": "- The lamp glows faint red as soon as the power comes on, then breathes amber\n  while the radio starts. This update restarts the radio once.\n\nFor makers\n- `hasler.block`: `gpio=17=ip,pd` (red on its pull-down, the stage-0 ember),\n  `gpio=22,27=op,dh`. Needs `hasler-update apply --allow-reboot`.",
+      "channels": [],
+      "halted": [],
+      "requires_migration": false,
+      "min_from_seq": 0,
+      "variants": [
+        "excelsior",
+        "hasler-hm",
+        "hasler-hm-hat"
+      ],
+      "release_page": "https://github.com/Delgado-Murphy/hasler-releases/releases/tag/v1.7.8",
+      "assets": {
+        "tarball": {
+          "name": "hasler-1.7.8-arm64.tar.zst",
+          "url": "https://github.com/Delgado-Murphy/hasler-releases/releases/download/v1.7.8/hasler-1.7.8-arm64.tar.zst",
+          "size": 41046473,
+          "sha256": "d837e51045fa6131e8ed1d24ccc02b2df91952412674cf1f19309598d978b562"
+        },
+        "release_json": {
+          "name": "release.json",
+          "url": "https://github.com/Delgado-Murphy/hasler-releases/releases/download/v1.7.8/release.json",
+          "size": 1139,
+          "sha256": "e228e15dd296e9c70b298294bee110dbfa812e374057604fabd29d4a0d3f38b6"
+        },
+        "signature": {
+          "name": "release.json.sig",
+          "url": "https://github.com/Delgado-Murphy/hasler-releases/releases/download/v1.7.8/release.json.sig",
+          "size": 310
+        },
+        "sbom": {
+          "name": "hasler-1.7.8.cdx.json",
+          "url": "https://github.com/Delgado-Murphy/hasler-releases/releases/download/v1.7.8/hasler-1.7.8.cdx.json",
+          "size": 20404
+        },
+        "sha256sums": {
+          "name": "SHA256SUMS",
+          "url": "https://github.com/Delgado-Murphy/hasler-releases/releases/download/v1.7.8/SHA256SUMS",
+          "size": 255
+        }
+      }
+    },
+    {
       "version": "1.7.7",
       "seq": 1070799,
       "date": "2026-11-21T14:35:52Z",
@@ -2739,5 +2787,5 @@
       }
     }
   ],
-  "updated": "2026-11-21T14:36:15Z"
+  "updated": "2026-11-21T14:55:24Z"
 }
