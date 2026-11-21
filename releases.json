@@ -2,6 +2,54 @@
   "schema": 1,
   "releases": [
     {
+      "version": "1.7.11",
+      "seq": 1071199,
+      "date": "2026-11-21T19:04:52Z",
+      "created": "2026-11-21T19:00:20Z",
+      "kind": "patch",
+      "prerelease": false,
+      "notes": "- After a power cut that left the player on the wrong output, the radio no\n  longer comes back silent: its volume goes back to the amp as well.\n  No restart with this one.\n\nFor makers\n- `hasler-bootcfg-guard`: with the Amp4 Pro chosen, a \"software\" moOde mixer\n  (`mpdmixer`, `cfg_mpd mixer_type`) goes back to \"hardware\", and mpd.conf's\n  ALSA Default output gets the `Digital` mixer before MPD starts (moOde's\n  worker rewrites it later, after MPD has read the silent one).",
+      "channels": [],
+      "halted": [],
+      "requires_migration": false,
+      "min_from_seq": 0,
+      "variants": [
+        "excelsior",
+        "hasler-hm",
+        "hasler-hm-hat"
+      ],
+      "release_page": "https://github.com/Delgado-Murphy/hasler-releases/releases/tag/v1.7.11",
+      "assets": {
+        "tarball": {
+          "name": "hasler-1.7.11-arm64.tar.zst",
+          "url": "https://github.com/Delgado-Murphy/hasler-releases/releases/download/v1.7.11/hasler-1.7.11-arm64.tar.zst",
+          "size": 41040676,
+          "sha256": "bf64753ed4754a99beae0ebd728ccb82fc1782b0a52afe25efbca6b6171e4a5a"
+        },
+        "release_json": {
+          "name": "release.json",
+          "url": "https://github.com/Delgado-Murphy/hasler-releases/releases/download/v1.7.11/release.json",
+          "size": 1330,
+          "sha256": "19b1970efdaa604d371af2e00545498408de8a15e4da9bea428b60f9675d14a8"
+        },
+        "signature": {
+          "name": "release.json.sig",
+          "url": "https://github.com/Delgado-Murphy/hasler-releases/releases/download/v1.7.11/release.json.sig",
+          "size": 310
+        },
+        "sbom": {
+          "name": "hasler-1.7.11.cdx.json",
+          "url": "https://github.com/Delgado-Murphy/hasler-releases/releases/download/v1.7.11/hasler-1.7.11.cdx.json",
+          "size": 20404
+        },
+        "sha256sums": {
+          "name": "SHA256SUMS",
+          "url": "https://github.com/Delgado-Murphy/hasler-releases/releases/download/v1.7.11/SHA256SUMS",
+          "size": 256
+        }
+      }
+    },
+    {
       "version": "1.7.10",
       "seq": 1071099,
       "date": "2026-11-21T18:40:07Z",
@@ -2889,5 +2937,5 @@
       }
     }
   ],
-  "updated": "2026-11-21T18:40:20Z"
+  "updated": "2026-11-21T19:04:53Z"
 }
