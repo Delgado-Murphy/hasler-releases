@@ -9,7 +9,9 @@
       "kind": "patch",
       "prerelease": false,
       "notes": "- The light at power-on is green now instead of red, then it blends into the\n  amber breath as before. This update restarts the radio once.\n\nFor makers\n- `hasler.block`: `gpio=22=op,dl`, `gpio=17,27=op,dh`; `hasler-lamp-boot`\n  blends from full green channel by channel (`EMBER = (0, 1, 0)`). Needs\n  `hasler-update apply --allow-reboot`.",
-      "channels": [],
+      "channels": [
+        "bench"
+      ],
       "halted": [],
       "requires_migration": false,
       "min_from_seq": 0,
@@ -3137,5 +3139,5 @@
       }
     }
   ],
-  "updated": "2026-11-22T01:52:23Z"
+  "updated": "2026-11-22T01:52:34Z"
 }
