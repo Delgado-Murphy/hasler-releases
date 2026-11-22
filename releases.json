@@ -2,6 +2,54 @@
   "schema": 1,
   "releases": [
     {
+      "version": "1.7.13",
+      "seq": 1071399,
+      "date": "2026-11-22T00:57:49Z",
+      "created": "2026-11-22T00:52:55Z",
+      "kind": "patch",
+      "prerelease": false,
+      "notes": "- The red light at power-on is full red now, easy to see: the pale glow was\n  hard to spot by day. It still blends into the amber breath after a few\n  seconds. This update restarts the radio once.\n\nFor makers\n- `hasler.block`: `gpio=17=op,dl` (was `ip,pd`); `hasler-lamp-boot` starts\n  its blend at full red (`EMBER_RED = 1.0`). Needs\n  `hasler-update apply --allow-reboot`.",
+      "channels": [],
+      "halted": [],
+      "requires_migration": false,
+      "min_from_seq": 0,
+      "variants": [
+        "excelsior",
+        "hasler-hm",
+        "hasler-hm-hat"
+      ],
+      "release_page": "https://github.com/Delgado-Murphy/hasler-releases/releases/tag/v1.7.13",
+      "assets": {
+        "tarball": {
+          "name": "hasler-1.7.13-arm64.tar.zst",
+          "url": "https://github.com/Delgado-Murphy/hasler-releases/releases/download/v1.7.13/hasler-1.7.13-arm64.tar.zst",
+          "size": 41039821,
+          "sha256": "386fb2523816dc81fdf32ddbacec15c5b48d4e55c69bb993fd5ca61e3c55755e"
+        },
+        "release_json": {
+          "name": "release.json",
+          "url": "https://github.com/Delgado-Murphy/hasler-releases/releases/download/v1.7.13/release.json",
+          "size": 1224,
+          "sha256": "51be44235b8e227aa1fdcd4d77b9681dc5fd5918e61dc046b4a474a6de67f46f"
+        },
+        "signature": {
+          "name": "release.json.sig",
+          "url": "https://github.com/Delgado-Murphy/hasler-releases/releases/download/v1.7.13/release.json.sig",
+          "size": 310
+        },
+        "sbom": {
+          "name": "hasler-1.7.13.cdx.json",
+          "url": "https://github.com/Delgado-Murphy/hasler-releases/releases/download/v1.7.13/hasler-1.7.13.cdx.json",
+          "size": 20404
+        },
+        "sha256sums": {
+          "name": "SHA256SUMS",
+          "url": "https://github.com/Delgado-Murphy/hasler-releases/releases/download/v1.7.13/SHA256SUMS",
+          "size": 256
+        }
+      }
+    },
+    {
       "version": "1.7.12",
       "seq": 1071299,
       "date": "2026-11-21T23:47:27Z",
@@ -2989,5 +3037,5 @@
       }
     }
   ],
-  "updated": "2026-11-21T23:47:42Z"
+  "updated": "2026-11-22T00:57:50Z"
 }
