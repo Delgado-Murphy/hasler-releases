@@ -2,6 +2,54 @@
   "schema": 1,
   "releases": [
     {
+      "version": "1.7.14",
+      "seq": 1071499,
+      "date": "2026-11-22T01:37:52Z",
+      "created": "2026-11-22T01:33:11Z",
+      "kind": "patch",
+      "prerelease": false,
+      "notes": "- A restart no longer hangs: the 1.7.10 and 1.7.13 updates sat 30 minutes at\n  a steady lamp until the radio gave up by itself or you unplugged it.\n  No restart with this one.\n\nFor makers\n- `rc-local.service.d/hasler-stop.conf`: `TimeoutStopSec=20s`. moOde's\n  worker, AirPlay and the mount monitor run in rc-local's cgroup, and Debian's\n  `TimeoutSec=infinity` let one of them hold a reboot until reboot.target's\n  30 min timeout.",
+      "channels": [],
+      "halted": [],
+      "requires_migration": false,
+      "min_from_seq": 0,
+      "variants": [
+        "excelsior",
+        "hasler-hm",
+        "hasler-hm-hat"
+      ],
+      "release_page": "https://github.com/Delgado-Murphy/hasler-releases/releases/tag/v1.7.14",
+      "assets": {
+        "tarball": {
+          "name": "hasler-1.7.14-arm64.tar.zst",
+          "url": "https://github.com/Delgado-Murphy/hasler-releases/releases/download/v1.7.14/hasler-1.7.14-arm64.tar.zst",
+          "size": 41038292,
+          "sha256": "12691a87872ac3f60655646a1ce001bb1e3b53ac8543a9077dbcfd1b52d4ed0d"
+        },
+        "release_json": {
+          "name": "release.json",
+          "url": "https://github.com/Delgado-Murphy/hasler-releases/releases/download/v1.7.14/release.json",
+          "size": 1282,
+          "sha256": "1f8b6eb1218bfe98b6561f4e06fbcb37b60e707ea168515513f29f79fcf8b808"
+        },
+        "signature": {
+          "name": "release.json.sig",
+          "url": "https://github.com/Delgado-Murphy/hasler-releases/releases/download/v1.7.14/release.json.sig",
+          "size": 310
+        },
+        "sbom": {
+          "name": "hasler-1.7.14.cdx.json",
+          "url": "https://github.com/Delgado-Murphy/hasler-releases/releases/download/v1.7.14/hasler-1.7.14.cdx.json",
+          "size": 20404
+        },
+        "sha256sums": {
+          "name": "SHA256SUMS",
+          "url": "https://github.com/Delgado-Murphy/hasler-releases/releases/download/v1.7.14/SHA256SUMS",
+          "size": 256
+        }
+      }
+    },
+    {
       "version": "1.7.13",
       "seq": 1071399,
       "date": "2026-11-22T00:57:49Z",
@@ -3039,5 +3087,5 @@
       }
     }
   ],
-  "updated": "2026-11-22T00:58:07Z"
+  "updated": "2026-11-22T01:37:53Z"
 }
