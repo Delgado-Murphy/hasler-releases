@@ -9,7 +9,9 @@
       "kind": "patch",
       "prerelease": false,
       "notes": "- The red light at power-on is full red now, easy to see: the pale glow was\n  hard to spot by day. It still blends into the amber breath after a few\n  seconds. This update restarts the radio once.\n\nFor makers\n- `hasler.block`: `gpio=17=op,dl` (was `ip,pd`); `hasler-lamp-boot` starts\n  its blend at full red (`EMBER_RED = 1.0`). Needs\n  `hasler-update apply --allow-reboot`.",
-      "channels": [],
+      "channels": [
+        "bench"
+      ],
       "halted": [],
       "requires_migration": false,
       "min_from_seq": 0,
@@ -3037,5 +3039,5 @@
       }
     }
   ],
-  "updated": "2026-11-22T00:57:50Z"
+  "updated": "2026-11-22T00:58:07Z"
 }
