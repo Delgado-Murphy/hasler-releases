@@ -9,7 +9,9 @@
       "kind": "patch",
       "prerelease": false,
       "notes": "- A restart no longer hangs: the 1.7.10 and 1.7.13 updates sat 30 minutes at\n  a steady lamp until the radio gave up by itself or you unplugged it.\n  No restart with this one.\n\nFor makers\n- `rc-local.service.d/hasler-stop.conf`: `TimeoutStopSec=20s`. moOde's\n  worker, AirPlay and the mount monitor run in rc-local's cgroup, and Debian's\n  `TimeoutSec=infinity` let one of them hold a reboot until reboot.target's\n  30 min timeout.",
-      "channels": [],
+      "channels": [
+        "bench"
+      ],
       "halted": [],
       "requires_migration": false,
       "min_from_seq": 0,
@@ -3087,5 +3089,5 @@
       }
     }
   ],
-  "updated": "2026-11-22T01:37:53Z"
+  "updated": "2026-11-22T01:38:12Z"
 }
