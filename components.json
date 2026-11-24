@@ -1,10 +1,20 @@
 {
   "schema": 1,
-  "issued": "2026-11-23T07:55:28Z",
-  "expires": "2026-12-07T07:55:28Z",
+  "issued": "2026-11-24T00:07:16Z",
+  "expires": "2026-12-08T00:07:16Z",
   "components": {
     "yt-dlp": {
       "candidates": [
+        {
+          "version": "2026.11.23",
+          "channel": "stable",
+          "requirements": "yt-dlp[default]==2026.11.23 \\\n    --hash=sha256:e9188e0c559905f7ee05acc1ba0b6fb3f310e7565bf6dea5f62b5300e0775e35\nbrotli==1.2.1 \\\n    --hash=sha256:b5b458950312830913f837e179ce9221000ab7a20b4e42d7b48c1fcd79140de1\ncertifi==2026.11.20 \\\n    --hash=sha256:7422df25243767b9877031a2248cb14d09ddac9beee846f4cef3d5c9191d488f\ncharset-normalizer==3.5.3 \\\n    --hash=sha256:fd0341b9dea133d187d7c5a2cd7e21ae6449a7b68ea8c2454f9cf77def11ec1b\nidna==3.20 \\\n    --hash=sha256:ab7ae7122974553370f0bdb919e1a960b2cd1bc1ef0276416d896db81c14582c\nmutagen==1.48.1 \\\n    --hash=sha256:4f077fe87d3fc7fba259aa63d8c026b18382ca6a42ef37c61e16f1b1b5b82fe7\npycryptodomex==3.24.2 \\\n    --hash=sha256:97dc6ea02ec1ed55dca0fbc98758ac23d0ca8ce9d7ea32d538c2851e23b8b27f\nrequests==2.34.2 \\\n    --hash=sha256:2a0d60c172f83ac6ab31e4554906c0f3b3588d37b5cb939b1c061f4907e278e0\nurllib3==2.8.0 \\\n    --hash=sha256:0cf3cae568d36aa9576b28dfb35f11328f1cb974ca7647d9475ebb86c75ac6e3\nwebsockets==17.4 \\\n    --hash=sha256:c74954409ea5789f7a60daa5f94580c00ad0b60b20751c47b35c4784877b5057\nyt-dlp-ejs==0.8.0 \\\n    --hash=sha256:79300e5fca7f937a1eeede11f0456862c1b41107ce1d726871e0207424f4bdb4\n",
+          "tested": {
+            "install": true,
+            "offline": true,
+            "online": null
+          }
+        },
         {
           "version": "2026.10.26",
           "channel": "stable",
@@ -16,9 +26,9 @@
           }
         },
         {
-          "version": "2026.10.21",
-          "channel": "stable",
-          "requirements": "yt-dlp[default]==2026.10.21 \\\n    --hash=sha256:94a3a3e2c423129d0bbd2f1be000c4171fa1226c29e251c84aff868f2851c247\nbrotli==1.2.1 \\\n    --hash=sha256:b5b458950312830913f837e179ce9221000ab7a20b4e42d7b48c1fcd79140de1\ncertifi==2026.10.23 \\\n    --hash=sha256:e9b54de76e530bb6cf0ccd036787103acb58fd42ba930ea8bf948ddbaa2f61d1\ncharset-normalizer==3.5.2 \\\n    --hash=sha256:849df64e889b2e17230d58410a03dba311a65b163508fd33679b2b737d4b7858\nidna==3.20 \\\n    --hash=sha256:ab7ae7122974553370f0bdb919e1a960b2cd1bc1ef0276416d896db81c14582c\nmutagen==1.48.1 \\\n    --hash=sha256:4f077fe87d3fc7fba259aa63d8c026b18382ca6a42ef37c61e16f1b1b5b82fe7\npycryptodomex==3.24.1 \\\n    --hash=sha256:9a732b9f5603b153dcdc071d6b342f192981907519827f2c1e4aeac41e2b34c2\nrequests==2.34.2 \\\n    --hash=sha256:2a0d60c172f83ac6ab31e4554906c0f3b3588d37b5cb939b1c061f4907e278e0\nurllib3==2.8.0 \\\n    --hash=sha256:0cf3cae568d36aa9576b28dfb35f11328f1cb974ca7647d9475ebb86c75ac6e3\nwebsockets==17.3 \\\n    --hash=sha256:c95d25b5382ee0e6191ecafdeabefdc1f7bff8dfee29239b9b79e760ef3b04bd\nyt-dlp-ejs==0.8.0 \\\n    --hash=sha256:79300e5fca7f937a1eeede11f0456862c1b41107ce1d726871e0207424f4bdb4\n",
+          "version": "2026.11.23.232705.dev0",
+          "channel": "nightly",
+          "requirements": "yt-dlp[default]==2026.11.23.232705.dev0 \\\n    --hash=sha256:8436f83880bd7406d7a96ffd3ae82cb3efef17162da457d0162f90c053ad738c\nbrotli==1.2.1 \\\n    --hash=sha256:b5b458950312830913f837e179ce9221000ab7a20b4e42d7b48c1fcd79140de1\ncertifi==2026.11.20 \\\n    --hash=sha256:7422df25243767b9877031a2248cb14d09ddac9beee846f4cef3d5c9191d488f\ncharset-normalizer==3.5.3 \\\n    --hash=sha256:fd0341b9dea133d187d7c5a2cd7e21ae6449a7b68ea8c2454f9cf77def11ec1b\nidna==3.20 \\\n    --hash=sha256:ab7ae7122974553370f0bdb919e1a960b2cd1bc1ef0276416d896db81c14582c\nmutagen==1.48.1 \\\n    --hash=sha256:4f077fe87d3fc7fba259aa63d8c026b18382ca6a42ef37c61e16f1b1b5b82fe7\npycryptodomex==3.24.2 \\\n    --hash=sha256:97dc6ea02ec1ed55dca0fbc98758ac23d0ca8ce9d7ea32d538c2851e23b8b27f\nrequests==2.34.2 \\\n    --hash=sha256:2a0d60c172f83ac6ab31e4554906c0f3b3588d37b5cb939b1c061f4907e278e0\nurllib3==2.8.0 \\\n    --hash=sha256:0cf3cae568d36aa9576b28dfb35f11328f1cb974ca7647d9475ebb86c75ac6e3\nwebsockets==17.4 \\\n    --hash=sha256:c74954409ea5789f7a60daa5f94580c00ad0b60b20751c47b35c4784877b5057\nyt-dlp-ejs==0.8.0 \\\n    --hash=sha256:79300e5fca7f937a1eeede11f0456862c1b41107ce1d726871e0207424f4bdb4\n",
           "tested": {
             "install": true,
             "offline": true,
@@ -29,16 +39,6 @@
           "version": "2026.11.22.232654.dev0",
           "channel": "nightly",
           "requirements": "yt-dlp[default]==2026.11.22.232654.dev0 \\\n    --hash=sha256:7299b17cdf2a2ac9590a162289d208422c5d04d389036540fe8119f4f9ea3a84\nbrotli==1.2.1 \\\n    --hash=sha256:b5b458950312830913f837e179ce9221000ab7a20b4e42d7b48c1fcd79140de1\ncertifi==2026.11.20 \\\n    --hash=sha256:7422df25243767b9877031a2248cb14d09ddac9beee846f4cef3d5c9191d488f\ncharset-normalizer==3.5.3 \\\n    --hash=sha256:fd0341b9dea133d187d7c5a2cd7e21ae6449a7b68ea8c2454f9cf77def11ec1b\nidna==3.20 \\\n    --hash=sha256:ab7ae7122974553370f0bdb919e1a960b2cd1bc1ef0276416d896db81c14582c\nmutagen==1.48.1 \\\n    --hash=sha256:4f077fe87d3fc7fba259aa63d8c026b18382ca6a42ef37c61e16f1b1b5b82fe7\npycryptodomex==3.24.2 \\\n    --hash=sha256:97dc6ea02ec1ed55dca0fbc98758ac23d0ca8ce9d7ea32d538c2851e23b8b27f\nrequests==2.34.2 \\\n    --hash=sha256:2a0d60c172f83ac6ab31e4554906c0f3b3588d37b5cb939b1c061f4907e278e0\nurllib3==2.8.0 \\\n    --hash=sha256:0cf3cae568d36aa9576b28dfb35f11328f1cb974ca7647d9475ebb86c75ac6e3\nwebsockets==17.4 \\\n    --hash=sha256:c74954409ea5789f7a60daa5f94580c00ad0b60b20751c47b35c4784877b5057\nyt-dlp-ejs==0.8.0 \\\n    --hash=sha256:79300e5fca7f937a1eeede11f0456862c1b41107ce1d726871e0207424f4bdb4\n",
-          "tested": {
-            "install": true,
-            "offline": true,
-            "online": null
-          }
-        },
-        {
-          "version": "2026.11.21.232659.dev0",
-          "channel": "nightly",
-          "requirements": "yt-dlp[default]==2026.11.21.232659.dev0 \\\n    --hash=sha256:d2c416e6b44e715ecdb0a3b3a08f09aaf8630a8a898e82fec38865d0a5db1a56\nbrotli==1.2.1 \\\n    --hash=sha256:b5b458950312830913f837e179ce9221000ab7a20b4e42d7b48c1fcd79140de1\ncertifi==2026.11.20 \\\n    --hash=sha256:7422df25243767b9877031a2248cb14d09ddac9beee846f4cef3d5c9191d488f\ncharset-normalizer==3.5.2 \\\n    --hash=sha256:849df64e889b2e17230d58410a03dba311a65b163508fd33679b2b737d4b7858\nidna==3.20 \\\n    --hash=sha256:ab7ae7122974553370f0bdb919e1a960b2cd1bc1ef0276416d896db81c14582c\nmutagen==1.48.1 \\\n    --hash=sha256:4f077fe87d3fc7fba259aa63d8c026b18382ca6a42ef37c61e16f1b1b5b82fe7\npycryptodomex==3.24.2 \\\n    --hash=sha256:97dc6ea02ec1ed55dca0fbc98758ac23d0ca8ce9d7ea32d538c2851e23b8b27f\nrequests==2.34.2 \\\n    --hash=sha256:2a0d60c172f83ac6ab31e4554906c0f3b3588d37b5cb939b1c061f4907e278e0\nurllib3==2.8.0 \\\n    --hash=sha256:0cf3cae568d36aa9576b28dfb35f11328f1cb974ca7647d9475ebb86c75ac6e3\nwebsockets==17.4 \\\n    --hash=sha256:c74954409ea5789f7a60daa5f94580c00ad0b60b20751c47b35c4784877b5057\nyt-dlp-ejs==0.8.0 \\\n    --hash=sha256:79300e5fca7f937a1eeede11f0456862c1b41107ce1d726871e0207424f4bdb4\n",
           "tested": {
             "install": true,
             "offline": true,
